@@ -18,7 +18,10 @@
 <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
 <!-- Supabase SDK + project config + data layer (replaces the localStorage db.js) -->
 <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<script src="config.js"></script>
+<script>
+  window.BERG_SUPABASE_URL = "https://wfaloikmocgbxtgiwcrk.supabase.co";
+  window.BERG_SUPABASE_ANON_KEY = "sb_publishable_e5bo2j5ZLq0lgUQYRLZHCw_pmao2kXG";
+</script>
 <script src="../_ds_bundle.js"></script>
 <script src="logos.js"></script>
 <style>
@@ -35,6 +38,17 @@
 </head>
 <body>
 <div id="root"></div>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="8" fill="#16202E"/>
+    <rect x="13" y="14" width="16" height="36" rx="2" fill="#283A50"/>
+    <rect x="17" y="19" width="8" height="2.4" rx="1" fill="#8A7B66"/>
+    <rect x="33" y="14" width="18" height="11" rx="2" fill="#F7F4EE"/>
+    <rect x="33" y="29" width="18" height="21" rx="2" fill="#283A50" stroke="#8A7B66" stroke-width="1"/>
+    <circle cx="42" cy="39" r="4" fill="#2F8A57"/>
+  </svg>
+</template>
 
 <!-- data layer: plain JS (no Babel) -->
 <script src="db.supabase.js"></script>
@@ -165,17 +179,11 @@ function SetupNotice() {
   );
 }
 
-const configured = window.BERG_SUPABASE_URL && window.BERG_SUPABASE_URL.indexOf("YOUR-PROJECT") === -1 && window.BERG_SUPABASE_ANON_KEY && window.BERG_SUPABASE_ANON_KEY.indexOf("YOUR-") === -1;
 const rootEl = ReactDOM.createRoot(document.getElementById('root'));
-if (!configured) {
-  rootEl.render(<SetupNotice />);
-} else {
-  // Always render the app (login screen) — never fall back to the setup
-  // notice just because session restore failed.
-  window.DB.init().catch((e) => console.error("init", e)).finally(() => {
-    rootEl.render(<Root />);
-  });
-}
+// Always render the app (login screen). Keys are baked in above.
+window.DB.init().catch((e) => console.error("init", e)).finally(() => {
+  rootEl.render(<Root />);
+});
 </script>
 </body>
 </html>
