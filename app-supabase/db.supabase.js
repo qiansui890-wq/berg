@@ -21,7 +21,7 @@
   // Loaded globals (see README for script tags):
   //   window.supabase            — @supabase/supabase-js UMD
   //   window.BERG_SUPABASE_URL / window.BERG_SUPABASE_ANON_KEY  (config.js)
-  const sb = window.supabase.createClient(window.BERG_SUPABASE_URL, window.BERG_SUPABASE_ANON_KEY);
+  const sb = window.const sb = window.supabase.createClient("https://wfaloikmocgbxtgiwcrk.supabase.co", "sb_publishable_e5bo2j5ZLq0lgUQYRLZHCw_pmao2kXG");
 
   /* ---- constants (identical to db.js — kept client-side) ---- */
   const STRATEGIES = [
