@@ -1,0 +1,47 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Results / metrics" subtitle="Navy band with serif figures" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<style>html,body{margin:0;}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="parts.jsx"></script>
+<script type="text/babel">
+const { Slide, Eyebrow, Chrome } = window.BergSlides;
+const stats = [
+  ["$500K","Stolen crypto returned to a Texas family","2025"],
+  ["30","Wallets frozen by injunction — first in Texas","2024"],
+  ["$100M+","In digital assets traced across cross-border cases","To date"],
+];
+function S(){
+  return (
+    <Slide bg="var(--navy-900)">
+      <div style={{ position: "absolute", left: 64, top: 70 }}>
+        <Eyebrow light>Recent Results</Eyebrow>
+        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 46, letterSpacing: "-0.02em", color: "var(--cream)", margin: "16px 0 0" }}>Outcomes that hold up in court</h1>
+      </div>
+      <div style={{ position: "absolute", left: 64, right: 64, top: 300, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 40 }}>
+        {stats.map(([v,c,y])=>(
+          <div key={v} style={{ borderTop: "3px solid var(--stone-500)", paddingTop: 24 }}>
+            <div style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 84, lineHeight: 0.95, letterSpacing: "-0.03em", color: "var(--cream)" }}>{v}</div>
+            <p style={{ fontSize: 18, color: "var(--navy-100)", margin: "18px 0 10px", lineHeight: 1.45 }}>{c}</p>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--stone-300)" }}>{y}</span>
+          </div>
+        ))}
+      </div>
+      <Chrome light/>
+    </Slide>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<S/>);
+setTimeout(()=>window.lucide&&window.lucide.createIcons(),40);
+</script>
+</body>
+</html>

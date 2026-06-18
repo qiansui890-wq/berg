@@ -1,0 +1,9 @@
+/* ============================================================
+   BERG — Webfonts
+   NOTE: Loaded from Google Fonts (web). These are SUBSTITUTES /
+   the working brand faces — Spectral, IBM Plex Sans, IBM Plex Mono.
+   If Berg licenses bespoke faces, replace these @font-face/@import
+   rules with self-hosted files. Flagged to the user.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Libre+Franklin:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

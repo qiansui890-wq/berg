@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berg PC — Sample Deck</title>
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../_ds_bundle.js"></script>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="8" fill="#16202E"/>
+    <rect x="14" y="16" width="36" height="24" rx="2" fill="#283A50" stroke="#8A7B66" stroke-width="1.2"/>
+    <rect x="18" y="44" width="20" height="3" rx="1.5" fill="#C5BAA9"/>
+    <path d="M40 46 l8 0 M40 50 l5 0" stroke="#5E7794" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</template>
+<style>
+  html,body{margin:0;height:100%;background:#0E1622;overflow:hidden;}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  #frame{width:1280px;height:720px;transform-origin:center center;box-shadow:0 24px 60px rgba(0,0,0,.5);}
+  .nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:20;
+    background:rgba(14,22,34,.82);backdrop-filter:blur(6px);border:1px solid #283A50;border-radius:999px;padding:8px 16px;font-family:var(--font-ui);}
+  .nav button{border:none;background:transparent;color:#E0E6EE;cursor:pointer;display:flex;padding:6px;border-radius:50%;}
+  .nav button:hover{background:#283A50;}
+  .nav span{color:#BECAD9;font-size:13px;font-variant-numeric:tabular-nums;min-width:44px;text-align:center;}
+</style>
+</head>
+<body>
+<div id="stage"><div id="frame"></div></div>
+<div class="nav">
+  <button id="prev" aria-label="Previous"><i data-lucide="chevron-left"></i></button>
+  <span id="count">1 / 7</span>
+  <button id="next" aria-label="Next"><i data-lucide="chevron-right"></i></button>
+</div>
+<script type="text/babel" src="parts.jsx"></script>
+<script type="text/babel" src="../ui_kits/dashboard/TraceGraph.jsx"></script>
+<script type="text/babel">
+const { Slide, SIco, Eyebrow, Rule, Chrome, LOGO, LOGO_REV } = window.BergSlides;
+const { TraceGraph, TraceLegend } = window.BergTrace;
+
+/* 01 — Title */
+const Title = () => (
+  <Slide bg="var(--navy-900)">
+    <div style={{position:"absolute",top:64,left:64}}><img src={LOGO_REV} style={{height:52}}/></div>
+    <div style={{position:"absolute",left:64,right:64,top:"50%",transform:"translateY(-50%)"}}>
+      <Eyebrow light>Crypto Fraud &amp; Recovery</Eyebrow><Rule light/>
+      <h1 style={{fontFamily:"var(--font-serif)",fontWeight:600,fontSize:72,lineHeight:1.04,letterSpacing:"-0.02em",color:"var(--cream)",margin:0,maxWidth:980}}>Recover what was taken.</h1>
+      <p style={{fontSize:24,color:"var(--navy-100)",margin:"28px 0 0",maxWidth:760,lineHeight:1.5}}>Senior attorneys and digital forensics experts, working together to trace and recover stolen digital assets.</p>
+    </div>
+    <div style={{position:"absolute",left:64,bottom:48,fontFamily:"var(--font-mono)",fontSize:14,color:"var(--navy-200)"}}>Houston, Texas · 281 857-6666</div>
+  </Slide>
+);
+
+/* 02 — Section */
+const Section = () => (
+  <Slide bg="var(--stone-100)">
+    <div style={{position:"absolute",right:-40,top:-60,fontFamily:"var(--font-serif)",fontWeight:700,fontSize:460,color:"var(--stone-200)",lineHeight:1,userSelect:"none"}}>01</div>
+    <div style={{position:"absolute",left:64,top:"50%",transform:"translateY(-50%)"}}>
+      <Eyebrow>Section One</Eyebrow>
+      <h1 style={{fontFamily:"var(--font-serif)",fontWeight:600,fontSize:64,letterSpacing:"-0.02em",color:"var(--ink-900)",margin:"24px 0 0",maxWidth:760,lineHeight:1.05}}>How asset recovery works</h1>
+      <p style={{fontSize:22,color:"var(--ink-600)",margin:"22px 0 0",maxWidth:620,lineHeight:1.5}}>Trace, identify, freeze, recover — a rigorous, evidence-led process.</p>
+    </div>
+    <Chrome n="Section 1"/>
+  </Slide>
+);
+
+/* 03 — Process */
+const steps = [["search-code","Trace","Follow stolen funds across the blockchain — through hops, bridges, and mixers."],["user-search","Identify","Tie on-chain activity to the wallets, services, and people behind it."],["snowflake","Freeze","Obtain court injunctions that freeze criminal wallets before funds move."],["scale","Recover","Litigate to return assets to victims — on contingency. No recovery, no fee."]];
+const Process = () => (
+  <Slide>
+    <div style={{position:"absolute",left:64,top:70}}><Eyebrow>Our Process</Eyebrow>
+      <h1 style={{fontFamily:"var(--font-serif)",fontWeight:600,fontSize:46,letterSpacing:"-0.02em",color:"var(--ink-900)",margin:"16px 0 0"}}>Four steps to recovery</h1></div>
+    <div style={{position:"absolute",left:64,right:64,top:250,display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:26}}>
+      {steps.map(([ic,t,d],i)=>(<div key={t}>
+        <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:16}}>
+          <span style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:56,height:56,borderRadius:12,background:"var(--navy-900)",color:"var(--stone-300)"}}><SIco n={ic} s={26}/></span>
+          <span style={{fontFamily:"var(--font-mono)",fontSize:15,color:"var(--stone-500)"}}>0{i+1}</span></div>
+        <h3 style={{fontFamily:"var(--font-serif)",fontSize:26,color:"var(--ink-900)",margin:"0 0 10px"}}>{t}</h3>
+        <p style={{fontSize:16,lineHeight:1.5,color:"var(--ink-600)",margin:0}}>{d}</p></div>))}
+    </div><Chrome/>
+  </Slide>
+);
+
+/* 04 — Results */
+const stats = [["$500K","Stolen crypto returned to a Texas family","2025"],["30","Wallets frozen by injunction — first in Texas","2024"],["$100M+","In digital assets traced across cross-border cases","To date"]];
+const Results = () => (
+  <Slide bg="var(--navy-900)">
+    <div style={{position:"absolute",left:64,top:70}}><Eyebrow light>Recent Results</Eyebrow>
+      <h1 style={{fontFamily:"var(--font-serif)",fontWeight:600,fontSize:46,letterSpacing:"-0.02em",color:"var(--cream)",margin:"16px 0 0"}}>Outcomes that hold up in court</h1></div>
+    <div style={{position:"absolute",left:64,right:64,top:300,display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:40}}>
+      {stats.map(([v,c,y])=>(<div key={v} style={{borderTop:"3px solid var(--stone-500)",paddingTop:24}}>
+        <div style={{fontFamily:"var(--font-serif)",fontWeight:600,fontSize:84,lineHeight:0.95,letterSpacing:"-0.03em",color:"var(--cream)"}}>{v}</div>
+        <p style={{fontSize:18,color:"var(--navy-100)",margin:"18px 0 10px",lineHeight:1.45}}>{c}</p>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:14,color:"var(--stone-300)"}}>{y}</span></div>))}
+    </div><Chrome light/>
+  </Slide>
+);
+
+/* 05 — Quote */
+const Quote = () => (
+  <Slide>
+    <div style={{position:"absolute",left:64,top:96,fontFamily:"var(--font-serif)",fontSize:200,lineHeight:0.6,color:"var(--stone-300)"}}>&ldquo;</div>
+    <div style={{position:"absolute",left:96,right:110,top:"50%",transform:"translateY(-50%)"}}>
+      <p style={{fontFamily:"var(--font-serif)",fontWeight:500,fontStyle:"italic",fontSize:46,lineHeight:1.3,letterSpacing:"-0.01em",color:"var(--ink-900)",margin:0}}>We understand this may be the worst time of your life. Our attorneys and investigators work together to trace what was taken — and pursue every avenue to bring it back.</p>
+      <div style={{display:"flex",alignItems:"center",gap:14,marginTop:40}}>
+        <span style={{width:44,height:3,background:"var(--stone-500)"}}></span>
+        <span style={{fontFamily:"var(--font-ui)",fontSize:18,fontWeight:600,color:"var(--ink-800)"}}>Geoff Berg</span>
+        <span style={{fontFamily:"var(--font-ui)",fontSize:18,color:"var(--ink-500)"}}>Managing Partner, Berg PC</span></div>
+    </div><Chrome/>
+  </Slide>
+);
+
+/* 06 — Trace case study */
+const Trace = () => (
+  <Slide>
+    <div style={{position:"absolute",left:64,top:80,width:380}}>
+      <Eyebrow>Case Study · BPC-2025-0417</Eyebrow>
+      <h1 style={{fontFamily:"var(--font-serif)",fontWeight:600,fontSize:40,letterSpacing:"-0.02em",color:"var(--ink-900)",margin:"18px 0 0",lineHeight:1.08}}>Tracing 8.42 BTC to a frozen off-ramp</h1>
+      <p style={{fontSize:17,lineHeight:1.55,color:"var(--ink-600)",margin:"20px 0 0"}}>Funds moved through two pass-through wallets and a mixer before reaching an exchange — where a court order froze 3.32 BTC.</p>
+      <div style={{marginTop:28,display:"flex",flexDirection:"column",gap:14}}>
+        {[["snowflake","3.32 BTC frozen by court order","var(--trace-frozen)"],["building-2","Exchange A subpoenaed for KYC","var(--trace-exchange)"],["alert-triangle","Mixer flagged in path","var(--trace-mixer)"]].map(([ic,t,c])=>(
+          <div key={t} style={{display:"flex",alignItems:"center",gap:11}}><SIco n={ic} s={20} c={c}/><span style={{fontSize:16,color:"var(--ink-800)"}}>{t}</span></div>))}
+      </div>
+    </div>
+    <div style={{position:"absolute",left:480,right:64,top:80}}><TraceGraph height={400}/><TraceLegend/></div>
+    <Chrome/>
+  </Slide>
+);
+
+/* 07 — Closing */
+const Closing = () => (
+  <Slide bg="var(--navy-900)">
+    <div style={{position:"absolute",left:64,top:"50%",transform:"translateY(-50%)"}}>
+      <Eyebrow light>Tell us about your case</Eyebrow><Rule light/>
+      <h1 style={{fontFamily:"var(--font-serif)",fontWeight:600,fontSize:60,letterSpacing:"-0.02em",color:"var(--cream)",margin:0,maxWidth:820,lineHeight:1.06}}>Let's recover what was taken.</h1>
+      <div style={{display:"flex",gap:40,marginTop:44}}>
+        {[["phone","281 857-6666"],["mail","info@bergpclawfirms.com"],["map-pin","24 Greenway Plaza, Houston"]].map(([ic,t])=>(
+          <div key={t} style={{display:"flex",alignItems:"center",gap:11}}><SIco n={ic} s={20} c="var(--stone-300)"/><span style={{fontFamily:"var(--font-ui)",fontSize:19,color:"var(--navy-100)"}}>{t}</span></div>))}
+      </div>
+    </div>
+    <div style={{position:"absolute",right:64,bottom:48}}><img src={LOGO_REV} style={{height:46}}/></div>
+  </Slide>
+);
+
+const SLIDES = [Title, Section, Process, Results, Quote, Trace, Closing];
+let idx = 0;
+const frame = document.getElementById('frame');
+const root = ReactDOM.createRoot(frame);
+const count = document.getElementById('count');
+
+function fit(){
+  const s = Math.min(window.innerWidth/1280, window.innerHeight/720) * 0.92;
+  frame.style.transform = `scale(${s})`;
+}
+function render(){
+  const S = SLIDES[idx];
+  root.render(<S/>);
+  count.textContent = `${idx+1} / ${SLIDES.length}`;
+  localStorage.setItem('berg_deck_idx', idx);
+  setTimeout(()=>window.lucide && window.lucide.createIcons(), 30);
+}
+function go(d){ idx = (idx + d + SLIDES.length) % SLIDES.length; render(); }
+
+document.getElementById('prev').onclick = ()=>go(-1);
+document.getElementById('next').onclick = ()=>go(1);
+window.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight'||e.key===' ') go(1);
+  if(e.key==='ArrowLeft') go(-1);
+});
+window.addEventListener('resize', fit);
+idx = parseInt(localStorage.getItem('berg_deck_idx')||'0',10) || 0;
+if(idx<0||idx>=SLIDES.length) idx=0;
+fit(); render();
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results — Berg PC</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="marketing.css">
+<style>
+  .stat .num{font-family:var(--font-serif);font-weight:500;font-size:clamp(40px,5vw,62px);line-height:1;letter-spacing:-.02em;color:var(--cream);}
+  .stat .cap{font-size:15px;color:var(--navy-100);margin-top:14px;line-height:1.5;max-width:30ch;}
+  .stat .yr{font-family:var(--font-mono);font-size:12px;color:var(--stone-300);margin-top:9px;display:block;}
+  .stat{border-top:2px solid var(--stone-500);padding-top:20px;}
+  .case h3{font-family:var(--font-serif);font-size:22px;color:var(--ink-900);margin:0 0 6px;font-weight:600;}
+  .case .tag{display:inline-block;font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-700);background:var(--stone-100);border-radius:var(--radius-pill);padding:3px 11px;margin-bottom:14px;}
+  .case p{font-size:14.5px;line-height:1.6;color:var(--ink-600);margin:0 0 14px;}
+  .case .out{font-family:var(--font-ui);font-size:14px;font-weight:600;color:var(--success-700);display:flex;align-items:center;gap:7px;}
+</style>
+</head>
+<body>
+<nav class="top" id="nav">
+  <a href="Berg PC Home (Animated).html"><img src="assets/berg-pc-logo-reverse.png" alt="Berg PC"></a>
+  <div class="links">
+    <a href="Berg PC Home (Animated).html#practice">Practice</a>
+    <a href="Berg PC Results (Animated).html">Results</a>
+    <a href="Berg PC Team (Animated).html">Team</a>
+    <a href="Berg PC Home (Animated).html#contact">Contact</a>
+  </div>
+  <a class="cta" href="app/index.html">Tell us about your case</a>
+</nav>
+
+<header class="hero">
+  <canvas id="net"></canvas>
+  <div class="container">
+    <a class="crumb" href="Berg PC Home (Animated).html">← Home</a>
+    <div class="eyebrow">Recent Results</div>
+    <h1>Outcomes that hold up in court.</h1>
+    <p class="lead">We pair senior trial attorneys with digital forensics experts — and the results show it. A selection of recent recoveries and rulings.</p>
+    <div class="acts"><a class="btn gold" href="app/index.html">Start your recovery <span class="ar">→</span></a></div>
+  </div>
+</header>
+
+<section class="dark">
+  <div class="container">
+    <div class="reveal"><div class="sec-eyebrow" style="color:var(--stone-300)">By the numbers</div><hr class="sec-rule"><h2>Recoveries that matter.</h2></div>
+    <div class="grid3">
+      <div class="stat reveal d1"><div class="num" data-count="500000" data-prefix="$">$0</div><div class="cap">Stolen crypto returned to a Texas family.</div><span class="yr">2025</span></div>
+      <div class="stat reveal d2"><div class="num" data-count="30" data-suffix=" wallets">0</div><div class="cap">Frozen by injunction — first of its kind in Texas.</div><span class="yr">2024</span></div>
+      <div class="stat reveal d3"><div class="num" data-count="100" data-prefix="$" data-suffix="M+">$0</div><div class="cap">In digital assets traced across cross-border cases.</div><span class="yr">To date</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="reveal"><div class="sec-eyebrow">Case Studies</div><hr class="sec-rule"><h2>Representative matters.</h2></div>
+    <div class="grid3">
+      <div class="card case reveal d1"><span class="tag">Crypto Fraud</span><h3>$500K returned to a family</h3><p>A Texas family was defrauded through a spoofed investment platform. We traced the funds across mixers to an off-ramp and recovered the assets.</p><div class="out">✓ Funds recovered, 2025</div></div>
+      <div class="card case reveal d2"><span class="tag">Injunction</span><h3>30 wallets frozen</h3><p>We obtained a first-of-its-kind Texas injunction freezing thirty criminal wallets while litigation proceeded.</p><div class="out">✓ Assets preserved, 2024</div></div>
+      <div class="card case reveal d3"><span class="tag">Cross-border</span><h3>Overseas ring traced</h3><p>For funds routed to an overseas exchange, we combined a stablecoin freeze, MLAT channels, and exchange cooperation.</p><div class="out">✓ Recovery in progress</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="container reveal">
+    <h2>Could your case be next?</h2>
+    <p>The initial review is free and confidential. If we take your case, we work on contingency — you pay nothing unless we recover.</p>
+    <a class="btn gold" href="app/index.html">Begin your case review <span class="ar">→</span></a>
+  </div>
+</section>
+
+<footer><div class="container fwrap"><img src="assets/berg-pc-logo-reverse.png" alt="Berg PC"><div>24 Greenway Plaza, Suite 1800 · Houston, Texas 77046 · 281 857-6666</div><div>© 2026 Berg PC. Attorney advertising.</div></div></footer>
+
+<template id="__bundler_thumbnail"><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="8" fill="#0E1622"/><path d="M16 44 L28 30 L38 38 L50 20" stroke="#CBA85C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="20" r="3.5" fill="#2F8A57"/></svg></template>
+
+<script src="marketing.js"></script>
+<script>
+/* count-up for the results numbers */
+(function(){
+  var done={};
+  function count(el){var id=el.getAttribute('data-count');if(done[id+el.className])return;done[id+el.className]=1;
+    var end=+el.dataset.count,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',i=0,steps=80;
+    var t=setInterval(function(){i++;var p=i/steps,e=1-Math.pow(1-p,3),v=Math.round(end*e);el.textContent=pre+(v>=1000?v.toLocaleString('en-US'):v)+suf;if(i>=steps){el.textContent=pre+(end>=1000?end.toLocaleString('en-US'):end)+suf;clearInterval(t);}},16);}
+  var nums=[].slice.call(document.querySelectorAll('[data-count]'));
+  function chk(){var tr=innerHeight*0.85;nums.forEach(function(n){if(n.getBoundingClientRect().top<tr)count(n);});}
+  addEventListener('scroll',chk,{passive:true});chk();
+})();
+</script>
+</body>
+</html>

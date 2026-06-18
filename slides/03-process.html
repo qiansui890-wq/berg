@@ -1,0 +1,51 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Process / four-step" subtitle="Icon steps on cream" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<style>html,body{margin:0;}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="parts.jsx"></script>
+<script type="text/babel">
+const { Slide, Eyebrow, Rule, Chrome, SIco } = window.BergSlides;
+const steps = [
+  ["search-code","Trace","Follow stolen funds across the blockchain — through hops, bridges, and mixers."],
+  ["user-search","Identify","Tie on-chain activity to the wallets, services, and people behind it."],
+  ["snowflake","Freeze","Obtain court injunctions that freeze criminal wallets before funds move."],
+  ["scale","Recover","Litigate to return assets to victims — on contingency. No recovery, no fee."],
+];
+function S(){
+  return (
+    <Slide>
+      <div style={{ position: "absolute", left: 64, top: 70 }}>
+        <Eyebrow>Our Process</Eyebrow>
+        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: 46, letterSpacing: "-0.02em", color: "var(--ink-900)", margin: "16px 0 0" }}>Four steps to recovery</h1>
+      </div>
+      <div style={{ position: "absolute", left: 64, right: 64, top: 250, display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 26 }}>
+        {steps.map(([ic,t,d],i)=>(
+          <div key={t}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+              <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 56, height: 56, borderRadius: 12, background: "var(--navy-900)", color: "var(--stone-300)" }}><SIco n={ic} s={26}/></span>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 15, color: "var(--stone-500)" }}>0{i+1}</span>
+            </div>
+            <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 26, color: "var(--ink-900)", margin: "0 0 10px" }}>{t}</h3>
+            <p style={{ fontSize: 16, lineHeight: 1.5, color: "var(--ink-600)", margin: 0 }}>{d}</p>
+          </div>
+        ))}
+      </div>
+      <Chrome/>
+    </Slide>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<S/>);
+setTimeout(()=>window.lucide&&window.lucide.createIcons(),40);
+</script>
+</body>
+</html>

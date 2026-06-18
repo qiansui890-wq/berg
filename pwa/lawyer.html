@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#0E1622">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Berg PC — Counsel">
+<link rel="manifest" href="manifest.lawyer.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Berg PC — Counsel</title>
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../app/logos.js"></script>
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;height:100%;}
+  body{background:#0B1119;font-family:var(--font-sans);overscroll-behavior:none;}
+  #app{max-width:460px;margin:0 auto;min-height:100vh;background:var(--cream);position:relative;display:flex;flex-direction:column;box-shadow:0 0 60px rgba(0,0,0,.4);}
+  .scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:84px;}
+  .safe-t{padding-top:env(safe-area-inset-top);}
+  .fade{animation:fade .35s ease both;}@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  button{font-family:var(--font-ui);cursor:pointer;}
+  [data-lucide]{width:20px;height:20px;}
+  .tabs{position:absolute;bottom:0;left:0;right:0;display:flex;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--ink-100);padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:20;}
+  .tab{flex:1;border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;color:var(--ink-400);font-size:10.5px;font-weight:600;transition:color .15s;position:relative;}
+  .tab.on{color:var(--ink-900);}
+  .badge{position:absolute;top:2px;right:50%;margin-right:-20px;background:var(--danger-500);color:#fff;font-family:var(--font-mono);font-size:9px;font-weight:700;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px;}
+  .sheet{position:absolute;inset:0;z-index:40;background:var(--cream);display:flex;flex-direction:column;animation:slide .3s ease both;}
+  @keyframes slide{from{transform:translateX(100%);}to{transform:none;}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel" src="../app/db.js" data-presets="env,react"></script>
+<script type="text/babel">
+const LOGO=(window.BERG_LOGOS&&window.BERG_LOGOS.logoRev)||"../assets/berg-pc-logo-reverse.png";
+const Ico=({n,s=20,c})=><i data-lucide={n} style={{width:s,height:s,color:c}}></i>;
+const useIcons=()=>React.useEffect(()=>{const t=setTimeout(()=>window.lucide&&window.lucide.createIcons(),20);return()=>clearTimeout(t);});
+const money=(n)=>window.DB.fmtMoney(n);
+const tone={"Intake":["var(--ink-100)","var(--ink-700)"],"Investigating":["var(--info-100)","var(--info-700)"],"Filed":["var(--stone-100)","var(--stone-700)"],"Frozen":["var(--warning-100)","var(--warning-700)"],"Recovered":["var(--success-100)","var(--success-700)"],"Closed":["var(--ink-100)","var(--ink-600)"]};
+const Pill=({s})=>{const[b,f]=tone[s]||tone.Intake;return <span style={{fontFamily:"var(--font-ui)",fontSize:11,fontWeight:600,padding:"3px 9px",borderRadius:999,background:b,color:f}}>{s}</span>;};
+
+function Login({onIn}){
+  const [email,setEmail]=React.useState(""),[pw,setPw]=React.useState(""),[err,setErr]=React.useState("");
+  useIcons();
+  function go(em,p){const r=window.DB.login(em||email,p||pw);if(r.error){setErr(r.error);return;}onIn(r.user);}
+  const fld={width:"100%",border:"1px solid var(--border-default)",borderRadius:"var(--radius-sm)",padding:"14px",fontFamily:"var(--font-ui)",fontSize:16,color:"var(--ink-900)",outline:"none",background:"#fff"};
+  return (
+    <div className="safe-t" style={{flex:1,display:"flex",flexDirection:"column",color:"var(--cream)",background:"radial-gradient(120% 80% at 20% 0%,#1E2C3E,#0E1622)",padding:"56px 26px 30px"}}>
+      <img src={LOGO} alt="Berg PC" style={{height:46,alignSelf:"flex-start"}}/>
+      <div style={{marginTop:"auto"}}>
+        <div style={{fontSize:11.5,fontWeight:600,letterSpacing:".2em",textTransform:"uppercase",color:"var(--stone-300)"}}>Counsel · Mobile</div>
+        <h1 style={{fontFamily:"var(--font-serif)",fontWeight:500,fontSize:36,lineHeight:1.1,letterSpacing:"-.02em",margin:"14px 0 0",color:"var(--cream)"}}>Your caseload, in hand.</h1>
+        <p style={{color:"var(--navy-100)",fontSize:15,lineHeight:1.55,marginTop:14}}>Review assigned cases, advance stages, and reply to clients on the go.</p>
+      </div>
+      <div style={{background:"var(--cream)",margin:"28px -26px -30px",padding:"26px 26px calc(30px + env(safe-area-inset-bottom))",borderTopLeftRadius:22,borderTopRightRadius:22}}>
+        <div style={{display:"flex",flexDirection:"column",gap:12}}>
+          <input style={fld} type="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)}/>
+          <input style={fld} type="password" placeholder="Password" value={pw} onChange={e=>setPw(e.target.value)}/>
+          {err && <div style={{color:"var(--danger-700)",fontSize:13,fontFamily:"var(--font-ui)"}}>{err}</div>}
+          <button onClick={()=>go()} style={{border:"none",background:"var(--ink-900)",color:"var(--cream)",borderRadius:"var(--radius-sm)",padding:"15px",fontSize:16,fontWeight:600,display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>Sign in <Ico n="arrow-right" s={18} c="var(--cream)"/></button>
+          <button onClick={()=>go("geoff@bergpc.com","lawyer")} style={{border:"1px solid var(--border-default)",background:"#fff",color:"var(--ink-700)",borderRadius:"var(--radius-sm)",padding:"13px",fontSize:14,fontWeight:600,display:"flex",alignItems:"center",justifyContent:"center",gap:9}}><Ico n="scale" s={16} c="var(--stone-600)"/> Use demo attorney account</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Cases({user,onOpen}){
+  useIcons();
+  const cs=window.DB.clientsFor(user);
+  const atIssue=cs.reduce((s,c)=>s+(+c.amountLost||0),0);
+  return (
+    <div className="fade" style={{padding:"20px 18px"}}>
+      <div style={{fontSize:11.5,fontWeight:600,letterSpacing:".16em",textTransform:"uppercase",color:"var(--stone-600)"}}>My caseload</div>
+      <h1 style={{fontFamily:"var(--font-serif)",fontSize:25,margin:"7px 0 0",color:"var(--ink-900)"}}>{cs.length} active cases</h1>
+      <div style={{fontSize:13,color:"var(--ink-500)",marginTop:3}}>{money(atIssue)} at issue</div>
+      <div style={{display:"flex",flexDirection:"column",gap:10,marginTop:18}}>
+        {cs.map(c=>{const un=(c.messages||[]).filter(m=>m.fromId!==user.id&&!m.read).length;return (
+          <button key={c.id} onClick={()=>onOpen(c.id)} style={{textAlign:"left",border:"1px solid var(--ink-100)",background:"#fff",borderRadius:"var(--radius-lg)",padding:"15px 16px",display:"flex",alignItems:"center",gap:12}}>
+            <div style={{flex:1,minWidth:0}}>
+              <div style={{display:"flex",alignItems:"center",gap:8}}><span style={{fontSize:15.5,fontWeight:600,color:"var(--ink-900)"}}>{c.name}</span>{c.overseas&&<Ico n="globe" s={13} c="var(--warning-600)"/>}</div>
+              <div style={{fontSize:12.5,color:"var(--ink-500)",margin:"3px 0 8px"}}>{c.matterType} · {money(c.amountLost)}</div>
+              <Pill s={c.status}/>
+            </div>
+            {un>0 && <span style={{background:"var(--danger-500)",color:"#fff",fontFamily:"var(--font-mono)",fontSize:11,fontWeight:700,minWidth:20,height:20,borderRadius:10,display:"flex",alignItems:"center",justifyContent:"center",padding:"0 5px"}}>{un}</span>}
+            <Ico n="chevron-right" s={18} c="var(--ink-300)"/>
+          </button>
+        );})}
+        {!cs.length && <div style={{textAlign:"center",color:"var(--ink-400)",padding:"40px 0"}}>No cases assigned.</div>}
+      </div>
+    </div>
+  );
+}
+
+function CaseSheet({id,user,onClose,bump}){
+  useIcons();
+  const c=window.DB.clientById(id);
+  const [tab,setTab]=React.useState("info");
+  const [text,setText]=React.useState("");
+  const endRef=React.useRef(null);
+  React.useEffect(()=>{window.DB.markMessagesRead(id,user.id);bump();},[]);
+  React.useEffect(()=>{if(tab==="msg"&&endRef.current)endRef.current.scrollTop=endRef.current.scrollHeight;});
+  if(!c)return null;
+  function setStage(s){window.DB.setStage(id,s,user.name);bump();}
+  function send(){if(!text.trim())return;window.DB.sendMessage(id,user,text);setText("");bump();}
+  const seg={flex:1,border:"none",padding:"10px 0",fontFamily:"var(--font-ui)",fontSize:13,fontWeight:600,background:"none"};
+  return (
+    <div className="sheet">
+      <div className="safe-t" style={{background:"var(--navy-900)",color:"var(--cream)",padding:"14px 16px 16px"}}>
+        <button onClick={onClose} style={{border:"none",background:"none",color:"var(--navy-100)",display:"flex",alignItems:"center",gap:6,padding:0,fontSize:14,marginBottom:10}}><Ico n="arrow-left" s={18} c="var(--navy-100)"/> Cases</button>
+        <div style={{display:"flex",alignItems:"center",gap:10}}><h2 style={{fontFamily:"var(--font-serif)",fontSize:22,margin:0,color:"var(--cream)"}}>{c.name}</h2></div>
+        <div style={{fontSize:12.5,color:"var(--navy-200)",marginTop:4}}>{c.matterType} · {money(c.amountLost)} · {c.id.toUpperCase()}</div>
+      </div>
+      <div style={{display:"flex",borderBottom:"1px solid var(--ink-100)",background:"#fff"}}>
+        {[["info","Case"],["msg","Messages"],["docs","Evidence"]].map(([k,l])=><button key={k} style={{...seg,color:tab===k?"var(--ink-900)":"var(--ink-400)",borderBottom:tab===k?"2px solid var(--ink-900)":"2px solid transparent"}} onClick={()=>setTab(k)}>{l}</button>)}
+      </div>
+      <div className="scroll" style={{paddingBottom:tab==="msg"?0:20}}>
+        {tab==="info" && <div className="fade" style={{padding:"16px 18px"}}>
+          <div style={{fontSize:12,fontWeight:600,letterSpacing:".1em",textTransform:"uppercase",color:"var(--stone-600)",marginBottom:10}}>Advance stage</div>
+          <div style={{display:"flex",flexWrap:"wrap",gap:8,marginBottom:20}}>
+            {window.DB.STAGES.map(s=>{const on=c.status===s;const[b,f]=tone[s];return <button key={s} onClick={()=>setStage(s)} style={{border:on?"1px solid "+f:"1px solid var(--border-default)",background:on?b:"#fff",color:on?f:"var(--ink-600)",borderRadius:999,padding:"7px 13px",fontSize:12.5,fontWeight:600}}>{s}</button>;})}
+          </div>
+          {[["Client",c.name],["Email",c.email],["Phone",c.phone],["Platform",c.platform],["Jurisdiction",(c.jurisdiction||"—")+(c.overseas?" · overseas":"")],["Wallets",c.wallets.length+" traced"]].map(([k,v])=>
+            <div key={k} style={{display:"flex",justifyContent:"space-between",padding:"12px 0",borderBottom:"1px solid var(--ink-100)"}}><span style={{fontSize:13.5,color:"var(--ink-500)"}}>{k}</span><span style={{fontSize:13.5,color:"var(--ink-900)",fontWeight:500,textAlign:"right",maxWidth:"62%"}}>{v||"—"}</span></div>
+          )}
+          {c.narrative && <p style={{fontSize:13.5,color:"var(--ink-600)",lineHeight:1.6,marginTop:14}}>{c.narrative}</p>}
+        </div>}
+        {tab==="msg" && <div className="fade" style={{display:"flex",flexDirection:"column",height:"100%"}}>
+          <div ref={endRef} style={{flex:1,overflowY:"auto",padding:"14px 16px",display:"flex",flexDirection:"column",gap:10,background:"var(--bg-page-alt)"}}>
+            {(c.messages||[]).map(m=>{const mine=m.fromId===user.id;return <div key={m.id} style={{alignSelf:mine?"flex-end":"flex-start",maxWidth:"80%"}}><div style={{background:mine?"var(--navy-800)":"#fff",color:mine?"var(--cream)":"var(--ink-800)",border:mine?"none":"1px solid var(--ink-100)",borderRadius:14,padding:"10px 13px",fontSize:14.5,lineHeight:1.45}}>{m.text}</div><div style={{fontFamily:"var(--font-mono)",fontSize:10,color:"var(--ink-400)",marginTop:3,textAlign:mine?"right":"left"}}>{mine?"You":m.fromName}</div></div>;})}
+            {!(c.messages||[]).length && <div style={{margin:"auto",color:"var(--ink-400)",fontSize:13.5}}>No messages yet.</div>}
+          </div>
+          <div style={{display:"flex",gap:8,padding:"10px 12px calc(10px + env(safe-area-inset-bottom))",borderTop:"1px solid var(--ink-100)",background:"#fff"}}>
+            <input value={text} onChange={e=>setText(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")send();}} placeholder="Reply to client…" style={{flex:1,border:"1px solid var(--border-default)",borderRadius:999,padding:"11px 15px",fontSize:15,outline:"none"}}/>
+            <button onClick={send} style={{border:"none",background:"var(--navy-800)",color:"#fff",borderRadius:"50%",width:44,height:44,flex:"none",display:"flex",alignItems:"center",justifyContent:"center"}}><Ico n="send" s={18} c="#fff"/></button>
+          </div>
+        </div>}
+        {tab==="docs" && <div className="fade" style={{padding:"16px 18px",display:"flex",flexDirection:"column",gap:9}}>
+          {c.documents.map(d=><div key={d.id} style={{display:"flex",alignItems:"center",gap:12,background:"#fff",border:"1px solid var(--ink-100)",borderRadius:"var(--radius-md)",padding:"12px 13px"}}><Ico n="file-text" s={19} c="var(--stone-600)"/><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:500,color:"var(--ink-800)"}}>{d.name}</div><div style={{fontFamily:"var(--font-mono)",fontSize:11,color:"var(--ink-400)"}}>{d.size} · {d.uploadedBy}</div></div>{d.dataUrl&&<a href={d.dataUrl} download={d.name} style={{display:"flex"}}><Ico n="download" s={17} c="var(--ink-500)"/></a>}</div>)}
+          {!c.documents.length && <div style={{textAlign:"center",color:"var(--ink-400)",padding:"30px 0"}}>No evidence uploaded.</div>}
+        </div>}
+      </div>
+    </div>
+  );
+}
+
+function Activity({user}){
+  useIcons();
+  const cs=window.DB.clientsFor(user);
+  const acts=window.DB.activity().filter(a=>cs.some(c=>c.name===a.target)||a.actor===user.name).slice(0,20);
+  return (
+    <div className="fade" style={{padding:"20px 18px"}}>
+      <h1 style={{fontFamily:"var(--font-serif)",fontSize:23,margin:"0 0 16px",color:"var(--ink-900)"}}>Activity</h1>
+      <div style={{display:"flex",flexDirection:"column",gap:0}}>
+        {acts.map((a,i)=><div key={a.id} style={{display:"flex",gap:12,padding:"12px 0",borderBottom:i<acts.length-1?"1px solid var(--ink-100)":"none"}}><span style={{width:30,height:30,borderRadius:"50%",background:"var(--stone-100)",color:"var(--stone-700)",display:"flex",alignItems:"center",justifyContent:"center",flex:"none"}}><Ico n="activity" s={15} c="var(--stone-700)"/></span><div style={{fontSize:13.5,color:"var(--ink-700)",lineHeight:1.45}}><b>{a.actor}</b> {a.action}{a.target&&<> · <span style={{color:"var(--ink-500)"}}>{a.target}</span></>}</div></div>)}
+        {!acts.length && <div style={{textAlign:"center",color:"var(--ink-400)",padding:"30px 0"}}>No recent activity.</div>}
+      </div>
+    </div>
+  );
+}
+
+function Profile({user,onOut}){
+  useIcons();
+  return (
+    <div className="fade" style={{padding:"20px 18px"}}>
+      <h1 style={{fontFamily:"var(--font-serif)",fontSize:23,margin:"0 0 14px",color:"var(--ink-900)"}}>{user.name}</h1>
+      <div style={{background:"#fff",border:"1px solid var(--ink-100)",borderRadius:"var(--radius-lg)",padding:"6px 16px 14px"}}>
+        {[["Role",window.DB.ROLE_LABEL[user.role]],["Title",user.title||"Attorney"],["Email",user.email]].map(([k,v])=><div key={k} style={{display:"flex",justifyContent:"space-between",padding:"13px 0",borderBottom:"1px solid var(--ink-100)"}}><span style={{fontSize:13.5,color:"var(--ink-500)"}}>{k}</span><span style={{fontSize:13.5,color:"var(--ink-900)",fontWeight:500}}>{v}</span></div>)}
+      </div>
+      <button onClick={onOut} style={{width:"100%",marginTop:18,border:"1px solid var(--border-default)",background:"#fff",color:"var(--danger-700)",borderRadius:"var(--radius-sm)",padding:"14px",fontSize:15,fontWeight:600,display:"flex",alignItems:"center",justifyContent:"center",gap:8}}><Ico n="log-out" s={17} c="var(--danger-700)"/> Sign out</button>
+    </div>
+  );
+}
+
+function App(){
+  const [user,setUser]=React.useState(()=>{const u=window.DB.currentUser();return u&&u.role==="lawyer"?u:null;});
+  const [tab,setTab]=React.useState("cases");
+  const [open,setOpen]=React.useState(null);
+  const [,force]=React.useReducer(x=>x+1,0);
+  useIcons();
+  // local notifications: ask once, notify on unread increase while app is open
+  const prevUnread=React.useRef(0);
+  React.useEffect(()=>{ if(user&&"Notification"in window&&Notification.permission==="default"){ try{Notification.requestPermission();}catch(e){} } },[user]);
+  React.useEffect(()=>{
+    if(!user)return;
+    const cs=window.DB.clientsFor(user);
+    const un=cs.reduce((s,c)=>s+(c.messages||[]).filter(m=>m.fromId!==user.id&&!m.read).length,0);
+    if(un>prevUnread.current && "Notification"in window && Notification.permission==="granted"){
+      try{new Notification("Berg PC — new client message",{body:"You have "+un+" unread message(s).",icon:"icon-192.png"});}catch(e){}
+    }
+    prevUnread.current=un;
+  });
+  if(!user) return <Login onIn={(u)=>{ if(u.role==="lawyer"){setUser(u);} else {window.DB.logout(); alert("This app is for attorneys. Use the client app to sign in as a client.");} }}/>;
+  const cs=window.DB.clientsFor(user);
+  const unread=cs.reduce((s,c)=>s+(c.messages||[]).filter(m=>m.fromId!==user.id&&!m.read).length,0);
+  const tabs=[["cases","Cases","folder-search"],["activity","Activity","history"],["profile","Profile","user"]];
+  return (
+    <React.Fragment>
+      <div className="scroll" key={tab}>
+        {tab==="cases" && <Cases user={user} onOpen={setOpen}/>}
+        {tab==="activity" && <Activity user={user}/>}
+        {tab==="profile" && <Profile user={user} onOut={()=>{window.DB.logout();setUser(null);}}/>}
+      </div>
+      <div className="tabs">
+        {tabs.map(([id,label,ic])=><button key={id} className={"tab"+(tab===id?" on":"")} onClick={()=>setTab(id)}>{id==="cases"&&unread>0&&<span className="badge">{unread}</span>}<Ico n={ic} s={21} c={tab===id?"var(--ink-900)":"var(--ink-400)"}/>{label}</button>)}
+      </div>
+      {open && <CaseSheet id={open} user={user} onClose={()=>{setOpen(null);force();}} bump={force}/>}
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('app')).render(<App/>);
+if('serviceWorker' in navigator){ window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{})); }
+</script>
+</body>
+</html>

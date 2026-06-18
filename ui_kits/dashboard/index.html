@@ -1,0 +1,76 @@
+<!-- @dsCard group="Dashboard" viewport="1320x820" -->
+<!-- @startingPoint section="Dashboard" subtitle="Case-tracking dashboard — overview, case list, trace graph" viewport="1320x860" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berg PC — Case Management</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  html,body{margin:0;height:100%;background:var(--bg-page-alt);}
+  #root,.app{height:100vh;}
+  ::-webkit-scrollbar{width:10px;height:10px;}
+  ::-webkit-scrollbar-thumb{background:var(--ink-200);border-radius:6px;}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="8" fill="#16202E"/>
+    <rect x="14" y="16" width="36" height="5" rx="2" fill="#8A7B66"/>
+    <rect x="14" y="27" width="36" height="3" rx="1.5" fill="#5E7794"/>
+    <rect x="14" y="34" width="28" height="3" rx="1.5" fill="#344C68"/>
+    <rect x="14" y="41" width="32" height="3" rx="1.5" fill="#344C68"/>
+    <text x="32" y="56" font-family="Georgia, serif" font-size="8" fill="#C5BAA9" text-anchor="middle" font-weight="700">CASES</text>
+  </svg>
+</template>
+<div id="root"></div>
+<script type="text/babel" src="shell.jsx"></script>
+<script type="text/babel" src="TraceGraph.jsx"></script>
+<script type="text/babel" src="screens.jsx"></script>
+<script type="text/babel">
+const { Sidebar, Topbar, AIco } = window.BergApp;
+const { Overview, CaseList, CaseDetail } = window.BergDash;
+const { Input } = window.BergPCDesignSystem_eb13e3;
+
+function App(){
+  const [nav, setNav] = React.useState("dashboard");
+  const [openId, setOpenId] = React.useState(null);
+  React.useEffect(()=>{ const t=setTimeout(()=>window.lucide&&window.lucide.createIcons(),30); return ()=>clearTimeout(t); });
+
+  const openCase = (id) => { setOpenId(id); setNav(id ? "casedetail" : "cases"); };
+  const titles = { dashboard: ["Overview","Case Management"], cases: ["Cases","Case Management"], trace: ["Asset Trace","Investigation"], casedetail: ["Case file","Cases"] };
+  const [t, crumb] = titles[nav] || titles.dashboard;
+
+  return (
+    <div className="app" style={{ display: "flex", overflow: "hidden", fontFamily: "var(--font-ui)" }}>
+      <Sidebar active={nav === "casedetail" ? "cases" : nav} go={(id)=>{setNav(id); setOpenId(null);}} />
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
+        <Topbar title={nav==="casedetail" ? "Case file" : t} crumb={crumb}>
+          <div style={{ width: 240 }}><Input placeholder="Search…" iconLeft={<AIco n="search" s={16}/>} /></div>
+        </Topbar>
+        <main style={{ flex: 1, overflow: "auto" }}>
+          {nav === "dashboard" && <Overview openCase={openCase} />}
+          {nav === "cases" && <CaseList openCase={openCase} />}
+          {nav === "trace" && <CaseDetail id="BPC-2025-0417" back={()=>setNav("dashboard")} />}
+          {nav === "casedetail" && <CaseDetail id={openId} back={()=>{setNav("cases"); setOpenId(null);}} />}
+          {["wallets","exchanges","documents"].includes(nav) && (
+            <div style={{ padding: 60, textAlign: "center", color: "var(--ink-400)", fontFamily: "var(--font-ui)" }}>
+              <AIco n="construction" s={30}/><p style={{marginTop:12}}>This section is part of the kit's navigation but not built out in this recreation.</p>
+            </div>
+          )}
+        </main>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* ============================================================
+   BERG PC — Color tokens
+   Sourced from the firm's mark: warm ink-black "B" building +
+   warm stone/taupe classical column. Deep navy is the firm's
+   "bg-Blue" brand treatment for hero & footer fields.
+   Restrained, monochrome-leaning, expensive. No gradients.
+   ============================================================ */
+
+:root {
+  /* ---- Ink (primary text, black actions, the mark) — warm charcoal ---- */
+  --ink-950: #121010;
+  --ink-900: #1A1714;   /* core brand black */
+  --ink-800: #262320;
+  --ink-700: #3A3631;
+  --ink-600: #524D46;
+  --ink-500: #6B665E;
+  --ink-400: #8C867D;
+  --ink-300: #B3ADA4;
+  --ink-200: #D7D2CA;
+  --ink-100: #E9E5DF;
+  --ink-50:  #F4F1EC;
+
+  /* ---- Stone / taupe (the column) — the warm accent ---- */
+  --stone-800: #4A4034;
+  --stone-700: #5E5343;
+  --stone-600: #726552;
+  --stone-500: #8A7B66;   /* core accent, matches column */
+  --stone-400: #A89A85;
+  --stone-300: #C5BAA9;
+  --stone-200: #DED6C9;
+  --stone-100: #EDE7DC;
+  --stone-50:  #F7F3EC;
+
+  /* ---- Navy (brand "bg-Blue" — dark fields, hero, footer) ---- */
+  --navy-950: #0E1622;
+  --navy-900: #16202E;   /* core brand navy */
+  --navy-800: #1E2C3E;
+  --navy-700: #283A50;
+  --navy-600: #344C68;
+  --navy-500: #3F5A7C;
+  --navy-400: #5E7794;
+  --navy-300: #8FA3BC;
+  --navy-200: #BECAD9;
+  --navy-100: #E0E6EE;
+
+  /* ---- Paper / surfaces ---- */
+  --cream:    #F7F4EE;   /* warm page background */
+  --cream-dim:#F0ECE3;
+  --white:    #FFFFFF;
+
+  /* ---- Semantic status ---- */
+  --success-700:#1F5A3C;
+  --success-500:#2F8A57;
+  --success-100:#DCEEE4;
+  --danger-700: #8C2B22;
+  --danger-500: #BC3B2C;
+  --danger-100: #F4DFDB;
+  --warning-700:#8A5A12;
+  --warning-500:#C2871C;
+  --warning-100:#F6E9CE;
+  --info-700:   #1F4E70;
+  --info-500:   #2E76A6;
+  --info-100:   #DBE9F3;
+
+  /* ---- Forensic trace palette (blockchain flow graph) ---- */
+  --trace-tainted: #BC3B2C;  /* origin of theft / tainted funds */
+  --trace-hop:     #8A7B66;  /* intermediary / pass-through wallet */
+  --trace-exchange:#2E76A6;  /* VASP / exchange off-ramp */
+  --trace-mixer:   #6B4E8C;  /* mixer / obfuscation service */
+  --trace-frozen:  #2F8A57;  /* frozen / recovered */
+
+  /* ============================================================
+     Semantic aliases — reference these in components
+     ============================================================ */
+  --bg-page:        var(--cream);
+  --bg-page-alt:    var(--cream-dim);
+  --bg-ink:         var(--navy-900);
+  --bg-ink-deep:    var(--navy-950);
+  --surface-card:   var(--white);
+  --surface-sunken: var(--ink-50);
+  --surface-raised: var(--white);
+  --surface-inverse:var(--navy-800);
+
+  --text-strong:    var(--ink-900);
+  --text-body:      var(--ink-700);
+  --text-muted:     var(--ink-500);
+  --text-subtle:    var(--ink-400);
+  --text-inverse:   var(--cream);
+  --text-inverse-muted: var(--navy-200);
+  --text-link:      var(--navy-700);
+  --text-on-accent: var(--cream);
+
+  --accent:         var(--stone-500);
+  --accent-strong:  var(--stone-600);
+  --accent-deep:    var(--stone-700);
+  --accent-soft:    var(--stone-100);
+  --primary:        var(--ink-900);
+  --primary-hover:  var(--ink-800);
+  --primary-active: var(--ink-950);
+
+  --border-subtle:  var(--ink-100);
+  --border-default: var(--ink-200);
+  --border-strong:  var(--ink-300);
+  --border-ink:     var(--ink-900);
+  --border-accent:  var(--stone-500);
+  --ring-focus:     color-mix(in oklch, var(--navy-700) 45%, transparent);
+
+  --text-success:   var(--success-700);
+  --text-danger:    var(--danger-700);
+  --text-warning:   var(--warning-700);
+  --text-info:      var(--info-700);
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crypto Fraud &amp; Recovery — Berg PC</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink-800);font-family:var(--font-sans);overflow-x:hidden;}
+  ::selection{background:var(--stone-300);color:var(--navy-950);}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1120px;margin:0 auto;padding:0 40px;}
+
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+    padding:16px 40px;transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent;}
+  nav.top.scrolled{background:rgba(14,22,34,.85);backdrop-filter:blur(14px);padding:11px 40px;border-bottom:1px solid rgba(138,123,102,.18);}
+  nav.top img{height:38px;}
+  nav .links{display:flex;gap:28px;font-size:14px;color:var(--navy-100);}
+  nav .links a:hover{color:var(--cream);}
+  nav .cta{font-family:var(--font-ui);font-weight:600;font-size:13.5px;background:var(--stone-500);color:var(--navy-950);padding:9px 16px;border-radius:var(--radius-sm);transition:background .2s,transform .2s;}
+  nav .cta:hover{background:var(--stone-400);transform:translateY(-1px);}
+  @media(max-width:760px){nav .links{display:none;}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;color:var(--cream);padding:150px 0 90px;
+    background:radial-gradient(130% 100% at 12% 0%,#1E2C3E,#16202E 45%,#0B1119);}
+  #net{position:absolute;inset:0;z-index:0;opacity:.9;}
+  .hero .container{position:relative;z-index:2;}
+  .crumb{font-size:13px;color:var(--stone-300);display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;
+    opacity:0;transform:translateY(14px);animation:fu .8s .1s forwards;}
+  .eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--stone-300);
+    opacity:0;transform:translateY(14px);animation:fu .8s .2s forwards;}
+  h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(38px,6vw,72px);line-height:1.05;letter-spacing:-.02em;
+    margin:18px 0 0;max-width:16ch;color:var(--cream);opacity:0;transform:translateY(20px);animation:fu .9s .32s forwards;}
+  .hero p.lead{font-size:clamp(16px,1.6vw,19px);color:var(--navy-100);line-height:1.6;max-width:600px;margin:24px 0 34px;
+    opacity:0;transform:translateY(20px);animation:fu .9s .5s forwards;}
+  .hero .acts{display:flex;gap:14px;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fu .9s .65s forwards;}
+  @keyframes fu{to{opacity:1;transform:none;}}
+  .btn{font-family:var(--font-ui);font-weight:600;font-size:15px;padding:14px 26px;border-radius:var(--radius-sm);
+    display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:1px solid transparent;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s;}
+  .btn.gold{background:var(--stone-500);color:var(--navy-950);box-shadow:0 8px 30px rgba(184,146,58,.25);}
+  .btn.gold:hover{background:var(--stone-400);transform:translateY(-2px);}
+  .btn.ghost{background:transparent;color:var(--cream);border-color:rgba(255,255,255,.22);}
+  .btn.ghost:hover{border-color:var(--stone-400);transform:translateY(-2px);}
+  .btn .ar{transition:transform .2s;}.btn:hover .ar{transform:translateX(4px);}
+
+  section{padding:96px 0;}
+  .sec-eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--stone-600);}
+  .sec-rule{width:54px;height:3px;background:var(--stone-500);border:0;margin:16px 0 22px;}
+  h2{font-family:var(--font-serif);font-weight:500;font-size:clamp(28px,4vw,46px);line-height:1.12;letter-spacing:-.02em;margin:0;color:var(--ink-900);max-width:18ch;}
+
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}.d5{transition-delay:.4s;}
+
+  /* capabilities */
+  .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px;}
+  @media(max-width:860px){.caps{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.caps{grid-template-columns:1fr;}}
+  .cap .ic{width:46px;height:46px;border-radius:var(--radius-md);background:var(--stone-100);color:var(--stone-700);display:flex;align-items:center;justify-content:center;margin-bottom:15px;transition:transform .3s,background .3s,color .3s;}
+  .cap:hover .ic{background:var(--navy-900);color:var(--stone-300);transform:translateY(-3px);}
+  .cap h3{font-family:var(--font-ui);font-size:17px;font-weight:600;color:var(--ink-900);margin:0 0 7px;}
+  .cap p{font-size:14.5px;line-height:1.55;color:var(--ink-600);margin:0;}
+
+  /* process timeline */
+  .proc{background:radial-gradient(120% 100% at 80% 0%,#1E2C3E,#0E1622);color:var(--cream);}
+  .proc h2{color:var(--cream);}
+  .ptl{margin-top:54px;display:flex;flex-direction:column;gap:0;}
+  .pstep{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:22px 0;border-top:1px solid rgba(138,123,102,.22);align-items:start;}
+  .pstep .n{font-family:var(--font-serif);font-size:34px;color:var(--stone-400);line-height:1;}
+  .pstep h4{font-family:var(--font-ui);font-size:19px;font-weight:600;color:var(--cream);margin:0 0 6px;}
+  .pstep p{font-size:15px;color:var(--navy-100);line-height:1.6;margin:0;max-width:62ch;}
+
+  /* warning */
+  .warn{display:flex;gap:18px;background:var(--warning-100);border-left:3px solid var(--warning-500);border-radius:var(--radius-md);padding:24px 26px;}
+  .warn .t{font-family:var(--font-ui);font-weight:600;color:var(--ink-900);margin:0 0 6px;font-size:16px;}
+  .warn p{margin:0;font-size:14.5px;color:var(--ink-700);line-height:1.6;}
+
+  .cta-band{background:radial-gradient(120% 120% at 50% 0%,#243549,#0E1622);text-align:center;color:var(--cream);}
+  .cta-band h2{color:var(--cream);margin:0 auto;}
+  .cta-band p{color:var(--navy-100);font-size:17px;max-width:48ch;margin:18px auto 32px;line-height:1.6;}
+
+  footer{background:var(--navy-950);color:var(--navy-200);padding:46px 0 30px;font-size:13.5px;}
+  footer .fwrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center;}
+  footer img{height:50px;}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;}
+    .crumb,.eyebrow,.hero h1,.hero p.lead,.hero .acts{opacity:1!important;transform:none!important;animation:none!important;}}
+</style>
+</head>
+<body>
+
+<nav class="top" id="nav">
+  <a href="Berg PC Home (Animated).html"><img src="assets/berg-pc-logo-reverse.png" alt="Berg PC"></a>
+  <div class="links">
+    <a href="Berg PC Home (Animated).html#practice">Practice</a>
+    <a href="Berg PC Home (Animated).html#results">Results</a>
+    <a href="#process">How it works</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="cta" href="app/index.html">Tell us about your case</a>
+</nav>
+
+<header class="hero">
+  <canvas id="net"></canvas>
+  <div class="container">
+    <a class="crumb" href="Berg PC Home (Animated).html">← All practice areas</a>
+    <div class="eyebrow">Crypto Litigation</div>
+    <h1>Crypto Fraud &amp; Recovery</h1>
+    <p class="lead">If you have been the victim of a cryptocurrency scam, this may be the worst time of your life. Our attorneys and digital forensics experts work together to trace what was taken — and pursue its recovery through the courts.</p>
+    <div class="acts">
+      <a class="btn gold" href="app/index.html">Start your recovery <span class="ar">→</span></a>
+      <a class="btn ghost" href="#process">See how it works</a>
+    </div>
+  </div>
+</header>
+
+<section class="light">
+  <div class="container">
+    <div class="reveal"><div class="sec-eyebrow">Our Capabilities</div><hr class="sec-rule"><h2>A rigorous, evidence-led investigation.</h2></div>
+    <div class="caps">
+      <div class="cap reveal d1"><div class="ic">🔎</div><h3>Tracing stolen assets</h3><p>We follow funds across the blockchain — through hops, bridges, and mixers — to where they come to rest.</p></div>
+      <div class="cap reveal d2"><div class="ic">🎯</div><h3>Locating criminal wallets</h3><p>We identify the destination wallets and cluster them to the actors and services behind them.</p></div>
+      <div class="cap reveal d3"><div class="ic">🕵</div><h3>Identifying scammers</h3><p>Open-source and forensic investigation ties on-chain activity to real-world identities.</p></div>
+      <div class="cap reveal d1"><div class="ic">🏛</div><h3>Working with exchanges</h3><p>We coordinate with VASPs and exchanges to flag, trace, and hold tainted deposits.</p></div>
+      <div class="cap reveal d2"><div class="ic">❄</div><h3>Freezing wallets via courts</h3><p>We obtain injunctions that freeze criminal wallets — including a first-of-its-kind order in Texas.</p></div>
+      <div class="cap reveal d3"><div class="ic">⚖</div><h3>Pursuing recovery</h3><p>We litigate to return funds to victims, on a contingency basis — no recovery, no fee.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="proc" id="process">
+  <div class="container">
+    <div class="reveal"><div class="sec-eyebrow" style="color:var(--stone-300)">How Recovery Works</div><hr class="sec-rule"><h2>From theft to recovery.</h2></div>
+    <div class="ptl">
+      <div class="pstep reveal d1"><div class="n">01</div><div><h4>Intake &amp; review</h4><p>You tell us what happened. We review the facts, the platforms involved, and whether — and how — we can help. The initial review is free.</p></div></div>
+      <div class="pstep reveal d1"><div class="n">02</div><div><h4>Trace the funds</h4><p>Our forensics team maps the flow of stolen assets across the chain, building an admissible chain-of-funds report.</p></div></div>
+      <div class="pstep reveal d1"><div class="n">03</div><div><h4>Identify &amp; locate</h4><p>We cluster destination wallets, attribute them to actors and exchanges, and pinpoint where the money can be reached.</p></div></div>
+      <div class="pstep reveal d1"><div class="n">04</div><div><h4>Freeze</h4><p>We coordinate with exchanges and move the courts for injunctions that freeze the criminal wallets.</p></div></div>
+      <div class="pstep reveal d1"><div class="n">05</div><div><h4>Recover</h4><p>We litigate to return your funds — including across borders. You pay nothing unless we recover.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container reveal">
+    <div class="warn">
+      <div style="font-size:24px;line-height:1;">⚠️</div>
+      <div>
+        <p class="t">Beware of recovery scams</p>
+        <p>Berg PC will never ask you to pay an upfront fee to recover stolen funds, and we cannot act until a full investigation is complete. If anyone guarantees recovery for a fee, stop and contact us directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="container reveal">
+    <h2>Tell us what happened.</h2>
+    <p>The initial review is free and confidential. If we take your case, we work on contingency — you pay nothing unless we recover.</p>
+    <a class="btn gold" href="app/index.html">Begin your case review <span class="ar">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container fwrap">
+    <img src="assets/berg-pc-logo-reverse.png" alt="Berg PC">
+    <div>24 Greenway Plaza, Suite 1800 · Houston, Texas 77046 · 281 857-6666</div>
+    <div>© 2026 Berg PC. Attorney advertising.</div>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="8" fill="#0E1622"/>
+    <circle cx="20" cy="22" r="4" fill="#BC3B2C"/><circle cx="44" cy="20" r="4" fill="#8A7B66"/>
+    <circle cx="32" cy="40" r="4" fill="#2E76A6"/><circle cx="46" cy="46" r="4" fill="#2F8A57"/>
+    <path d="M20 22 L44 20 M44 20 L32 40 M32 40 L46 46" stroke="#5E7794" stroke-width="1.5" fill="none"/>
+  </svg>
+</template>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+/* reveal */
+const els=[].slice.call(document.querySelectorAll('.reveal'));
+function chk(){const tr=innerHeight*0.86;for(let i=els.length-1;i>=0;i--){if(els[i].getBoundingClientRect().top<tr){els[i].classList.add('in');els.splice(i,1);}}}
+addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);chk();
+
+/* node network */
+(function(){
+  const c=document.getElementById('net'),x=c.getContext('2d');let W,H,nodes,DPR=Math.min(devicePixelRatio||1,2);const LINK=160;
+  function size(){const r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*DPR;c.height=H*DPR;x.setTransform(DPR,0,0,DPR,0,0);
+    const n=Math.min(90,Math.round(W*H/15000));
+    nodes=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.36,vy:(Math.random()-.5)*.36,r:Math.random()*1.7+1.3,gold:Math.random()>.8}));}
+  size();addEventListener('resize',size);
+  const pulses=[];setInterval(()=>{if(!nodes||nodes.length<2)return;const a=nodes[(Math.random()*nodes.length)|0];let b=null,bd=LINK;for(const m of nodes){if(m===a)continue;const d=Math.hypot(m.x-a.x,m.y-a.y);if(d<bd){bd=d;b=m;}}if(b)pulses.push({a,b,t:0,sp:.013+Math.random()*.012});},300);
+  function tick(){x.clearRect(0,0,W,H);
+    for(let i=0;i<nodes.length;i++){const a=nodes[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
+      for(let j=i+1;j<nodes.length;j++){const b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<LINK){const o=(1-d/LINK)*.5;x.strokeStyle='rgba(120,150,186,'+o+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}}
+    for(const n of nodes){x.beginPath();x.arc(n.x,n.y,n.r,0,7);x.fillStyle=n.gold?'rgba(214,180,108,1)':'rgba(160,180,205,.85)';x.fill();if(n.gold){x.beginPath();x.arc(n.x,n.y,n.r+4,0,7);x.fillStyle='rgba(203,168,92,.2)';x.fill();}}
+    for(let i=pulses.length-1;i>=0;i--){const p=pulses[i];p.t+=p.sp;if(p.t>=1){pulses.splice(i,1);continue;}const px=p.a.x+(p.b.x-p.a.x)*p.t,py=p.a.y+(p.b.y-p.a.y)*p.t;x.beginPath();x.arc(px,py,3,0,7);x.fillStyle='rgba(220,186,110,1)';x.fill();x.beginPath();x.arc(px,py,9,0,7);x.fillStyle='rgba(203,168,92,.26)';x.fill();}
+    requestAnimationFrame(tick);}
+  tick();
+})();
+</script>
+</body>
+</html>

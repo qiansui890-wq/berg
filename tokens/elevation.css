@@ -1,0 +1,32 @@
+/* ============================================================
+   BERG — Elevation, borders & motion
+   Shadows are cool-navy tinted, low and precise — not soft puffy.
+   ============================================================ */
+
+:root {
+  /* ---- Shadows (navy-tinted, restrained) ---- */
+  --shadow-xs: 0 1px 2px rgba(8, 20, 40, 0.06);
+  --shadow-sm: 0 1px 3px rgba(8, 20, 40, 0.08), 0 1px 2px rgba(8, 20, 40, 0.04);
+  --shadow-md: 0 4px 12px rgba(8, 20, 40, 0.08), 0 2px 4px rgba(8, 20, 40, 0.04);
+  --shadow-lg: 0 12px 28px rgba(8, 20, 40, 0.12), 0 4px 8px rgba(8, 20, 40, 0.05);
+  --shadow-xl: 0 24px 50px rgba(8, 20, 40, 0.18), 0 8px 16px rgba(8, 20, 40, 0.06);
+  --shadow-inset: inset 0 1px 2px rgba(8, 20, 40, 0.06);
+  /* Gold focus glow for accent actions */
+  --shadow-gold: 0 4px 16px rgba(184, 146, 58, 0.28);
+
+  /* ---- Border widths ---- */
+  --border-hair: 1px;
+  --border-thick: 2px;
+  --border-rule: 3px;   /* gold rule under headings */
+
+  /* ---- Focus ring ---- */
+  --focus-ring: 0 0 0 3px var(--ring-focus);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);   /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);       /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);   /* @kind other */
+  --duration-fast: 120ms;   /* @kind other */
+  --duration-base: 200ms;   /* @kind other */
+  --duration-slow: 360ms;   /* @kind other */
+}

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Colors" viewport="700x170" name="Forensic trace palette" subtitle="Wallet roles in blockchain flow graphs — the investigation product." -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--cream);padding:20px;font-family:var(--font-sans);}
+  .grid{display:flex;gap:12px;}
+  .item{flex:1;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;}
+  .dot{width:30px;height:30px;border-radius:var(--radius-pill);box-shadow:0 0 0 4px var(--white),0 0 0 5px var(--ink-100);}
+  .role{font-size:11px;font-weight:600;color:var(--ink-800);}
+  .desc{font-size:10px;color:var(--ink-500);line-height:1.4;}
+  .hex{font-size:10px;font-family:var(--font-mono);color:var(--ink-400);}
+</style></head><body>
+  <div class="grid">
+    <div class="item"><div class="dot" style="background:#BC3B2C"></div><div class="role">Tainted</div><div class="desc">Origin of theft</div><div class="hex">--trace-tainted</div></div>
+    <div class="item"><div class="dot" style="background:#8A7B66"></div><div class="role">Hop</div><div class="desc">Pass-through wallet</div><div class="hex">--trace-hop</div></div>
+    <div class="item"><div class="dot" style="background:#2E76A6"></div><div class="role">Exchange</div><div class="desc">VASP / off-ramp</div><div class="hex">--trace-exchange</div></div>
+    <div class="item"><div class="dot" style="background:#6B4E8C"></div><div class="role">Mixer</div><div class="desc">Obfuscation service</div><div class="hex">--trace-mixer</div></div>
+    <div class="item"><div class="dot" style="background:#2F8A57"></div><div class="role">Frozen</div><div class="desc">Recovered / frozen</div><div class="hex">--trace-frozen</div></div>
+  </div>
+</body></html>
