@@ -1,0 +1,64 @@
+<!-- @dsCard group="Components" viewport="760x420" name="Data — addresses, avatars, tables" subtitle="AddressChip, Avatar, Table — forensic data primitives" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--cream);font-family:var(--font-sans);padding:24px 28px;color:var(--ink-700);}
+  .lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-600);margin:0 0 11px;}
+  .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { AddressChip, Avatar, Table, Badge } = window.BergPCDesignSystem_eb13e3;
+
+const rows = [
+  { case:"BPC-2025-0417", wallet:"bc1q9zk2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9j6l3", role:"tainted", stage:"Tracing", amount:"$182,400" },
+  { case:"BPC-2025-0388", wallet:"0xa3f19c4e7b2049d5f1c8a6037be29d4471e7b204", role:"exchange", stage:"Frozen", amount:"$54,900" },
+  { case:"BPC-2025-0356", wallet:"bc1qxy2kgd9q8r3v7m0w5t4f6h8s2p1c0j9l3k7n5", role:"hop", stage:"Filed", amount:"$1.2M" },
+];
+const stageTone = { Tracing:"info", Frozen:"success", Filed:"accent" };
+
+function Demo(){
+  return (
+    <div>
+      <div className="lbl">Address chips — trace roles</div>
+      <div className="row">
+        <AddressChip address="bc1q9zk2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9j6l3" role="tainted" />
+        <AddressChip address="0xa3f19c4e7b2049d5f1c8a6037be29d4471e7b204" role="hop" />
+        <AddressChip address="0x7be29d4471e7b204a3f19c4e7b2049d5f1c8a603" role="exchange" lead={8} tail={6} />
+        <AddressChip address="bc1qmixer4f8x3v0rd7t6yqe2h5n8s4p1w0c9j6l3" role="mixer" />
+      </div>
+
+      <div className="lbl">Avatars</div>
+      <div className="row">
+        <Avatar name="Geoff Berg" size={44} tone="navy" />
+        <Avatar name="Investigation Team" size={44} tone="stone" />
+        <Avatar name="J D" size={44} tone="ink" />
+      </div>
+
+      <div className="lbl">Case table</div>
+      <Table
+        rowKey="case"
+        columns={[
+          { key:"case", label:"Case" },
+          { key:"wallet", label:"Wallet", render:(v,r)=> <AddressChip address={v} role={r.role} /> },
+          { key:"stage", label:"Stage", render:(v)=> <Badge tone={stageTone[v]}>{v}</Badge> },
+          { key:"amount", label:"At issue", align:"right" },
+        ]}
+        rows={rows}
+      />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

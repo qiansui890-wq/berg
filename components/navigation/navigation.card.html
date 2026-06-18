@@ -1,0 +1,43 @@
+<!-- @dsCard group="Components" viewport="700x220" name="Tabs" subtitle="Underlined navigation with ink active indicator" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--cream);font-family:var(--font-sans);padding:26px 28px;color:var(--ink-700);}
+  .panel{padding:20px 2px;font-size:14px;color:var(--ink-600);}
+  [data-lucide]{width:15px;height:15px;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Tabs } = window.BergPCDesignSystem_eb13e3;
+const Ico = ({n}) => <i data-lucide={n}></i>;
+function Demo(){
+  const [tab,setTab] = React.useState("trace");
+  const items=[
+    {id:"overview",label:"Overview",icon:<Ico n="file-text"/>},
+    {id:"trace",label:"Asset trace",icon:<Ico n="git-branch"/>},
+    {id:"docs",label:"Documents",icon:<Ico n="paperclip"/>},
+    {id:"timeline",label:"Timeline",icon:<Ico n="clock"/>},
+  ];
+  const copy={overview:"Case summary, parties, and current posture.",trace:"Interactive blockchain flow from the tainted origin to known off-ramps.",docs:"Filings, statements, and evidence exhibits.",timeline:"Chronological log of investigation milestones."};
+  return (
+    <div>
+      <Tabs value={tab} onChange={setTab} items={items}/>
+      <div className="panel">{copy[tab]}</div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+setTimeout(()=>window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>

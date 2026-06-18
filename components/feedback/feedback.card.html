@@ -1,0 +1,72 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Feedback & status" subtitle="Badge, Tag, Alert, Toast, Tooltip" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--cream);font-family:var(--font-sans);padding:24px 28px;color:var(--ink-700);}
+  .lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-600);margin:0 0 11px;}
+  .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+  .col{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+  [data-lucide]{width:17px;height:17px;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Badge, Tag, Alert, Toast, Tooltip, IconButton } = window.BergPCDesignSystem_eb13e3;
+const Ico = ({n,...p}) => <i data-lucide={n} {...p}></i>;
+
+function Demo(){
+  const [tags,setTags] = React.useState(["Coinbase","Binance","Kraken"]);
+  return (
+    <div>
+      <div className="lbl">Badges — case stages & results</div>
+      <div className="row">
+        <Badge tone="neutral">Intake</Badge>
+        <Badge tone="info">Under investigation</Badge>
+        <Badge tone="accent">Tracing</Badge>
+        <Badge tone="warning" variant="solid">Action needed</Badge>
+        <Badge tone="success" iconLeft={<Ico n="snowflake" style={{width:12,height:12}}/>}>Funds frozen</Badge>
+        <Badge tone="danger">Tainted wallet</Badge>
+      </div>
+
+      <div className="lbl">Tags — selected platforms</div>
+      <div className="row">
+        {tags.map(t=> <Tag key={t} onRemove={()=>setTags(tags.filter(x=>x!==t))}>{t}</Tag>)}
+        <Tag iconLeft={<Ico n="plus" style={{width:14,height:14}}/>}>Add exchange</Tag>
+      </div>
+
+      <div className="lbl">Alerts</div>
+      <div className="col">
+        <Alert tone="warning" title="Beware of recovery scams" icon={<Ico n="shield-alert"/>}>
+          Berg PC never asks for upfront fees to recover stolen funds. If someone claims they can, stop and contact us.
+        </Alert>
+        <Alert tone="success" title="Injunction granted" icon={<Ico n="gavel"/>} onClose={()=>{}}>
+          The court has frozen 30 wallets linked to your case.
+        </Alert>
+      </div>
+
+      <div className="lbl">Toast &amp; tooltip</div>
+      <div className="row" style={{alignItems:'flex-start'}}>
+        <Toast tone="success" title="Document uploaded" icon={<Ico n="check-circle"/>} onClose={()=>{}}>
+          Bank statement added to case BPC-2025-0417.
+        </Toast>
+        <Tooltip label="Copy wallet address" side="top">
+          <IconButton label="Copy" variant="outline"><Ico n="copy"/></IconButton>
+        </Tooltip>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+setTimeout(()=>window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>

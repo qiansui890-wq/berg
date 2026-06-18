@@ -1,0 +1,101 @@
+<!-- @dsCard group="Components" viewport="700x600" name="Forms & actions" subtitle="Button, Input, Select, Checkbox, Radio, Switch, IconButton" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--cream);font-family:var(--font-sans);padding:24px 28px;color:var(--ink-700);}
+  .sec{margin-bottom:22px;}
+  .lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-600);margin-bottom:11px;}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .col{display:flex;flex-direction:column;gap:10px;max-width:300px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  [data-lucide]{width:17px;height:17px;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Input, Textarea, Select, Checkbox, Radio, Switch, Field } = window.BergPCDesignSystem_eb13e3;
+const Ico = ({n,...p}) => <i data-lucide={n} {...p}></i>;
+
+function Demo(){
+  const [agree,setAgree] = React.useState(true);
+  const [notify,setNotify] = React.useState(true);
+  const [loss,setLoss] = React.useState("crypto");
+  return (
+    <div>
+      <div className="sec">
+        <div className="lbl">Buttons</div>
+        <div className="row">
+          <Button variant="primary">Tell Us About Your Case</Button>
+          <Button variant="accent">Start intake</Button>
+          <Button variant="secondary">Call the firm</Button>
+          <Button variant="ghost">Cancel</Button>
+          <Button variant="danger">Withdraw</Button>
+          <Button variant="primary" disabled>Disabled</Button>
+        </div>
+        <div className="row" style={{marginTop:12}}>
+          <Button size="sm" variant="secondary">Small</Button>
+          <Button size="md" iconLeft={<Ico n="phone"/>}>281 857-6666</Button>
+          <Button size="lg" variant="primary" iconRight={<Ico n="arrow-right"/>}>Begin recovery</Button>
+        </div>
+      </div>
+
+      <div className="grid2">
+        <div className="sec">
+          <div className="lbl">Inputs</div>
+          <div className="col">
+            <Field label="Email" required>
+              <Input type="email" placeholder="you@email.com" iconLeft={<Ico n="mail"/>} />
+            </Field>
+            <Field label="Wallet address" hint="The address you sent funds to.">
+              <Input placeholder="bc1q…" iconLeft={<Ico n="wallet"/>} />
+            </Field>
+            <Field label="Amount lost" error="Enter a valid figure.">
+              <Input defaultValue="12,40O" invalid />
+            </Field>
+            <Field label="How were funds sent?">
+              <Select defaultValue="Cryptocurrency">
+                <option>Wire transfer</option><option>Cryptocurrency</option><option>Both</option>
+              </Select>
+            </Field>
+          </div>
+        </div>
+
+        <div className="sec">
+          <div className="lbl">Choices</div>
+          <div className="col">
+            <Textarea rows={3} placeholder="Briefly describe what happened…" />
+            <div style={{display:'flex',flexDirection:'column',gap:8}}>
+              <Radio name="loss" value="wire" checked={loss==='wire'} onChange={()=>setLoss('wire')} label="Wire transfer" />
+              <Radio name="loss" value="crypto" checked={loss==='crypto'} onChange={()=>setLoss('crypto')} label="Cryptocurrency" />
+            </div>
+            <Checkbox checked={agree} onChange={e=>setAgree(e.target.checked)} label="I have read and agree with the foregoing." />
+            <Switch checked={notify} onChange={e=>setNotify(e.target.checked)} label="Email me on case updates" />
+          </div>
+
+          <div className="lbl" style={{marginTop:18}}>Icon buttons</div>
+          <div className="row">
+            <IconButton label="Search" variant="outline"><Ico n="search"/></IconButton>
+            <IconButton label="Download" variant="outline"><Ico n="download"/></IconButton>
+            <IconButton label="More" variant="ghost"><Ico n="ellipsis"/></IconButton>
+            <IconButton label="Add" variant="solid"><Ico n="plus"/></IconButton>
+            <IconButton label="Close" variant="outline" shape="round"><Ico n="x"/></IconButton>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+setTimeout(()=>window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>
