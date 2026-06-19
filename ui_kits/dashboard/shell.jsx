@@ -37,9 +37,9 @@ function Sidebar({ active, go }) {
         })}
       </nav>
       <div style={{ padding: 14, borderTop: "1px solid var(--navy-700)", display: "flex", alignItems: "center", gap: 10 }}>
-        <Avatar name="Geoff Berg" size={34} tone="stone" />
+        <Avatar name="Geoffrey Berg" size={34} tone="stone" />
         <div style={{ minWidth: 0 }}>
-          <div style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "var(--cream)", whiteSpace: "nowrap" }}>Geoff Berg</div>
+          <div style={{ fontFamily: "var(--font-ui)", fontSize: 13, fontWeight: 600, color: "var(--cream)", whiteSpace: "nowrap" }}>Geoffrey Berg</div>
           <div style={{ fontFamily: "var(--font-ui)", fontSize: 11.5, color: "var(--navy-300)" }}>Managing Partner</div>
         </div>
       </div>

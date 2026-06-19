@@ -35,46 +35,93 @@
 <script type="text/babel" src="../dashboard/TraceGraph.jsx"></script>
 <script type="text/babel">
 const DSx = window.BergPCDesignSystem_eb13e3;
-const { Card, CardHeader, Stat, Badge, Button, AddressChip, Input, Tag, IconButton, Alert, Tabs } = DSx;
+const { Card, CardHeader, Stat, Badge, Button, AddressChip, Input, Tag, IconButton, Alert, Tabs, Stepper, Table } = DSx;
 const { Sidebar, Topbar, AIco } = window.BergApp;
-const { TraceGraph, TraceLegend, ROLE_COLOR } = window.BergTrace;
+const { TraceGraph, TraceLegend, ROLE_COLOR, ROLE_BADGE, NODES, TXNS } = window.BergTrace;
 
-const INSPECT = {
-  label: "Exchange A — off-ramp", role: "exchange",
-  addr: "0xa3f19c4e7b2049d5f1c8a6037be29d4471e7b204",
-  balance: "3.32 BTC", usd: "$214,800", first: "2025-02-14", last: "2025-04-02", txs: 41, cluster: "Binance hot wallet (likely)",
+const NODE_BY = Object.fromEntries(NODES.map((n) => [n.id, n]));
+const ALERT_TONE = { tainted: "info", hop: "neutral", mixer: "danger", exchange: "warning", frozen: "success" };
+const ACTION = {
+  tainted: ["git-branch", "Trace forward"], hop: ["git-branch", "Trace forward"],
+  mixer: ["flag", "Flag high-risk"], exchange: ["snowflake", "Request freeze"], frozen: ["file-plus", "Add to report"],
 };
+const STATUS_TONE = { Confirmed: "neutral", Mixed: "accent", "Off-ramp": "info", Frozen: "success" };
 
-function Inspector(){
+function Inspector({ node }){
+  const [btone, blabel] = ROLE_BADGE[node.role];
+  const [aicon, alabel] = ACTION[node.role];
   return (
     <Card padding="lg" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
-          <span style={{ width: 11, height: 11, borderRadius: "50%", background: ROLE_COLOR[INSPECT.role] }}></span>
-          <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 18, margin: 0, color: "var(--ink-900)" }}>{INSPECT.label}</h3>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 9, minWidth: 0 }}>
+          <span style={{ width: 11, height: 11, borderRadius: "50%", background: ROLE_COLOR[node.role], flex: "none" }}></span>
+          <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 18, margin: 0, color: "var(--ink-900)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{node.label}</h3>
         </div>
-        <Badge tone="info">Exchange</Badge>
+        <Badge tone={btone}>{blabel}</Badge>
       </div>
-      <AddressChip address={INSPECT.addr} role={INSPECT.role} />
+      <AddressChip address={node.addr} role={node.role} />
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-        <Stat label="Balance" value={INSPECT.balance} caption={INSPECT.usd} />
-        <Stat label="Transactions" value={INSPECT.txs} caption="in/out" />
+        <Stat label="Balance" value={node.balance} caption={node.usd} />
+        <Stat label="Transactions" value={node.txs} caption="in/out" />
       </div>
       <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: 14, display: "flex", flexDirection: "column", gap: 9, fontFamily: "var(--font-ui)", fontSize: 13.5 }}>
-        {[["First seen", INSPECT.first],["Last activity", INSPECT.last],["Cluster", INSPECT.cluster]].map(([k,v])=>(
-          <div key={k} style={{ display: "flex", justifyContent: "space-between" }}><span style={{ color: "var(--ink-500)" }}>{k}</span><span style={{ color: "var(--ink-800)", fontFamily: k==="Cluster"?"var(--font-ui)":"var(--font-mono)", fontWeight: 500 }}>{v}</span></div>
+        {[["First seen", node.first],["Last activity", node.last],["Cluster", node.cluster]].map(([k,v])=>(
+          <div key={k} style={{ display: "flex", justifyContent: "space-between", gap: 12 }}><span style={{ color: "var(--ink-500)", flex: "none" }}>{k}</span><span style={{ color: "var(--ink-800)", fontFamily: k==="Cluster"?"var(--font-ui)":"var(--font-mono)", fontWeight: 500, textAlign: "right" }}>{v}</span></div>
         ))}
       </div>
-      <Alert tone="warning" icon={<AIco n="building-2" s={17}/>}>Subpoena prepared for KYC records. Awaiting court signature.</Alert>
+      <Alert tone={ALERT_TONE[node.role]} icon={<AIco n="info" s={17}/>}>{node.note}</Alert>
       <div style={{ display: "flex", gap: 10 }}>
-        <Button variant="primary" fullWidth iconLeft={<AIco n="snowflake" s={16}/>}>Request freeze</Button>
+        <Button variant="primary" fullWidth iconLeft={<AIco n={aicon} s={16}/>}>{alabel}</Button>
         <IconButton label="Add to report" variant="outline"><AIco n="file-plus" s={17}/></IconButton>
       </div>
     </Card>
   );
 }
 
+function TxnTable({ onSelect }){
+  return (
+    <Card padding="none">
+      <Table
+        rowKey="hash"
+        onRowClick={(r)=>onSelect(NODE_BY[r.to])}
+        columns={[
+          { key:"hash", label:"Transaction", render:(v)=> <span style={{fontFamily:"var(--font-mono)",fontSize:12.5,color:"var(--ink-800)"}}>{v}</span> },
+          { key:"from", label:"From", render:(v)=> NODE_BY[v].label },
+          { key:"to", label:"To", render:(v)=> NODE_BY[v].label },
+          { key:"amount", label:"Amount", align:"right", render:(v)=> <span style={{fontFamily:"var(--font-mono)",fontWeight:600}}>{v}</span> },
+          { key:"date", label:"Date", render:(v)=> <span style={{fontFamily:"var(--font-mono)",fontSize:12.5,color:"var(--ink-600)"}}>{v}</span> },
+          { key:"status", label:"Status", render:(v)=> <Badge tone={STATUS_TONE[v]}>{v}</Badge> },
+        ]}
+        rows={TXNS}
+      />
+    </Card>
+  );
+}
+
+function WalletTable({ onSelect }){
+  return (
+    <Card padding="none">
+      <Table
+        rowKey="id"
+        onRowClick={(r)=>onSelect(r)}
+        columns={[
+          { key:"label", label:"Wallet", render:(v,r)=> <span style={{display:"inline-flex",alignItems:"center",gap:8}}><span style={{width:9,height:9,borderRadius:"50%",background:ROLE_COLOR[r.role]}}></span>{v}</span> },
+          { key:"addr", label:"Address", render:(v,r)=> <AddressChip address={v} role={r.role} /> },
+          { key:"role", label:"Role", render:(v)=> { const [t,l]=ROLE_BADGE[v]; return <Badge tone={t}>{l}</Badge>; } },
+          { key:"amt", label:"Through", align:"right", render:(v)=> <span style={{fontFamily:"var(--font-mono)",fontWeight:600}}>{v}</span> },
+          { key:"last", label:"Last seen", render:(v)=> <span style={{fontFamily:"var(--font-mono)",fontSize:12.5,color:"var(--ink-600)"}}>{v}</span> },
+        ]}
+        rows={NODES}
+      />
+    </Card>
+  );
+}
+
 function App(){
+  const [sel, setSel] = React.useState("ex1");
+  const [tab, setTab] = React.useState("graph");
+  const node = NODE_BY[sel] || NODES[0];
+  const select = (n) => setSel(n.id);
   React.useEffect(()=>{ const t=setTimeout(()=>window.lucide&&window.lucide.createIcons(),30); return ()=>clearTimeout(t); });
   return (
     <div style={{ display: "flex", height: "100vh", overflow: "hidden", fontFamily: "var(--font-ui)" }}>
@@ -92,28 +139,40 @@ function App(){
           <div style={{ flex: 1 }}></div>
           <Button variant="primary" iconLeft={<AIco n="play" s={15}/>}>Run trace</Button>
         </div>
-        <main style={{ flex: 1, overflow: "auto", padding: 26, display: "grid", gridTemplateColumns: "1fr 340px", gap: 18, alignItems: "start" }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+        <main style={{ flex: 1, overflow: "auto", padding: 26, display: "grid", gridTemplateColumns: "minmax(0,1fr) 340px", gap: 18, alignItems: "start" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14, minWidth: 0 }}>
+            <Card padding="lg">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16, gap: 12, flexWrap: "wrap" }}>
+                <div style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: ".14em", textTransform: "uppercase", color: "var(--stone-600)" }}>Recovery progress</div>
+                <Badge tone="warning">Freeze stage</Badge>
+              </div>
+              <Stepper current={2} steps={[{label:"Trace",sub:"on-chain"},{label:"Identify",sub:"attribute"},{label:"Freeze",sub:"injunction"},{label:"Recover",sub:"judgment"}]} />
+            </Card>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12 }}>
               <Card padding="md"><Stat label="Traced" value="86%" caption="of 8.42 BTC" /></Card>
-              <Card padding="md"><Stat label="Wallets" value="14" caption="in path" /></Card>
+              <Card padding="md"><Stat label="Wallets" value={NODES.length} caption="in path" /></Card>
               <Card padding="md"><Stat label="Off-ramps" value="2" caption="exchanges" /></Card>
               <Card padding="md"><Stat label="Frozen" value="3.32 BTC" deltaTone="success" delta="confirmed" /></Card>
             </div>
             <Card padding="md">
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 16, margin: 0, color: "var(--ink-900)" }}>Flow graph</h3>
-                <div style={{ display: "flex", gap: 8 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10, gap: 12, flexWrap: "wrap" }}>
+                <Tabs value={tab} onChange={setTab} items={[
+                  {id:"graph",label:"Flow graph",icon:<AIco n="git-branch" s={15}/>},
+                  {id:"txns",label:"Transactions",icon:<AIco n="arrow-left-right" s={15}/>},
+                  {id:"wallets",label:"Wallets",icon:<AIco n="wallet" s={15}/>},
+                ]}/>
+                {tab==="graph" && <div style={{ display: "flex", gap: 8 }}>
                   <IconButton label="Zoom out" variant="outline"><AIco n="minus" s={16}/></IconButton>
                   <IconButton label="Zoom in" variant="outline"><AIco n="plus" s={16}/></IconButton>
                   <IconButton label="Fit" variant="outline"><AIco n="maximize" s={16}/></IconButton>
-                </div>
+                </div>}
               </div>
-              <TraceGraph height={340} />
-              <TraceLegend />
+              {tab==="graph" && <><div style={{ marginTop: 4 }}><TraceGraph height={340} onSelect={select} selectedId={sel} /></div><TraceLegend /></>}
+              {tab==="txns" && <div style={{ marginTop: 12 }}><TxnTable onSelect={select} /></div>}
+              {tab==="wallets" && <div style={{ marginTop: 12 }}><WalletTable onSelect={select} /></div>}
             </Card>
           </div>
-          <Inspector />
+          <Inspector node={node} />
         </main>
       </div>
     </div>

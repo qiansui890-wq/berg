@@ -1,0 +1,120 @@
+<!-- @dsCard group="Colors" viewport="980x680" name="Dark theme" subtitle="Opt-in [data-theme=dark] — components on a dark field" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../_ds_bundle.js"></script>
+<style>
+  html,body{margin:0;}
+  .stage{min-height:100vh;background:var(--bg-page);padding:28px 30px;font-family:var(--font-sans);transition:background .2s;}
+  .lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-600);margin:0 0 14px;}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+  .toggle{position:fixed;top:16px;right:18px;z-index:10;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const D = window.BergPCDesignSystem_eb13e3;
+const { Card, CardHeader, Button, IconButton, Badge, Tag, Alert, Input, Checkbox, Switch, Stat, Table, AddressChip, Stepper, Pagination, Tooltip, Avatar } = D;
+
+function AIco({ n, s = 16 }) {
+  const ref = React.useRef(null);
+  React.useEffect(() => { if (ref.current && window.lucide) { ref.current.innerHTML = ""; const i = document.createElement("i"); i.setAttribute("data-lucide", n); ref.current.appendChild(i); window.lucide.createIcons({ attrs: { width: s, height: s }, nameAttr: "data-lucide" }); } });
+  return <span ref={ref} style={{ display: "inline-flex" }} />;
+}
+
+function Demo() {
+  const [dark, setDark] = React.useState(true);
+  const [page, setPage] = React.useState(2);
+  React.useEffect(() => { document.documentElement.setAttribute("data-theme", dark ? "dark" : "light"); }, [dark]);
+
+  return (
+    <div className="stage" data-theme={dark ? "dark" : "light"}>
+      <div className="toggle">
+        <Button size="sm" variant={dark ? "secondary" : "primary"} iconLeft={<AIco n={dark ? "sun" : "moon"} s={15} />} onClick={() => setDark(!dark)}>
+          {dark ? "Light" : "Dark"}
+        </Button>
+      </div>
+
+      <div className="lbl">Dark theme — data-theme=&quot;{dark ? "dark" : "light"}&quot;</div>
+
+      <div className="grid">
+        <Card padding="lg">
+          <CardHeader eyebrow="Buttons & badges" title="Actions" />
+          <div className="row">
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="accent">Accent</Button>
+            <Button variant="ghost">Ghost</Button>
+          </div>
+          <div className="row">
+            <IconButton variant="solid" label="a"><AIco n="snowflake" /></IconButton>
+            <IconButton variant="outline" label="b"><AIco n="download" /></IconButton>
+            <IconButton variant="ghost" label="c"><AIco n="more-horizontal" /></IconButton>
+            <Badge tone="neutral" variant="solid">Filed</Badge>
+            <Badge tone="accent">Tracing</Badge>
+            <Badge tone="success">Recovered</Badge>
+            <Badge tone="warning">Frozen</Badge>
+            <Tag iconLeft={<AIco n="filter" s={13} />}>Stage: All</Tag>
+          </div>
+          <div className="row" style={{ marginBottom: 0 }}>
+            <Checkbox checked label="Tainted only" onChange={() => {}} />
+            <Switch checked label="Live trace" onChange={() => {}} />
+            <Tooltip label="Frozen by court order"><span style={{ color: "var(--text-link)", fontSize: 14 }}>hover me</span></Tooltip>
+          </div>
+        </Card>
+
+        <Card padding="lg">
+          <CardHeader eyebrow="Inputs & status" title="Forms" />
+          <div style={{ marginBottom: 12 }}><Input placeholder="Search cases…" iconLeft={<AIco n="search" s={15} />} /></div>
+          <Alert tone="info" icon={<AIco n="git-branch" s={16} />}>New off-ramp detected on BPC-2025-0417.</Alert>
+          <div style={{ height: 10 }} />
+          <Alert tone="success" icon={<AIco n="snowflake" s={16} />}>Exchange confirmed freeze — $54,900.</Alert>
+        </Card>
+
+        <Card padding="lg">
+          <CardHeader eyebrow="People & metrics" title="Surfaces" />
+          <div className="row">
+            <Avatar name="Geoffrey Berg" tone="ink" />
+            <Avatar name="Kathryn Nelson" tone="stone" />
+            <Avatar name="Tomas Tijerina" tone="navy" />
+            <div style={{ flex: 1 }} />
+            <Stat label="Traced" value="86%" caption="of funds" />
+          </div>
+          <div style={{ marginTop: 8 }}>
+            <Stepper current={1} items={[{ label: "Intake" }, { label: "Trace" }, { label: "Freeze" }, { label: "Recover" }]} />
+          </div>
+        </Card>
+
+        <Card padding="none">
+          <div style={{ padding: "16px 20px", borderBottom: "1px solid var(--border-subtle)" }}>
+            <span style={{ fontFamily: "var(--font-heading)", fontSize: 17, color: "var(--text-strong)" }}>Wallets</span>
+          </div>
+          <Table rowKey="w"
+            columns={[
+              { key: "w", label: "Address", render: (v, r) => <AddressChip address={v} role={r.role} /> },
+              { key: "amt", label: "Balance", align: "right" },
+            ]}
+            rows={[
+              { w: "bc1q9zk2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9j6l3", role: "tainted", amt: "8.42 BTC" },
+              { w: "0xa3f19c4e7b2049d5f1c8a6037be29d4471e7b204", role: "exchange", amt: "3.32 BTC" },
+            ]} />
+          <div style={{ display: "flex", justifyContent: "flex-end", padding: "12px 18px" }}>
+            <Pagination page={page} pageCount={8} onChange={setPage} />
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

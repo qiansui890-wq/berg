@@ -1,0 +1,73 @@
+/* ============================================================
+   BERG PC — Dark theme
+   Opt-in: set [data-theme="dark"] on a wrapper (or <html>).
+   Strategy: the raw --ink-* scale is INVERTED (text lightens,
+   borders/sunken surfaces darken automatically). Surfaces
+   (--white), page fields, and the soft status/stone tints are
+   remapped explicitly. --fill-ink (solid dark elements) and
+   --cream (light text/fills on dark) are deliberately kept,
+   so buttons, badges, avatars, and checks stay correct.
+   ============================================================ */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* ---- Ink scale, inverted: 900 = lightest text … 50 = darkest field ---- */
+  --ink-950: #FAF8F4;
+  --ink-900: #F2EEE8;   /* primary text */
+  --ink-800: #E2DDD5;
+  --ink-700: #CFC9C0;   /* body text */
+  --ink-600: #B0A99F;
+  --ink-500: #948D83;   /* muted text */
+  --ink-400: #7C756B;   /* subtle text */
+  --ink-300: #4E4942;   /* strong borders */
+  --ink-200: #3A352F;   /* default borders */
+  --ink-100: #2A2622;   /* subtle borders / neutral-soft bg */
+  --ink-50:  #211D1A;   /* sunken / disabled field bg */
+
+  /* ---- Surfaces ---- */
+  --cream-dim: #0B121C;
+  --white:     #1A2433;          /* cards sit just above the page */
+  --bg-page:        #0E1622;     /* navy-950 */
+  --bg-page-alt:    #0A111B;
+  --surface-card:   #1A2433;
+  --surface-sunken: #131C28;
+  --surface-raised: #212D3C;
+  --surface-inverse:#0A111B;
+
+  /* keep navy fields readable as slightly-raised dark panels */
+  --navy-900: #16202E;
+  --navy-950: #0B121C;
+
+  /* ---- Stone accent: soft tint darkens, soft text lightens ---- */
+  --stone-100: #2C2620;   /* soft accent panel bg */
+  --stone-700: #CBBFAE;   /* text on soft accent / eyebrows */
+  --stone-600: #B6A892;
+  --accent-soft: #2C2620;
+
+  /* ---- Ink fills stay dark; nudge so they read on dark cards ---- */
+  --fill-ink:        #0C0A09;
+  --fill-ink-strong: #232019;
+  --primary:        #0C0A09;
+  --primary-hover:  #232019;
+  --primary-active: #000000;
+  --border-ink:     #F2EEE8;
+
+  /* ---- Status: soft tints dark, on-tint text light ---- */
+  --success-100: #14271C;
+  --success-700: #74C593;
+  --danger-100:  #2E1613;
+  --danger-700:  #EA8C7F;
+  --warning-100: #2B2008;
+  --warning-700: #E3B65C;
+  --info-100:    #102230;
+  --info-700:    #82B9DF;
+
+  /* ---- Focus ring brighter on dark ---- */
+  --ring-focus: color-mix(in oklch, var(--navy-300) 55%, transparent);
+
+  /* status text aliases follow the lightened -700 values automatically */
+}
+
+/* Inputs/selects autofill + placeholder legibility on dark */
+[data-theme="dark"] ::placeholder { color: var(--ink-400); opacity: 1; }

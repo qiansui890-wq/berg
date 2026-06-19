@@ -36,7 +36,7 @@
 <script type="text/babel" src="screens.jsx"></script>
 <script type="text/babel">
 const { Sidebar, Topbar, AIco } = window.BergApp;
-const { Overview, CaseList, CaseDetail } = window.BergDash;
+const { Overview, CaseList, CaseDetail, WalletWatchlist, Exchanges, Documents } = window.BergDash;
 const { Input } = window.BergPCDesignSystem_eb13e3;
 
 function App(){
@@ -45,7 +45,7 @@ function App(){
   React.useEffect(()=>{ const t=setTimeout(()=>window.lucide&&window.lucide.createIcons(),30); return ()=>clearTimeout(t); });
 
   const openCase = (id) => { setOpenId(id); setNav(id ? "casedetail" : "cases"); };
-  const titles = { dashboard: ["Overview","Case Management"], cases: ["Cases","Case Management"], trace: ["Asset Trace","Investigation"], casedetail: ["Case file","Cases"] };
+  const titles = { dashboard: ["Overview","Case Management"], cases: ["Cases","Case Management"], trace: ["Asset Trace","Investigation"], casedetail: ["Case file","Cases"], wallets: ["Wallet Watchlist","Case Management"], exchanges: ["Exchanges / VASPs","Case Management"], documents: ["Documents","Case Management"] };
   const [t, crumb] = titles[nav] || titles.dashboard;
 
   return (
@@ -60,11 +60,9 @@ function App(){
           {nav === "cases" && <CaseList openCase={openCase} />}
           {nav === "trace" && <CaseDetail id="BPC-2025-0417" back={()=>setNav("dashboard")} />}
           {nav === "casedetail" && <CaseDetail id={openId} back={()=>{setNav("cases"); setOpenId(null);}} />}
-          {["wallets","exchanges","documents"].includes(nav) && (
-            <div style={{ padding: 60, textAlign: "center", color: "var(--ink-400)", fontFamily: "var(--font-ui)" }}>
-              <AIco n="construction" s={30}/><p style={{marginTop:12}}>This section is part of the kit's navigation but not built out in this recreation.</p>
-            </div>
-          )}
+          {nav === "wallets" && <WalletWatchlist />}
+          {nav === "exchanges" && <Exchanges />}
+          {nav === "documents" && <Documents />}
         </main>
       </div>
     </div>

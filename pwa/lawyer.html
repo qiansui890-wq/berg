@@ -16,6 +16,7 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
 <script src="../app/logos.js"></script>
+<script src="push.js"></script>
 <style>
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{margin:0;height:100%;}
@@ -187,6 +188,7 @@ function App(){
   // local notifications: ask once, notify on unread increase while app is open
   const prevUnread=React.useRef(0);
   React.useEffect(()=>{ if(user&&"Notification"in window&&Notification.permission==="default"){ try{Notification.requestPermission();}catch(e){} } },[user]);
+  React.useEffect(()=>{ if(user&&window.bergEnablePush) window.bergEnablePush(user); },[user]);
   React.useEffect(()=>{
     if(!user)return;
     const cs=window.DB.clientsFor(user);

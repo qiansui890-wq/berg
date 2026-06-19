@@ -17,6 +17,7 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
 <script src="../app/logos.js"></script>
+<script src="push.js"></script>
 <style>
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{margin:0;height:100%;}
@@ -217,6 +218,7 @@ function App(){
     if(un>prevUnread.current&&"Notification"in window&&Notification.permission==="granted"){ try{new Notification("Berg PC — message from your attorney",{body:"You have "+un+" unread message(s).",icon:"icon-192.png"});}catch(e){} }
     prevUnread.current=un;
   });
+  React.useEffect(()=>{ if(user&&user.role==="client"&&window.bergEnablePush) window.bergEnablePush(user); },[user]);
   if(!user || user.role!=="client"){
     return <Login onIn={(u)=>{ if(u.role!=="client"){ /* this app is client-only */ } setUser(u); }}/>;
   }

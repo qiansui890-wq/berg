@@ -103,8 +103,22 @@ create table if not exists public.messages (
   id uuid primary key default gen_random_uuid(),
   client_id uuid not null references public.clients(id) on delete cascade,
   from_id uuid, from_name text default '', from_role text default '',
-  text text not null, read boolean default false, ts timestamptz default now()
+  text text not null default '', read boolean default false, ts timestamptz default now(),
+  recalled boolean not null default false,
+  -- in-chat attachment (small files/images stored inline as a data URL; att_url for storage-backed files)
+  att_name text, att_type text, att_size text, att_data text, att_url text
 );
+
+-- If your messages table already exists, run this once to add the new columns:
+--   alter table public.messages
+--     add column if not exists recalled boolean not null default false,
+--     add column if not exists att_name text,
+--     add column if not exists att_type text,
+--     add column if not exists att_size text,
+--     add column if not exists att_data text,
+--     add column if not exists att_url  text,
+--     alter column text drop not null,
+--     alter column text set default '';
 
 -- notes are internal — clients must NEVER read these
 create table if not exists public.notes (

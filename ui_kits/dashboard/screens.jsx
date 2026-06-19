@@ -1,6 +1,6 @@
 /* Berg PC — Dashboard screens (overview, cases, case detail). Exports window.BergDash. */
 const _D = window.BergPCDesignSystem_eb13e3;
-const { Card, CardHeader, Stat, Table, Badge, Button, AddressChip, Tabs, Tag, Alert, Input, IconButton } = _D;
+const { Card, CardHeader, Stat, Table, Badge, Button, AddressChip, Tabs, Tag, Alert, Input, IconButton, Pagination, EmptyState } = _D;
 const { AIco } = window.BergApp;
 const { TraceGraph, TraceLegend } = window.BergTrace;
 
@@ -167,4 +167,134 @@ function CaseDetail({ id, back }) {
   );
 }
 
-window.BergDash = { Overview, CaseList, CaseDetail, CASES };
+const WATCH = [
+  { id: "w1", wallet: "bc1q9zk2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9j6l3", case: "BPC-2025-0417", role: "tainted",  risk: "Critical", balance: "8.42 BTC", last: "12m ago",  status: "Watching" },
+  { id: "w2", wallet: "0xa3f19c4e7b2049d5f1c8a6037be29d4471e7b204", case: "BPC-2025-0388", role: "exchange", risk: "High",     balance: "3.32 BTC", last: "1h ago",   status: "Frozen" },
+  { id: "w3", wallet: "bc1qhop1a7c2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9", case: "BPC-2025-0417", role: "hop",      risk: "Medium",   balance: "0.00 BTC", last: "4h ago",   status: "Watching" },
+  { id: "w4", wallet: "bc1qmixer44adm4f8x3v0rd7t6yqe2h5n8s4p1w0c9", case: "BPC-2025-0417", role: "mixer",    risk: "Critical", balance: "—",        last: "ongoing",  status: "Watching" },
+  { id: "w5", wallet: "0x7be29d4471e7b204a3f19c4e7b2049d5f1c8a603", case: "BPC-2025-0341", role: "frozen",   risk: "Low",      balance: "3.32 BTC", last: "1d ago",   status: "Frozen" },
+  { id: "w6", wallet: "bc1qxy2kgd9q8r3v7m0w5t4f6h8s2p1c0j9l3k7n5", case: "BPC-2025-0356", role: "hop",      risk: "Medium",   balance: "1.04 BTC", last: "2d ago",   status: "Cleared" },
+];
+const RISK_TONE = { Critical: "danger", High: "warning", Medium: "accent", Low: "neutral" };
+const WSTATUS_TONE = { Watching: "info", Frozen: "success", Cleared: "neutral" };
+const ROLE_LABEL = { tainted: "Tainted", hop: "Pass-through", mixer: "Mixer", exchange: "Exchange", frozen: "Frozen" };
+
+function WalletWatchlist() {
+  const [page, setPage] = React.useState(1);
+  return (
+    <div style={{ padding: 26, display: "flex", flexDirection: "column", gap: 16 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
+        {[["Watched", "146", "wallet"], ["Flagged", "12", "flag"], ["Frozen", "8", "snowflake"], ["Cleared", "31", "check-circle"]].map(([l,v,ic])=>(
+          <Card key={l} padding="md">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <Stat label={l} value={v} />
+              <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 38, height: 38, borderRadius: "var(--radius-md)", background: "var(--stone-100)", color: "var(--stone-700)" }}><AIco n={ic} s={19}/></span>
+            </div>
+          </Card>
+        ))}
+      </div>
+      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div style={{ width: 320 }}><Input placeholder="Search wallets…" iconLeft={<AIco n="search" s={16}/>} /></div>
+        <Tag iconLeft={<AIco n="filter" s={14}/>}>Risk: All</Tag>
+        <Tag iconLeft={<AIco n="filter" s={14}/>}>Status: All</Tag>
+        <div style={{ flex: 1 }}></div>
+        <Button variant="primary" iconLeft={<AIco n="plus" s={16}/>}>Watch address</Button>
+      </div>
+      <Card padding="none">
+        <Table rowKey="id"
+          columns={[
+            { key: "wallet", label: "Address", render: (v, r)=> <AddressChip address={v} role={r.role} /> },
+            { key: "role", label: "Role", render: (v)=> <span style={{ fontSize: 13, color: "var(--ink-600)" }}>{ROLE_LABEL[v]}</span> },
+            { key: "case", label: "Case", render: (v)=> <span style={{ fontFamily: "var(--font-mono)", fontSize: 12.5, color: "var(--ink-700)" }}>{v}</span> },
+            { key: "risk", label: "Risk", render: (v)=> <Badge tone={RISK_TONE[v]}>{v}</Badge> },
+            { key: "balance", label: "Balance", align: "right", render: (v)=> <span style={{ fontFamily: "var(--font-mono)", fontWeight: 600 }}>{v}</span> },
+            { key: "last", label: "Last seen", align: "right", render: (v)=> <span style={{ color: "var(--ink-400)", fontSize: 13 }}>{v}</span> },
+            { key: "status", label: "Status", render: (v)=> <Badge tone={WSTATUS_TONE[v]}>{v}</Badge> },
+          ]}
+          rows={WATCH} />
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 18px", borderTop: "1px solid var(--border-subtle)" }}>
+          <span style={{ fontSize: 13, color: "var(--ink-500)" }}>Showing 1–6 of 146 watched wallets</span>
+          <Pagination page={page} pageCount={24} onChange={setPage} />
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+const VASPS = [
+  { id: "e1", name: "Binance", jur: "Global / Malta", cases: 9, reqs: 6, status: "Cooperating", resp: "~2 days" },
+  { id: "e2", name: "Coinbase", jur: "United States", cases: 7, reqs: 5, status: "Cooperating", resp: "~1 day" },
+  { id: "e3", name: "Kraken", jur: "United States", cases: 3, reqs: 2, status: "Cooperating", resp: "~3 days" },
+  { id: "e4", name: "Tether (USDT)", jur: "Issuer freeze", cases: 4, reqs: 3, status: "Pending", resp: "—" },
+  { id: "e5", name: "Huobi / HTX", jur: "Seychelles", cases: 2, reqs: 2, status: "Slow", resp: "~10 days" },
+  { id: "e6", name: "Unknown VASP", jur: "Unattributed", cases: 1, reqs: 0, status: "Declined", resp: "—" },
+];
+const VASP_TONE = { Cooperating: "success", Pending: "warning", Slow: "accent", Declined: "danger" };
+
+function Exchanges() {
+  return (
+    <div style={{ padding: 26, display: "flex", flexDirection: "column", gap: 16 }}>
+      <Alert tone="info" icon={<AIco n="building-2" s={17}/>}>
+        Track freeze requests and KYC cooperation across exchanges and VASPs. Response times feed the recovery timeline for each case.
+      </Alert>
+      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div style={{ width: 320 }}><Input placeholder="Search exchanges / VASPs…" iconLeft={<AIco n="search" s={16}/>} /></div>
+        <div style={{ flex: 1 }}></div>
+        <Button variant="primary" iconLeft={<AIco n="send" s={16}/>}>New freeze request</Button>
+      </div>
+      <Card padding="none">
+        <Table rowKey="id"
+          columns={[
+            { key: "name", label: "Exchange / VASP", render: (v)=> <span style={{ display: "inline-flex", alignItems: "center", gap: 9, fontWeight: 600, color: "var(--ink-900)" }}><span style={{ width: 26, height: 26, borderRadius: "var(--radius-sm)", background: "var(--navy-900)", color: "var(--stone-300)", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontFamily: "var(--font-serif)", fontWeight: 700 }}>{v[0]}</span>{v}</span> },
+            { key: "jur", label: "Jurisdiction", render: (v)=> <span style={{ fontSize: 13, color: "var(--ink-600)" }}>{v}</span> },
+            { key: "cases", label: "Cases", align: "right" },
+            { key: "reqs", label: "Freeze requests", align: "right" },
+            { key: "resp", label: "Avg. response", align: "right", render: (v)=> <span style={{ fontFamily: "var(--font-mono)", fontSize: 12.5, color: "var(--ink-600)" }}>{v}</span> },
+            { key: "status", label: "Status", render: (v)=> <Badge tone={VASP_TONE[v]}>{v}</Badge> },
+          ]}
+          rows={VASPS} />
+      </Card>
+    </div>
+  );
+}
+
+const FILES = [
+  { id: "d1", name: "Chain-of-funds report.pdf", case: "BPC-2025-0417", type: "Forensic report", by: "Investigations", date: "May 02", status: "verified" },
+  { id: "d2", name: "Bank statement — Feb 2025.pdf", case: "BPC-2025-0417", type: "Evidence", by: "Jane Doe", date: "Apr 17", status: "verified" },
+  { id: "d3", name: "Exchange A — KYC subpoena.docx", case: "BPC-2025-0388", type: "Filing", by: "Geoffrey Berg", date: "Apr 24", status: "verified" },
+  { id: "d4", name: "Screenshots — platform chat.zip", case: "BPC-2025-0417", type: "Evidence", by: "Jane Doe", date: "Apr 18", status: "review" },
+  { id: "d5", name: "Injunction order — draft.pdf", case: "BPC-2025-0356", type: "Filing", by: "Kathryn E. Nelson", date: "May 06", status: "review" },
+];
+
+function Documents() {
+  const [q, setQ] = React.useState("");
+  const rows = FILES.filter((f)=> (f.name + f.case + f.type).toLowerCase().includes(q.toLowerCase()));
+  return (
+    <div style={{ padding: 26, display: "flex", flexDirection: "column", gap: 16 }}>
+      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div style={{ width: 320 }}><Input placeholder="Search documents…" iconLeft={<AIco n="search" s={16}/>} value={q} onChange={(e)=>setQ(e.target.value)} /></div>
+        <Tag iconLeft={<AIco n="filter" s={14}/>}>Type: All</Tag>
+        <div style={{ flex: 1 }}></div>
+        <Button variant="primary" iconLeft={<AIco n="upload" s={16}/>}>Upload</Button>
+      </div>
+      <Card padding="none">
+        {rows.length === 0 ? (
+          <EmptyState icon={<AIco n="file-search" s={22}/>} title="No documents match" description="Try a different search term, or upload a new file to a case." />
+        ) : (
+          <Table rowKey="id"
+            columns={[
+              { key: "name", label: "Document", render: (v)=> <span style={{ display: "inline-flex", alignItems: "center", gap: 9, color: "var(--ink-800)", fontWeight: 500 }}><span style={{ color: "var(--stone-600)" }}><AIco n="file-text" s={17}/></span>{v}</span> },
+              { key: "case", label: "Case", render: (v)=> <span style={{ fontFamily: "var(--font-mono)", fontSize: 12.5, color: "var(--ink-700)" }}>{v}</span> },
+              { key: "type", label: "Type", render: (v)=> <Tag>{v}</Tag> },
+              { key: "by", label: "Added by" },
+              { key: "date", label: "Date", align: "right", render: (v)=> <span style={{ color: "var(--ink-400)", fontSize: 13 }}>{v}</span> },
+              { key: "status", label: "Status", render: (v)=> <Badge tone={v==="verified"?"success":"warning"}>{v==="verified"?"Verified":"In review"}</Badge> },
+            ]}
+            rows={rows} />
+        )}
+      </Card>
+    </div>
+  );
+}
+
+window.BergDash = { Overview, CaseList, CaseDetail, WalletWatchlist, Exchanges, Documents, CASES };

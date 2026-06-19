@@ -7,6 +7,7 @@
    ============================================================ */
 
 :root {
+  color-scheme: light;
   /* ---- Ink (primary text, black actions, the mark) — warm charcoal ---- */
   --ink-950: #121010;
   --ink-900: #1A1714;   /* core brand black */
@@ -94,8 +95,14 @@
   --accent-strong:  var(--stone-600);
   --accent-deep:    var(--stone-700);
   --accent-soft:    var(--stone-100);
-  --primary:        var(--ink-900);
-  --primary-hover:  var(--ink-800);
+
+  /* Ink FILLS — solid dark elements (buttons, checks, badges, tooltips).
+     Separate from the ink TEXT scale so dark mode can keep fills dark
+     while text inverts to light. */
+  --fill-ink:        var(--ink-900);
+  --fill-ink-strong: var(--ink-800);
+  --primary:        var(--fill-ink);
+  --primary-hover:  var(--fill-ink-strong);
   --primary-active: var(--ink-950);
 
   --border-subtle:  var(--ink-100);
