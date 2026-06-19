@@ -151,29 +151,89 @@ function EditRow({ label, value, onChange, type = "text", options, textarea, rea
 /* secure message thread — used by lawyer (case detail) and client (portal) */
 function MessageThread({ client, user, height = 360 }) {
   const [text, setText] = React.useState("");
+  const [hover, setHover] = React.useState(null);
+  const [busy, setBusy] = React.useState(false);
+  const fileRef = React.useRef(null);
   const endRef = React.useRef(null);
+  const toast = useToast();
   const msgs = client.messages || [];
   React.useEffect(() => { window.DB.markMessagesRead(client.id, user.id); }, [client.id, msgs.length]);
   React.useEffect(() => { if (endRef.current) endRef.current.scrollTop = endRef.current.scrollHeight; });
   React.useEffect(refreshIcons);
   function send() { if (!text.trim()) return; window.DB.sendMessage(client.id, user, text); setText(""); }
+  function recall(m) { if (window.confirm("Recall this message? It will be removed for everyone on this case.")) window.DB.recallMessage(client.id, m.id, user); }
+  async function pickFile(e) {
+    const file = e.target.files && e.target.files[0]; e.target.value = "";
+    if (!file) return;
+    const MAX = 3 * 1024 * 1024;
+    if (file.size > MAX) { toast({ tone: "danger", icon: "alert-circle", title: "File too large", msg: "Max 3 MB in chat — use Documents for larger files." }); return; }
+    setBusy(true);
+    try {
+      const dataUrl = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
+      await window.DB.sendMessage(client.id, user, "", { name: file.name, type: extType(file.name), size: fmtSize(file.size), dataUrl });
+    } catch (err) { toast({ tone: "danger", icon: "alert-circle", title: "Couldn't attach", msg: String(err && err.message || err) }); }
+    finally { setBusy(false); }
+  }
   return (
     <div style={{ display: "flex", flexDirection: "column", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", background: "var(--white)", overflow: "hidden" }}>
       <div ref={endRef} style={{ height, overflowY: "auto", padding: "16px 16px", display: "flex", flexDirection: "column", gap: 12, background: "var(--bg-page-alt)" }}>
         {msgs.length ? msgs.map((m) => {
           const mine = m.fromId === user.id;
+          const att = m.attachment;
+          const imgOnly = att && att.type === "img" && att.dataUrl && !m.text;
           return (
-            <div key={m.id} style={{ display: "flex", flexDirection: "column", alignItems: mine ? "flex-end" : "flex-start" }}>
-              <div style={{ maxWidth: "78%", background: mine ? "var(--navy-800)" : "var(--white)", color: mine ? "var(--cream)" : "var(--ink-800)", border: mine ? "none" : "1px solid var(--border-subtle)", borderRadius: "var(--radius-md)", padding: "9px 13px", fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5 }}>{m.text}</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, color: "var(--ink-400)", marginTop: 4 }}>{mine ? "You" : m.fromName} · {new Date(m.ts).toLocaleString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</div>
+            <div key={m.id} onMouseEnter={() => setHover(m.id)} onMouseLeave={() => setHover((h) => (h === m.id ? null : h))}
+              style={{ display: "flex", flexDirection: "column", alignItems: mine ? "flex-end" : "flex-start" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 6, flexDirection: mine ? "row" : "row-reverse", maxWidth: "82%" }}>
+                {mine && !m.recalled && (
+                  <button onClick={() => recall(m)} title="Recall message" aria-label="Recall message"
+                    style={{ border: "none", background: "transparent", cursor: "pointer", color: "var(--ink-400)", padding: 4, lineHeight: 0, opacity: hover === m.id ? 1 : 0, transition: "opacity var(--duration-fast) var(--ease-standard)", flex: "none" }}>
+                    <Ico n="undo-2" s={14} />
+                  </button>
+                )}
+                <div style={{ background: m.recalled ? "transparent" : mine ? "var(--navy-800)" : "var(--white)", color: mine ? "var(--cream)" : "var(--ink-800)",
+                  border: m.recalled ? "1px dashed var(--border-default)" : mine ? "none" : "1px solid var(--border-subtle)",
+                  borderRadius: "var(--radius-md)", padding: imgOnly ? 4 : "9px 13px", fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.5, minWidth: 0 }}>
+                  {m.recalled ? (
+                    <span style={{ fontStyle: "italic", color: "var(--ink-400)", display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13 }}>
+                      <Ico n="ban" s={14} /> {mine ? "You recalled a message" : (m.fromName + " recalled a message")}
+                    </span>
+                  ) : (
+                    <>
+                      {att && att.type === "img" && att.dataUrl ? (
+                        <a href={att.dataUrl} target="_blank" rel="noreferrer" style={{ display: "block" }}>
+                          <img src={att.dataUrl} alt={att.name} style={{ maxWidth: 230, maxHeight: 220, borderRadius: 7, display: "block" }} />
+                        </a>
+                      ) : att ? (
+                        <a href={att.dataUrl || undefined} download={att.name} target="_blank" rel="noreferrer"
+                          style={{ display: "flex", alignItems: "center", gap: 9, textDecoration: "none", color: mine ? "var(--cream)" : "var(--ink-800)", background: mine ? "rgba(255,255,255,0.10)" : "var(--ink-50)", border: mine ? "none" : "1px solid var(--border-subtle)", borderRadius: "var(--radius-sm)", padding: "8px 10px", minWidth: 180 }}>
+                          <Ico n="file-text" s={18} />
+                          <span style={{ flex: 1, minWidth: 0 }}>
+                            <span style={{ display: "block", fontSize: 13, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{att.name}</span>
+                            <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 10.5, opacity: 0.7 }}>{att.size}</span>
+                          </span>
+                          <Ico n="download" s={15} />
+                        </a>
+                      ) : null}
+                      {m.text ? <div style={{ marginTop: att ? 6 : 0, whiteSpace: "pre-wrap", wordBreak: "break-word" }}>{m.text}</div> : null}
+                    </>
+                  )}
+                </div>
+              </div>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, color: "var(--ink-400)", marginTop: 4 }}>{mine ? "You" : m.fromName} · {new Date(m.ts).toLocaleString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}{m.recalled ? " · recalled" : ""}</div>
             </div>
           );
         }) : <div style={{ margin: "auto", textAlign: "center", color: "var(--ink-400)", fontFamily: "var(--font-ui)", fontSize: 13.5 }}><Ico n="messages-square" s={26} /><div style={{ marginTop: 8 }}>No messages yet — start your secure conversation.</div></div>}
       </div>
-      <div style={{ display: "flex", gap: 8, padding: 12, borderTop: "1px solid var(--border-subtle)", background: "var(--white)" }}>
+      <div style={{ display: "flex", gap: 8, padding: 12, borderTop: "1px solid var(--border-subtle)", background: "var(--white)", alignItems: "center" }}>
+        <input ref={fileRef} type="file" accept="image/*,.pdf,.csv,.xls,.xlsx,.zip,.doc,.docx,.txt" onChange={pickFile} style={{ display: "none" }} />
+        <button onClick={() => fileRef.current && fileRef.current.click()} disabled={busy} title="Attach file or image" aria-label="Attach file or image"
+          style={{ border: "1px solid var(--border-default)", background: "var(--white)", color: busy ? "var(--ink-300)" : "var(--ink-600)", borderRadius: "var(--radius-sm)", width: 40, height: 40, cursor: busy ? "default" : "pointer", display: "inline-flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+          <Ico n={busy ? "loader" : "paperclip"} s={18} />
+        </button>
         <input value={text} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") send(); }} placeholder="Type a message, press Enter to send…"
           style={{ flex: 1, border: "1px solid var(--border-default)", borderRadius: "var(--radius-sm)", padding: "10px 12px", fontFamily: "var(--font-ui)", fontSize: 14, outline: "none" }} />
-        <button onClick={send} disabled={!text.trim()} style={{ border: "none", background: text.trim() ? "var(--navy-800)" : "var(--ink-200)", color: "var(--cream)", borderRadius: "var(--radius-sm)", padding: "0 16px", cursor: text.trim() ? "pointer" : "default", display: "inline-flex", alignItems: "center", gap: 7, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600 }}><Ico n="send" s={16} /> Send</button>
+        <button onClick={send} disabled={!text.trim()} style={{ border: "none", background: text.trim() ? "var(--navy-800)" : "var(--ink-200)", color: "var(--cream)", borderRadius: "var(--radius-sm)", padding: "0 16px", height: 40, cursor: text.trim() ? "pointer" : "default", display: "inline-flex", alignItems: "center", gap: 7, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600 }}><Ico n="send" s={16} /> Send</button>
       </div>
     </div>
   );

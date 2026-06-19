@@ -10,6 +10,7 @@ function AdminApp({ user, view, openClientId }) {
   const open = openId ? window.DB.clientById(openId) : null;
   if (open) return <AdCaseDetail client={open} user={user} onBack={() => setOpenId(null)} />;
   if (view === "users") return <Users />;
+  if (view === "analytics") return <window.BergAnalytics user={user} />;
   if (view === "assign") return <Assignments onOpen={setOpenId} />;
   if (view === "activity") return <ActivityLog />;
   return <AdminOverview onOpen={setOpenId} />;

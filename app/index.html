@@ -53,6 +53,7 @@
 <script type="text/babel" src="lawyer.jsx"></script>
 <script type="text/babel" src="client.jsx"></script>
 <script type="text/babel" src="admin.jsx"></script>
+<script type="text/babel" src="extras.jsx"></script>
 <script type="text/babel">
 const { Shell, ToastHost, Ico, refreshIcons } = window.BergUI;
 const { AuthScreen } = window.BergAuth;
@@ -64,6 +65,7 @@ const NAV = {
   admin: [
     { section: "Console" },
     { id: "overview", icon: "layout-dashboard", label: "Firm overview" },
+    { id: "analytics", icon: "bar-chart-3", label: "Analytics" },
     { id: "assign", icon: "users-round", label: "Client assignment" },
     { id: "users", icon: "user-cog", label: "User management" },
     { id: "activity", icon: "history", label: "Activity log" },
@@ -78,12 +80,14 @@ const NAV = {
     { id: "home", icon: "gauge", label: "Case progress" },
     { id: "documents", icon: "files", label: "My documents" },
     { id: "messages", icon: "message-circle", label: "Secure messages" },
+    { id: "help", icon: "life-buoy", label: "Help & safety" },
     { id: "profile", icon: "user", label: "My profile" },
   ],
 };
 const DEFAULT_VIEW = { admin: "overview", lawyer: "board", client: "home" };
 const TITLES = {
   overview: "Firm overview", assign: "Client assignment", users: "User management", activity: "Activity log",
+  analytics: "Analytics", help: "Help & safety",
   board: "Daily board", clients: "My cases", home: "Case progress", documents: "My documents", messages: "Secure messages", profile: "My profile",
 };
 

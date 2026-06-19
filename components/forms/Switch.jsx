@@ -34,7 +34,7 @@ export function Switch({ checked = false, onChange, disabled = false, label, id,
             width: 40,
             height: 22,
             borderRadius: "var(--radius-pill)",
-            background: checked ? "var(--ink-900)" : "var(--ink-300)",
+            background: checked ? "var(--fill-ink)" : "var(--ink-300)",
             transition: "background var(--duration-base) var(--ease-standard)",
           }}
         />

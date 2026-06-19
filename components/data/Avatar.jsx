@@ -6,7 +6,7 @@ export function Avatar({ name = "", src, size = 40, tone = "navy", style }) {
   const tones = {
     navy:  ["var(--navy-800)", "var(--cream)"],
     stone: ["var(--stone-500)", "var(--cream)"],
-    ink:   ["var(--ink-800)", "var(--cream)"],
+    ink:   ["var(--fill-ink-strong)", "var(--cream)"],
   };
   const [bg, fg] = tones[tone] || tones.navy;
   return (

@@ -29,24 +29,53 @@ function bergNet(c){
 
 function AuthScreen({ onAuthed }) {
   const [mode, setMode] = React.useState("login");
-  const [form, setForm] = React.useState({ name: "", email: "", password: "" });
+  const [form, setForm] = React.useState({ name: "", email: "", password: "", invite: "" });
   const [err, setErr] = React.useState("");
+  const [notice, setNotice] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [show, setShow] = React.useState(false);
   React.useEffect(() => {
     refreshIcons();
+    if (window.BERG_RECOVERY) {
+      setMode("reset");
+      setNotice("Choose a new password for your account.");
+    } else if (window.BERG_CONFIRM_RETURN && !window.BERG_JUST_CONFIRMED) {
+      setMode("login");
+      setNotice("Your email is confirmed \u2014 sign in below to continue.");
+      window.BERG_CONFIRM_RETURN = false;
+    }
     const c = document.getElementById('authnet');
     if (c && !c.dataset.on) { c.dataset.on = '1'; bergNet(c); }
   }, []);
   const up = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  React.useEffect(() => { refreshIcons(); }, [mode]);
 
   async function submit(e) {
-    e.preventDefault(); setErr(""); setBusy(true);
+    e.preventDefault(); setErr(""); setNotice(""); setBusy(true);
     try {
+      if (mode === "forgot") {
+        const r = await window.DB.requestPasswordReset(form.email);
+        if (r.error) { setErr(r.error); return; }
+        setMode("login");
+        setNotice("If an account exists for " + form.email + ", we've sent a password-reset link. Open it to choose a new password.");
+        return;
+      }
+      if (mode === "reset") {
+        if (!form.password || form.password.length < 8) { setErr("Choose a password of at least 8 characters."); return; }
+        const r = await window.DB.setNewPassword(form.password);
+        if (r.error) { setErr(r.error); return; }
+        onAuthed(r.user);
+        return;
+      }
       const res = mode === "login"
         ? await window.DB.login(form.email, form.password)
-        : await window.DB.register({ name: form.name, email: form.email, password: form.password, role: "client" });
+        : await window.DB.register({ name: form.name, email: form.email, password: form.password, role: "client", code: form.invite });
       if (res.error) { setErr(res.error); return; }
+      if (res.needsConfirmation) {
+        setMode("login");
+        setNotice("Check your inbox — we sent a confirmation link to " + res.email + ". Click it to activate your account, then sign in below.");
+        return;
+      }
       onAuthed(res.user);
     } catch (e) {
       setErr("Could not reach the server. Check your Supabase config and connection.");
@@ -64,27 +93,37 @@ function AuthScreen({ onAuthed }) {
             <span style={{ fontFamily: "var(--font-serif)", fontSize: 19, fontWeight: 600, color: "var(--ink-900)", letterSpacing: "-0.01em" }}>Berg PC</span>
           </div>
 
-          <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 30, fontWeight: 600, color: "var(--ink-900)", margin: 0, letterSpacing: "-0.015em" }}>{mode === "login" ? "Welcome back" : "Create your account"}</h2>
+          <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 30, fontWeight: 600, color: "var(--ink-900)", margin: 0, letterSpacing: "-0.015em" }}>{ ({ login: "Welcome back", register: "Create your account", forgot: "Reset your password", reset: "Set a new password" })[mode] }</h2>
           <p style={{ fontSize: 14.5, color: "var(--ink-500)", margin: "9px 0 28px", lineHeight: 1.55 }}>
-            {mode === "login" ? "Sign in to manage your cases, evidence, and tracing progress." : "Register to file your case, upload evidence, and track recovery."}
+            { ({ login: "Sign in to manage your cases, evidence, and tracing progress.", register: "Register to file your case, upload evidence, and track recovery.", forgot: "Enter your email and we'll send you a link to reset your password.", reset: "Almost there — choose a new password to finish signing in." })[mode] }
           </p>
 
           <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {notice && <div style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 13, lineHeight: 1.5, color: "var(--success-700)", background: "var(--success-100)", borderRadius: "var(--radius-sm)", padding: "10px 12px" }}><Ico n="mail-check" s={16} /> <span>{notice}</span></div>}
             {mode === "register" && (
               <Field label="Full name" required><Input value={form.name} onChange={up("name")} placeholder="Your name" iconLeft={<Ico n="user" s={16} />} /></Field>
             )}
-            <Field label="Email" required><Input type="email" value={form.email} onChange={up("email")} placeholder="you@email.com" iconLeft={<Ico n="mail" s={16} />} /></Field>
-            <Field label="Password" required>
+            {mode === "register" && window.BERG_INVITE_REQUIRED && (
+              <Field label="Invite code" required hint="Berg PC sends this with your invitation."><Input value={form.invite} onChange={up("invite")} placeholder="e.g. BERGPC-2026" iconLeft={<Ico n="ticket" s={16} />} /></Field>
+            )}
+            {mode !== "reset" && <Field label="Email" required><Input type="email" value={form.email} onChange={up("email")} placeholder="you@email.com" iconLeft={<Ico n="mail" s={16} />} /></Field>}
+            {mode !== "forgot" && (
+            <Field label={mode === "reset" ? "New password" : "Password"} required>
               <Input type={show ? "text" : "password"} value={form.password} onChange={up("password")} placeholder="••••••••"
                 iconLeft={<Ico n="lock" s={16} />} trailing={<span style={{ cursor: "pointer", display: "flex" }} onClick={() => setShow((s) => !s)}><Ico n={show ? "eye-off" : "eye"} s={16} /></span>} />
             </Field>
+            )}
             {err && <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--danger-700)", background: "var(--danger-100)", borderRadius: "var(--radius-sm)", padding: "9px 12px" }}><Ico n="alert-circle" s={16} /> {err}</div>}
-            <Button type="submit" variant="primary" fullWidth size="lg" disabled={busy} iconRight={<Ico n="arrow-right" s={18} />}>{busy ? "Please wait…" : mode === "login" ? "Sign in" : "Register & continue"}</Button>
+            <Button type="submit" variant="primary" fullWidth size="lg" disabled={busy} iconRight={<Ico n="arrow-right" s={18} />}>{busy ? "Please wait…" : ({ login: "Sign in", register: "Register & continue", forgot: "Send reset link", reset: "Update password" })[mode]}</Button>
           </form>
 
-          <div style={{ textAlign: "center", margin: "18px 0", fontSize: 14, color: "var(--ink-500)" }}>
-            {mode === "login" ? <>Don't have an account? <a href="#" onClick={(e) => { e.preventDefault(); setMode("register"); setErr(""); }} style={{ color: "var(--navy-700)", fontWeight: 600 }}>Register</a></>
-              : <>Already have an account? <a href="#" onClick={(e) => { e.preventDefault(); setMode("login"); setErr(""); }} style={{ color: "var(--navy-700)", fontWeight: 600 }}>Back to sign in</a></>}
+          <div style={{ textAlign: "center", margin: "18px 0", fontSize: 14, color: "var(--ink-500)", display: "flex", flexDirection: "column", gap: 8 }}>
+            {mode === "login" && <>
+              <a href="#" onClick={(e) => { e.preventDefault(); setMode("forgot"); setErr(""); setNotice(""); }} style={{ color: "var(--navy-700)", fontWeight: 600 }}>Forgot your password?</a>
+              <span>Don't have an account? <a href="#" onClick={(e) => { e.preventDefault(); setMode("register"); setErr(""); setNotice(""); }} style={{ color: "var(--navy-700)", fontWeight: 600 }}>Register</a></span>
+            </>}
+            {mode === "register" && <span>Already have an account? <a href="#" onClick={(e) => { e.preventDefault(); setMode("login"); setErr(""); setNotice(""); }} style={{ color: "var(--navy-700)", fontWeight: 600 }}>Back to sign in</a></span>}
+            {(mode === "forgot" || mode === "reset") && <a href="#" onClick={(e) => { e.preventDefault(); setMode("login"); setErr(""); setNotice(""); }} style={{ color: "var(--navy-700)", fontWeight: 600 }}>Back to sign in</a>}
           </div>
 
           <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: 16, fontSize: 12.5, color: "var(--ink-400)", lineHeight: 1.6, display: "flex", gap: 8, alignItems: "flex-start" }}>

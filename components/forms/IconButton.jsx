@@ -18,7 +18,7 @@ export function IconButton({
   const variants = {
     ghost:   { background: "transparent",     color: "var(--ink-700)",  border: "1px solid transparent" },
     outline: { background: "var(--white)",     color: "var(--ink-800)",  border: "1px solid var(--border-default)" },
-    solid:   { background: "var(--ink-900)",   color: "var(--cream)",    border: "1px solid var(--ink-900)" },
+    solid:   { background: "var(--fill-ink)",   color: "var(--cream)",    border: "1px solid var(--fill-ink)" },
   };
   const d = dims[size];
   return (
@@ -43,8 +43,8 @@ export function IconButton({
       onMouseEnter={(e) => {
         if (disabled) return;
         if (variant === "ghost") e.currentTarget.style.background = "var(--ink-100)";
-        if (variant === "outline") e.currentTarget.style.borderColor = "var(--ink-900)";
-        if (variant === "solid") e.currentTarget.style.background = "var(--ink-800)";
+        if (variant === "outline") e.currentTarget.style.borderColor = "var(--fill-ink)";
+        if (variant === "solid") e.currentTarget.style.background = "var(--fill-ink-strong)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.background = variants[variant].background;

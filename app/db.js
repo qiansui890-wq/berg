@@ -193,17 +193,31 @@
     activity() { return load().activity; },
     log(actor, action, target) { const d = load(); log(d, actor, action, target); save(); },
 
-    sendMessage(clientId, fromUser, text) {
-      const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !text.trim()) return;
+    sendMessage(clientId, fromUser, text, attachment) {
+      const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c) return;
+      const body = (text || "").trim();
+      if (!body && !attachment) return;
       c.messages = c.messages || [];
-      c.messages.push({ id: uid("m"), fromId: fromUser.id, fromName: fromUser.name, fromRole: fromUser.role, text: text.trim(), ts: now(), read: false });
-      log(d, fromUser.name, "sent a secure message", c.name); save();
+      c.messages.push({ id: uid("m"), fromId: fromUser.id, fromName: fromUser.name, fromRole: fromUser.role, text: body, attachment: attachment || null, recalled: false, ts: now(), read: false });
+      log(d, fromUser.name, attachment ? "shared a file in secure chat" : "sent a secure message", c.name); save();
+    },
+    recallMessage(clientId, msgId, user) {
+      const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !c.messages) return;
+      const m = c.messages.find((x) => x.id === msgId); if (!m) return;
+      if (user && m.fromId !== user.id) return; // only the sender can recall
+      m.recalled = true; m.text = ""; m.attachment = null;
+      log(d, user ? user.name : "", "recalled a message", c.name); save();
     },
     markMessagesRead(clientId, userId) { const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !c.messages) return; c.messages.forEach((m) => { if (m.fromId !== userId) m.read = true; }); save(); },
     unreadFor(user) { const d = load(); let n = 0; this.clientsFor(user).forEach((c) => (c.messages || []).forEach((m) => { if (m.fromId !== user.id && !m.read) n++; })); return n; },
 
     addNote(clientId, author, text) { const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !text.trim()) return; c.notes = c.notes || []; c.notes.unshift({ id: uid("n"), author: author.name, text: text.trim(), ts: now() }); log(d, author.name, "added an internal note", c.name); save(); },
     removeNote(clientId, noteId) { const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !c.notes) return; c.notes = c.notes.filter((n) => n.id !== noteId); save(); },
+
+    tasksFor(clientId) { const c = load().clients.find((x) => x.id === clientId); return (c && c.tasks) || []; },
+    addTask(clientId, task, actorName) { const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !task.title || !task.title.trim()) return; c.tasks = c.tasks || []; c.tasks.push({ id: uid("tk"), title: task.title.trim(), due: task.due || "", done: false, createdBy: actorName || "" }); log(d, actorName, "added task: " + task.title.trim(), c.name); save(); },
+    toggleTask(clientId, taskId) { const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !c.tasks) return; const t = c.tasks.find((x) => x.id === taskId); if (t) t.done = !t.done; save(); },
+    removeTask(clientId, taskId) { const d = load(); const c = d.clients.find((x) => x.id === clientId); if (!c || !c.tasks) return; c.tasks = c.tasks.filter((x) => x.id !== taskId); save(); },
   };
 
   function blankClient(user) {

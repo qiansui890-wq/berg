@@ -23,7 +23,7 @@ export function Tooltip({ label, side = "top", children, style }) {
         style={{
           position: "absolute",
           ...pos[side],
-          background: "var(--ink-900)",
+          background: "var(--fill-ink)",
           color: "var(--cream)",
           fontFamily: "var(--font-ui)",
           fontSize: "var(--text-xs)",

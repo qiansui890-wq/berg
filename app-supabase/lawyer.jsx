@@ -154,7 +154,7 @@ function ClientList({ user, clients, onOpen }) {
   const cb = { width: 16, height: 16, accentColor: "var(--ink-900)", cursor: "pointer" };
   return (
     <LWrap>
-      <LSec eyebrow="My clients" title={`Cases (${clients.length})`} right={<NewCaseButton user={user} onCreated={onOpen} toast={toast} />} />
+      <LSec eyebrow="My clients" title={`Cases (${clients.length})`} right={<div style={{ display: "flex", gap: 10 }}><NewClientAccountButton user={user} toast={toast} /><NewCaseButton user={user} onCreated={onOpen} toast={toast} /></div>} />
       <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
         <div style={{ width: 300 }}><LInput placeholder="Search clients, matters…" iconLeft={<LIco n="search" s={16} />} value={q} onChange={(e) => setQ(e.target.value)} /></div>
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
@@ -209,6 +209,43 @@ function ClientList({ user, clients, onOpen }) {
 }
 const thBulk = { padding: "11px 16px", fontSize: 11, fontWeight: 600, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--ink-500)", borderBottom: "1px solid var(--border-default)", background: "var(--ink-50)", whiteSpace: "nowrap" };
 const tdBulk = { padding: "11px 16px", fontSize: 13.5, color: "var(--ink-700)", verticalAlign: "middle" };
+
+/* ---- new client login dialog (lawyer creates a portal account) ---- */
+function NewClientAccountButton({ user, toast }) {
+  const [open, setOpen] = React.useState(false);
+  const [busy, setBusy] = React.useState(false);
+  const [f, setF] = React.useState({ name: "", email: "", password: "" });
+  lRefresh();
+  function gen() { const s = "Berg-" + Math.random().toString(36).slice(2, 8) + Math.floor(10 + Math.random() * 89); setF((v) => ({ ...v, password: s })); }
+  async function create() {
+    if (!f.name.trim() || !f.email.trim()) { toast({ tone: "warning", icon: "alert-triangle", title: "Name and email are required" }); return; }
+    if (!f.password.trim() || f.password.trim().length < 8) { toast({ tone: "warning", icon: "alert-triangle", title: "Set a password of 8+ characters (or Generate one)" }); return; }
+    setBusy(true);
+    const r = await window.DB.addUser({ name: f.name.trim(), email: f.email.trim(), password: f.password.trim(), role: "client" });
+    setBusy(false);
+    if (r && r.error) { toast({ tone: "danger", icon: "alert-circle", title: r.error }); return; }
+    setOpen(false);
+    toast({ tone: "success", icon: "user-plus", title: "Client login created", msg: f.name.trim() + (r && r.needsConfirmation ? " — confirmation email sent" : "") });
+    setF({ name: "", email: "", password: "" });
+  }
+  return (
+    <>
+      <LBtn variant="secondary" iconLeft={<LIco n="user-plus" s={16} />} onClick={() => setOpen(true)}>New client login</LBtn>
+      <LDialog open={open} onClose={() => setOpen(false)} title="New client login" description="Creates a portal account for your client. They get a confirmation email; share the password so they can sign in once confirmed." width={460}
+        footer={<><LBtn variant="ghost" onClick={() => setOpen(false)}>Cancel</LBtn><LBtn variant="primary" onClick={create} disabled={busy} iconLeft={<LIco n="check" s={16} />}>{busy ? "Creating…" : "Create login"}</LBtn></>}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
+          <LEdit label="Client name" value={f.name} onChange={(v) => setF({ ...f, name: v })} />
+          <LEdit label="Email" value={f.email} onChange={(v) => setF({ ...f, email: v })} type="email" />
+          <div>
+            <LEdit label="Initial password" value={f.password} onChange={(v) => setF({ ...f, password: v })} />
+            <a href="#" onClick={(e) => { e.preventDefault(); gen(); }} style={{ fontSize: 12.5, color: "var(--navy-700)", fontWeight: 600, display: "inline-block", marginTop: 6 }}>Generate a strong password</a>
+          </div>
+          <LAlert tone="info" icon={<LIco n="info" s={16} />}>The client must click the email confirmation link before their first sign-in. They can reset this anytime via “Forgot password”.</LAlert>
+        </div>
+      </LDialog>
+    </>
+  );
+}
 
 /* ---- new case dialog ---- */
 function NewCaseButton({ user, onCreated, toast }) {

@@ -1,0 +1,68 @@
+<!-- @dsCard group="Components" viewport="980x860" name="AttorneyCard — the firm's people" subtitle="Full Berg PC roster · tweak layout, columns, content" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../assets/team/roster.js"></script>
+<style>
+  body{margin:0;background:var(--cream);font-family:var(--font-sans);padding:26px 30px;color:var(--ink-700);}
+  .lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-600);margin:0 0 14px;}
+  .team-fit-contain img{object-fit:contain !important;background:var(--navy-950);}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const { AttorneyCard } = window.BergPCDesignSystem_eb13e3;
+const team = window.BergPCTeam || [];
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "layout": "portrait",
+  "columns": 3,
+  "showBio": true,
+  "showCredentials": true,
+  "photoFit": "cover"
+}/*EDITMODE-END*/;
+
+function App(){
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const row = t.layout === "row";
+  const gridCols = row ? "1fr" : `repeat(${t.columns}, minmax(0, 1fr))`;
+  return (
+    <div className={t.photoFit === "contain" ? "team-fit-contain" : ""}>
+      <div className="lbl">The firm — {team.length} people</div>
+      <div style={{ display: "grid", gridTemplateColumns: gridCols, gap: 16, maxWidth: row ? 560 : "none" }}>
+        {team.map((p) => (
+          <AttorneyCard
+            key={p.name}
+            {...p}
+            orientation={t.layout}
+            bio={t.showBio ? p.bio : undefined}
+            credentials={t.showCredentials ? p.credentials : []}
+          />
+        ))}
+      </div>
+
+      <TweaksPanel>
+        <TweakSection label="Layout" />
+        <TweakRadio label="Style" value={t.layout} options={["portrait", "row"]} onChange={(v) => setTweak("layout", v)} />
+        <TweakRadio label="Columns" value={String(t.columns)} options={["2", "3", "4"]} onChange={(v) => setTweak("columns", parseInt(v, 10))} />
+        <TweakSection label="Content" />
+        <TweakToggle label="Show bio" value={t.showBio} onChange={(v) => setTweak("showBio", v)} />
+        <TweakToggle label="Show credentials" value={t.showCredentials} onChange={(v) => setTweak("showCredentials", v)} />
+        <TweakSection label="Photo" />
+        <TweakRadio label="Fit" value={t.photoFit} options={["cover", "contain"]} onChange={(v) => setTweak("photoFit", v)} />
+      </TweaksPanel>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

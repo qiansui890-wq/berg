@@ -38,8 +38,8 @@ export function Checkbox({ checked, defaultChecked, onChange, disabled = false, 
             width: 18,
             height: 18,
             borderRadius: "var(--radius-xs)",
-            border: `1.5px solid ${checked ? "var(--ink-900)" : "var(--border-strong)"}`,
-            background: checked ? "var(--ink-900)" : "var(--white)",
+            border: `1.5px solid ${checked ? "var(--fill-ink)" : "var(--border-strong)"}`,
+            background: checked ? "var(--fill-ink)" : "var(--white)",
             transition: "all var(--duration-fast) var(--ease-standard)",
           }}
         >

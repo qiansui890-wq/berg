@@ -42,6 +42,7 @@ function CaseDetail({ client, user, onBack, readOnly }) {
     { id: "wallets", label: "Wallets", icon: <CIco n="wallet" s={15} /> },
     { id: "strategy", label: "Recovery strategy", icon: <CIco n="target" s={15} /> },
     { id: "evidence", label: "Evidence", icon: <CIco n="folder-lock" s={15} /> },
+    ...(editable ? [{ id: "drafts", label: "Drafts", icon: <CIco n="file-pen" s={15} /> }, { id: "explorer", label: "Explorer", icon: <CIco n="radar" s={15} /> }, { id: "tasks", label: "Tasks", icon: <CIco n="list-checks" s={15} /> }] : []),
     { id: "messages", label: "Messages", icon: <CIco n="message-circle" s={15} /> },
     { id: "notes", label: "Internal notes", icon: <CIco n="sticky-note" s={15} /> },
     { id: "timeline", label: "Timeline", icon: <CIco n="clock" s={15} /> },
@@ -124,6 +125,9 @@ function CaseDetail({ client, user, onBack, readOnly }) {
           {tab === "evidence" && <EvidenceTab client={client} user={user} editable={editable} toast={toast} />}
           {tab === "messages" && <CMsg client={client} user={user} />}
           {tab === "notes" && <CNotes client={client} user={user} />}
+          {tab === "drafts" && <window.BergDocGen client={client} user={user} />}
+          {tab === "explorer" && <window.BergExplorer client={client} />}
+          {tab === "tasks" && <window.BergTasks client={client} user={user} />}
           {tab === "timeline" && <TimelineTab client={client} user={user} editable={editable} toast={toast} />}
         </div>
       </CCard>

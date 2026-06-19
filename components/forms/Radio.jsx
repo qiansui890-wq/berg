@@ -38,12 +38,12 @@ export function Radio({ checked, name, value, onChange, disabled = false, label,
             width: 18,
             height: 18,
             borderRadius: "var(--radius-pill)",
-            border: `1.5px solid ${checked ? "var(--ink-900)" : "var(--border-strong)"}`,
+            border: `1.5px solid ${checked ? "var(--fill-ink)" : "var(--border-strong)"}`,
             background: "var(--white)",
             transition: "all var(--duration-fast) var(--ease-standard)",
           }}
         >
-          {checked && <span style={{ width: 9, height: 9, borderRadius: "var(--radius-pill)", background: "var(--ink-900)" }} />}
+          {checked && <span style={{ width: 9, height: 9, borderRadius: "var(--radius-pill)", background: "var(--fill-ink)" }} />}
         </span>
       </span>
       {label && <span>{label}</span>}

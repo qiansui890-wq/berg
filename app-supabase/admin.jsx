@@ -1,7 +1,7 @@
 /* Berg PC Platform — admin console. Exports window.BergAdmin */
 const DSAd = window.BergPCDesignSystem_eb13e3;
 const { Card: AdCard, CardHeader: AdCH, Stat: AdStat, Table: AdTable, Badge: AdBadge, Button: AdBtn, Avatar: AdAvatar, Dialog: AdDialog, Input: AdInput, Tag: AdTag } = DSAd;
-const { Ico: AdIco, refreshIcons: adRefresh, StageBadge: AdStage, PageWrap: AdWrap, SectionTitle: AdSec, EditRow: AdEdit, useToast: adToast } = window.BergUI;
+const { Ico: AdIco, refreshIcons: adRefresh, StageBadge: AdStage, PageWrap: AdWrap, SectionTitle: AdSec, EditRow: AdEdit, useToast: adToast, attorneyPhoto: adPhoto } = window.BergUI;
 const { CaseDetail: AdCaseDetail } = window.BergCase;
 
 function AdminApp({ user, view, openClientId }) {
@@ -10,6 +10,7 @@ function AdminApp({ user, view, openClientId }) {
   const open = openId ? window.DB.clientById(openId) : null;
   if (open) return <AdCaseDetail client={open} user={user} onBack={() => setOpenId(null)} />;
   if (view === "users") return <Users />;
+  if (view === "analytics") return <window.BergAnalytics user={user} />;
   if (view === "assign") return <Assignments onOpen={setOpenId} />;
   if (view === "activity") return <ActivityLog />;
   return <AdminOverview onOpen={setOpenId} />;
@@ -45,7 +46,7 @@ function AdminOverview({ onOpen }) {
               return (
                 <div key={l.id} style={{ padding: "10px 12px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <AdAvatar name={l.name} size={36} tone="stone" />
+                    <AdAvatar name={l.name} src={adPhoto(l.email)} size={36} tone="stone" />
                     <div style={{ flex: 1 }}><div style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--ink-900)" }}>{l.name}</div><div style={{ fontSize: 12.5, color: "var(--ink-500)" }}>{l.title || "Attorney"}</div></div>
                     <div style={{ textAlign: "right" }}><div style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--ink-900)" }}>{cs.length} cases</div><div style={{ fontSize: 12, color: "var(--ink-500)" }}>{window.DB.fmtMoney(amt)}</div></div>
                   </div>
@@ -81,21 +82,33 @@ function Users() {
   const [dlg, setDlg] = React.useState(false);
   const [f, setF] = React.useState({ name: "", email: "", password: "", role: "lawyer", title: "" });
   const users = window.DB.users();
-  function add() {
+  async function add() {
     if (!f.name.trim() || !f.email.trim() || !f.password.trim()) { toast({ tone: "warning", icon: "alert-triangle", title: "Please complete all fields" }); return; }
     if (users.some((u) => u.email.toLowerCase() === f.email.toLowerCase().trim())) { toast({ tone: "danger", icon: "alert-circle", title: "Email already exists" }); return; }
-    window.DB.addUser({ name: f.name.trim(), email: f.email.trim(), password: f.password.trim(), role: f.role, title: f.title.trim() });
+    const r = await window.DB.addUser({ name: f.name.trim(), email: f.email.trim(), password: f.password.trim(), role: f.role, title: f.title.trim() });
+    if (r && r.error) { toast({ tone: "danger", icon: "alert-circle", title: r.error }); return; }
     setDlg(false); setF({ name: "", email: "", password: "", role: "lawyer", title: "" });
-    toast({ tone: "success", icon: "user-plus", title: "Account created", msg: f.name });
+    toast({ tone: "success", icon: "user-plus", title: "Account created", msg: f.name + (r && r.needsConfirmation ? " — confirmation email sent" : "") });
+  }
+  async function seedAttorneys() {
+    const list = (window.BERG_ATTORNEYS || []).filter((a) => a.email && a.email.trim());
+    if (!list.length) { toast({ tone: "warning", icon: "alert-triangle", title: "Add attorney emails in attorneys.js first" }); return; }
+    let created = 0, skipped = 0, failed = 0;
+    for (const a of list) {
+      if (users.some((u) => u.email.toLowerCase() === a.email.toLowerCase().trim())) { skipped++; continue; }
+      const r = await window.DB.addUser({ name: a.name, email: a.email.trim(), password: window.BERG_ATTORNEY_PW || "BergPC-Welcome-2026", role: "lawyer", title: a.title || "" });
+      if (r && r.error) failed++; else created++;
+    }
+    toast({ tone: failed ? "warning" : "success", icon: "users", title: `Attorneys: ${created} created, ${skipped} already existed` + (failed ? `, ${failed} failed` : "") });
   }
   const roleTone = { admin: "danger", lawyer: "accent", client: "info" };
   return (
     <AdWrap>
-      <AdSec eyebrow="Accounts" title={`User management (${users.length})`} right={<AdBtn variant="primary" iconLeft={<AdIco n="user-plus" s={16} />} onClick={() => setDlg(true)}>New account</AdBtn>} />
+      <AdSec eyebrow="Accounts" title={`User management (${users.length})`} right={<div style={{ display: "flex", gap: 10 }}><AdBtn variant="secondary" iconLeft={<AdIco n="users" s={16} />} onClick={seedAttorneys}>Create attorney accounts</AdBtn><AdBtn variant="primary" iconLeft={<AdIco n="user-plus" s={16} />} onClick={() => setDlg(true)}>New account</AdBtn></div>} />
       <AdCard padding="none">
         <AdTable rowKey="id"
           columns={[
-            { key: "name", label: "Name", render: (v, r) => <span style={{ display: "flex", alignItems: "center", gap: 10 }}><AdAvatar name={v} size={30} tone={r.role === "client" ? "navy" : "stone"} />{v}</span> },
+            { key: "name", label: "Name", render: (v, r) => <span style={{ display: "flex", alignItems: "center", gap: 10 }}><AdAvatar name={v} src={adPhoto(r.email)} size={30} tone={r.role === "client" ? "navy" : "stone"} />{v}</span> },
             { key: "email", label: "Email", render: (v) => <span style={{ fontFamily: "var(--font-mono)", fontSize: 12.5, color: "var(--ink-600)" }}>{v}</span> },
             { key: "role", label: "Role", render: (v) => <AdBadge tone={roleTone[v]}>{window.DB.ROLE_LABEL[v]}</AdBadge> },
             { key: "title", label: "Title", render: (v) => v || "—" },

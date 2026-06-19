@@ -9,6 +9,7 @@ function ClientApp({ user, view, onNav }) {
   if (!client.intakeComplete && view !== "profile") return <Intake client={client} user={user} />;
   if (view === "documents") return <ClientDocs client={client} user={user} />;
   if (view === "messages") return <ClientMessages client={client} user={user} />;
+  if (view === "help") return <window.BergEducation />;
   if (view === "profile") return <ClientProfile client={client} user={user} />;
   return <ClientHome client={client} user={user} onNav={onNav} />;
 }
@@ -103,6 +104,10 @@ function ClientHome({ client, user, onNav }) {
   const STEPS_MAP = window.DB.STAGES;
   const idx = STEPS_MAP.indexOf(client.status);
   const traced = client.wallets.length ? Math.min(99, 40 + client.wallets.length * 12) : 0;
+  const EST = { "Intake": "~1 week", "Investigating": "~2–4 weeks", "Filed": "~4–8 weeks", "Frozen": "~1–3 months", "Recovered": "", "Closed": "" };
+  const tracedAmt = Math.round((+client.amountLost || 0) * traced / 100);
+  const frozenAmt = idx >= 3 ? Math.round((+client.amountLost || 0) * 0.7) : 0;
+  const recoveredAmt = idx >= 4 ? (+client.amountLost || 0) : 0;
   const lawyer = window.DB.users().find((u) => u.id === client.lawyerId);
   const [grown, setGrown] = React.useState(false);
   const [tv, setTv] = React.useState(0);
@@ -139,7 +144,7 @@ function ClientHome({ client, user, onNav }) {
                     </span>
                     {i < STEPS_MAP.length - 1 && <span style={{ width: 2, flex: 1, minHeight: 22, background: i < idx ? "var(--success-500)" : "var(--border-default)", transform: grown ? "scaleY(1)" : "scaleY(0)", transformOrigin: "top", transition: "transform .5s ease " + (i * 0.12) + "s" }} />}
                   </div>
-                  <div style={{ paddingBottom: 16 }}><div style={{ fontFamily: "var(--font-ui)", fontSize: 14.5, fontWeight: st === "todo" ? 500 : 600, color: st === "todo" ? "var(--ink-400)" : "var(--ink-900)" }}>{t}</div></div>
+                  <div style={{ paddingBottom: 16 }}><div style={{ fontFamily: "var(--font-ui)", fontSize: 14.5, fontWeight: st === "todo" ? 500 : 600, color: st === "todo" ? "var(--ink-400)" : "var(--ink-900)" }}>{t}{st === "active" && EST[t] ? <span style={{ fontWeight: 500, fontSize: 12.5, color: "var(--stone-600)", marginLeft: 8 }}>· typically {EST[t]}</span> : null}</div></div>
                 </div>
               );
             })}
@@ -152,6 +157,26 @@ function ClientHome({ client, user, onNav }) {
             <div style={{ width: 1, background: "var(--stone-300)" }} />
             <ClStat label="Traced" value={tv + "%"} caption="of fund flow" />
           </ClCard>
+          <ClCard padding="lg">
+            <ClCH title="Recovery progress" />
+            <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
+              {[["Traced", tracedAmt, "var(--info-500)", "search"], ["Frozen", frozenAmt, "var(--warning-500)", "snowflake"], ["Recovered", recoveredAmt, "var(--success-500)", "badge-check"]].map(([lbl, amt, col, ic]) => {
+                const pct = client.amountLost ? Math.round((amt / client.amountLost) * 100) : 0;
+                return (
+                  <div key={lbl}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "var(--font-ui)", fontSize: 13, marginBottom: 5 }}>
+                      <span style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "var(--ink-700)", fontWeight: 500 }}><ClIco n={ic} s={14} c={col} /> {lbl}</span>
+                      <span style={{ color: "var(--ink-500)" }}>{window.DB.fmtMoney(amt)}</span>
+                    </div>
+                    <div style={{ height: 7, borderRadius: 4, background: "var(--ink-100)", overflow: "hidden" }}>
+                      <div style={{ height: "100%", borderRadius: 4, background: col, width: (grown ? pct : 0) + "%", transition: "width 1s cubic-bezier(.16,1,.3,1)" }} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </ClCard>
+
           <ClCard padding="lg">
             <ClCH title="Your team" />
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

@@ -22,6 +22,9 @@
   window.BERG_SUPABASE_URL = "https://wfaloikmocgbxtgiwcrk.supabase.co";
   window.BERG_SUPABASE_ANON_KEY = "sb_publishable_e5bo2j5ZLq0lgUQYRLZHCw_pmao2kXG";
 </script>
+<!-- project config + invite-only settings (edit invite codes in config.js) -->
+<script src="config.js"></script>
+<script src="attorneys.js"></script>
 <script src="../_ds_bundle.js"></script>
 <script src="logos.js"></script>
 <style>
@@ -61,8 +64,9 @@
 <script type="text/babel" src="lawyer.jsx"></script>
 <script type="text/babel" src="client.jsx"></script>
 <script type="text/babel" src="admin.jsx"></script>
+<script type="text/babel" src="extras.jsx"></script>
 <script type="text/babel">
-const { Shell, ToastHost, Ico, refreshIcons } = window.BergUI;
+const { Shell, ToastHost, Ico, refreshIcons, useToast } = window.BergUI;
 const { AuthScreen } = window.BergAuth;
 const { LawyerApp } = window.BergLawyer;
 const { ClientApp } = window.BergClient;
@@ -72,6 +76,7 @@ const NAV = {
   admin: [
     { section: "Console" },
     { id: "overview", icon: "layout-dashboard", label: "Firm overview" },
+    { id: "analytics", icon: "bar-chart-3", label: "Analytics" },
     { id: "assign", icon: "users-round", label: "Client assignment" },
     { id: "users", icon: "user-cog", label: "User management" },
     { id: "activity", icon: "history", label: "Activity log" },
@@ -86,6 +91,7 @@ const NAV = {
     { id: "home", icon: "gauge", label: "Case progress" },
     { id: "documents", icon: "files", label: "My documents" },
     { id: "messages", icon: "message-circle", label: "Secure messages" },
+    { id: "help", icon: "life-buoy", label: "Help & safety" },
     { id: "profile", icon: "user", label: "My profile" },
   ],
 };
@@ -93,6 +99,7 @@ const DEFAULT_VIEW = { admin: "overview", lawyer: "board", client: "home" };
 const TITLES = {
   overview: "Firm overview", assign: "Client assignment", users: "User management", activity: "Activity log",
   board: "Daily board", clients: "My cases", home: "Case progress", documents: "My documents", messages: "Secure messages", profile: "My profile",
+  analytics: "Analytics", help: "Help & safety",
 };
 
 /* ---- global search (lawyer / admin) ---- */
@@ -123,13 +130,21 @@ function GlobalSearch({ user, onOpen }) {
 
 function Platform() {
   const [user, setUser] = React.useState(() => window.DB.currentUser());
+  const [recovery, setRecovery] = React.useState(() => !!window.BERG_RECOVERY);
   const [view, setView] = React.useState(() => { const u = window.DB.currentUser(); return u ? DEFAULT_VIEW[u.role] : null; });
   const [openClientId, setOpenClientId] = React.useState(null);
   const [, force] = React.useReducer((x) => x + 1, 0);
+  const toast = useToast();
   React.useEffect(() => window.DB.subscribe(force), []);
   React.useEffect(refreshIcons);
+  React.useEffect(() => {
+    if (user && window.BERG_JUST_CONFIRMED) {
+      window.BERG_JUST_CONFIRMED = false;
+      toast({ tone: "success", icon: "check-circle", title: "Email confirmed", msg: "Welcome to your Berg PC case portal." });
+    }
+  }, [user]);
 
-  if (!user) return <AuthScreen onAuthed={(u) => { setUser(u); setView(DEFAULT_VIEW[u.role]); }} />;
+  if (!user || recovery) return <AuthScreen onAuthed={(u) => { setRecovery(false); setUser(u); setView(DEFAULT_VIEW[u.role]); }} />;
 
   const logout = async () => { await window.DB.logout(); setUser(null); setView(null); };
   const nav = NAV[user.role];

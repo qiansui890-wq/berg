@@ -7,7 +7,7 @@ import React from "react";
  */
 export function Badge({ tone = "neutral", variant = "soft", size = "md", iconLeft = null, children, style }) {
   const tones = {
-    neutral: { soft: ["var(--ink-100)", "var(--ink-700)"], solid: ["var(--ink-900)", "var(--cream)"] },
+    neutral: { soft: ["var(--ink-100)", "var(--ink-700)"], solid: ["var(--fill-ink)", "var(--cream)"] },
     accent:  { soft: ["var(--stone-100)", "var(--stone-700)"], solid: ["var(--stone-600)", "var(--cream)"] },
     success: { soft: ["var(--success-100)", "var(--success-700)"], solid: ["var(--success-500)", "#fff"] },
     danger:  { soft: ["var(--danger-100)", "var(--danger-700)"], solid: ["var(--danger-500)", "#fff"] },
