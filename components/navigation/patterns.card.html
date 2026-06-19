@@ -1,0 +1,69 @@
+<!-- @dsCard group="Components" viewport="820x560" name="Flow — stepper, breadcrumb, pagination, empty" subtitle="Stepper, Breadcrumb, Pagination, EmptyState" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;background:var(--cream);font-family:var(--font-sans);padding:26px 30px;color:var(--ink-700);}
+  .lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-600);margin:0 0 14px;}
+  .block{margin-bottom:30px;}
+  .card{background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);}
+  [data-lucide]{width:15px;height:15px;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Stepper, Breadcrumb, Pagination, EmptyState, Button } = window.BergPCDesignSystem_eb13e3;
+const Ico = ({n,s}) => <i data-lucide={n} style={{width:s,height:s}}></i>;
+
+function Demo(){
+  const [page,setPage] = React.useState(3);
+  return (
+    <div>
+      <div className="block">
+        <div className="lbl">Stepper — case progress</div>
+        <div className="card" style={{padding:'24px 18px'}}>
+          <Stepper current={2} steps={["Intake","Investigating","Filed","Frozen","Recovered"]} />
+        </div>
+      </div>
+
+      <div className="block">
+        <div className="lbl">Breadcrumb</div>
+        <Breadcrumb items={[
+          {label:"Cases", href:"#"},
+          {label:"BPC-2025-0417", href:"#"},
+          {label:"Asset trace"},
+        ]} />
+      </div>
+
+      <div className="block">
+        <div className="lbl">Pagination</div>
+        <Pagination page={page} pageCount={12} onChange={setPage} />
+      </div>
+
+      <div className="block">
+        <div className="lbl">Empty state</div>
+        <div className="card">
+          <EmptyState
+            icon={<Ico n="folder-search" s={22} />}
+            title="No cases yet"
+            description="New client intakes appear here once they're filed and assigned."
+            action={<Button variant="primary" iconLeft={<Ico n="plus" s={16} />}>New case</Button>}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+setTimeout(()=>window.lucide && window.lucide.createIcons(), 60);
+</script>
+</body>
+</html>
