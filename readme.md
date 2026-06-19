@@ -83,15 +83,15 @@ The brand ships **no proprietary icon set**. This system standardizes on **[Luci
 **Root**
 - `styles.css` — the single entry point consumers link (`@import`s only).
 - `tokens/` — `colors.css`, `typography.css`, `spacing.css`, `elevation.css` (+ motion), `fonts.css`, `base.css`.
-- `assets/` — logo lockups + mark (primary & reverse) and the logo specimen card.
+- `assets/` — logo lockups + mark (primary & reverse) and the logo specimen card; `assets/team/roster.js` holds the real attorney roster (names, roles, bios, headshot URLs).
 - `guidelines/` — foundation specimen cards (Colors ×5, Type ×4, Spacing ×2).
 
 **Components** (`components/`, namespace `window.BergPCDesignSystem_eb13e3`)
 - **forms/** — Button, IconButton, Input, Textarea, Select, Checkbox, Radio, Switch, Field
 - **feedback/** — Badge, Tag, Alert, Toast, Tooltip
-- **layout/** — Card (+ CardHeader), Stat
-- **data/** — AddressChip *(signature wallet-string element)*, Avatar, Table
-- **navigation/** — Tabs
+- **layout/** — Card (+ CardHeader), Stat, EmptyState
+- **data/** — AddressChip *(signature wallet-string element)*, Avatar, AttorneyCard *(attorney/team profile card)*, Table
+- **navigation/** — Tabs, Stepper *(case-stage progress)*, Breadcrumb, Pagination
 - **overlay/** — Dialog
 - Each directory carries a `@dsCard` demo HTML; each component has `.jsx` + `.d.ts` + `.prompt.md`.
 

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>复制 index.html</title>
+<style>
+  body{margin:0;font-family:system-ui,'Segoe UI',sans-serif;background:#0E1622;color:#F7F4EE;padding:18px;}
+  h1{font-size:17px;margin:0 0 4px;}
+  p{font-size:13px;color:#BECAD9;margin:0 0 14px;line-height:1.5;}
+  .bar{display:flex;gap:10px;align-items:center;margin-bottom:12px;}
+  button{border:none;border-radius:7px;padding:12px 20px;font-size:15px;font-weight:700;cursor:pointer;background:#8A7B66;color:#0E1622;}
+  button:active{transform:translateY(1px);}
+  #ok{font-size:13px;color:#2F8A57;font-weight:600;opacity:0;transition:opacity .2s;}
+  #ok.show{opacity:1;}
+  textarea{width:100%;height:62vh;box-sizing:border-box;background:#0B1119;color:#cfe;border:1px solid #283A50;border-radius:8px;padding:12px;font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.4;white-space:pre;}
+</style></head><body>
+<h1>Berg PC · app-supabase/index.html</h1>
+<p>点「一键复制全部」→ 到 GitHub 的 <b>app-supabase/index.html</b> 编辑 → 全选删旧的 → 粘贴 → Commit。</p>
+<div class="bar"><button id="btn">📋 一键复制全部</button><span id="ok">✓ 已复制！</span></div>
+<textarea id="code" readonly>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;title&gt;Berg PC — Case Management Platform (Supabase)&lt;/title&gt;
+&lt;link rel="stylesheet" href="../styles.css"&gt;
+&lt;script&gt;
+  /* Silence the harmless in-browser Babel transformer warning. */
+  (function () {
+    var _warn = console.warn.bind(console);
+    console.warn = function () { var m = arguments[0]; if (typeof m === "string" &amp;&amp; m.indexOf("in-browser Babel transformer") !== -1) return; return _warn.apply(null, arguments); };
+  })();
+&lt;/script&gt;
+&lt;script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"&gt;&lt;/script&gt;
+&lt;!-- Supabase SDK + project config + data layer (replaces the localStorage db.js) --&gt;
+&lt;script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.BERG_SUPABASE_URL = "https://wfaloikmocgbxtgiwcrk.supabase.co";
+  window.BERG_SUPABASE_ANON_KEY = "sb_publishable_e5bo2j5ZLq0lgUQYRLZHCw_pmao2kXG";
+&lt;/script&gt;
+&lt;script src="../_ds_bundle.js"&gt;&lt;/script&gt;
+&lt;script src="logos.js"&gt;&lt;/script&gt;
+&lt;style&gt;
+  html,body{margin:0;height:100%;background:var(--bg-page-alt);}
+  #root{height:100vh;}
+  ::-webkit-scrollbar{width:10px;height:10px;}
+  ::-webkit-scrollbar-thumb{background:var(--ink-200);border-radius:6px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  .setup{max-width:560px;margin:0 auto;padding:64px 28px;font-family:var(--font-ui);color:var(--ink-700);}
+  .setup h1{font-family:var(--font-serif);font-size:28px;color:var(--ink-900);margin:0 0 6px;}
+  .setup code{font-family:var(--font-mono);font-size:13px;background:var(--ink-100);padding:2px 6px;border-radius:4px;}
+  .setup ol{line-height:1.8;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="root"&gt;&lt;/div&gt;
+
+&lt;template id="__bundler_thumbnail"&gt;
+  &lt;svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;rect width="64" height="64" rx="8" fill="#16202E"/&gt;
+    &lt;rect x="13" y="14" width="16" height="36" rx="2" fill="#283A50"/&gt;
+    &lt;rect x="17" y="19" width="8" height="2.4" rx="1" fill="#8A7B66"/&gt;
+    &lt;rect x="33" y="14" width="18" height="11" rx="2" fill="#F7F4EE"/&gt;
+    &lt;rect x="33" y="29" width="18" height="21" rx="2" fill="#283A50" stroke="#8A7B66" stroke-width="1"/&gt;
+    &lt;circle cx="42" cy="39" r="4" fill="#2F8A57"/&gt;
+  &lt;/svg&gt;
+&lt;/template&gt;
+
+&lt;!-- data layer: plain JS (no Babel) --&gt;
+&lt;script src="db.supabase.js"&gt;&lt;/script&gt;
+
+&lt;!-- UI: Babel-transpiled, same files as the demo app --&gt;
+&lt;script type="text/babel" src="shared.jsx"&gt;&lt;/script&gt;
+&lt;script type="text/babel" src="auth.jsx"&gt;&lt;/script&gt;
+&lt;script type="text/babel" src="trace.jsx"&gt;&lt;/script&gt;
+&lt;script type="text/babel" src="casedetail.jsx"&gt;&lt;/script&gt;
+&lt;script type="text/babel" src="lawyer.jsx"&gt;&lt;/script&gt;
+&lt;script type="text/babel" src="client.jsx"&gt;&lt;/script&gt;
+&lt;script type="text/babel" src="admin.jsx"&gt;&lt;/script&gt;
+&lt;script type="text/babel"&gt;
+const { Shell, ToastHost, Ico, refreshIcons } = window.BergUI;
+const { AuthScreen } = window.BergAuth;
+const { LawyerApp } = window.BergLawyer;
+const { ClientApp } = window.BergClient;
+const { AdminApp } = window.BergAdmin;
+
+const NAV = {
+  admin: [
+    { section: "Console" },
+    { id: "overview", icon: "layout-dashboard", label: "Firm overview" },
+    { id: "assign", icon: "users-round", label: "Client assignment" },
+    { id: "users", icon: "user-cog", label: "User management" },
+    { id: "activity", icon: "history", label: "Activity log" },
+  ],
+  lawyer: [
+    { section: "Workspace" },
+    { id: "board", icon: "layout-dashboard", label: "Daily board" },
+    { id: "clients", icon: "folder-search", label: "My cases" },
+  ],
+  client: [
+    { section: "My case" },
+    { id: "home", icon: "gauge", label: "Case progress" },
+    { id: "documents", icon: "files", label: "My documents" },
+    { id: "messages", icon: "message-circle", label: "Secure messages" },
+    { id: "profile", icon: "user", label: "My profile" },
+  ],
+};
+const DEFAULT_VIEW = { admin: "overview", lawyer: "board", client: "home" };
+const TITLES = {
+  overview: "Firm overview", assign: "Client assignment", users: "User management", activity: "Activity log",
+  board: "Daily board", clients: "My cases", home: "Case progress", documents: "My documents", messages: "Secure messages", profile: "My profile",
+};
+
+/* ---- global search (lawyer / admin) ---- */
+function GlobalSearch({ user, onOpen }) {
+  const [q, setQ] = React.useState("");
+  const [focus, setFocus] = React.useState(false);
+  const results = q.trim() ? window.DB.clientsFor(user).filter((c) =&gt; (c.name + " " + c.matterType + " " + c.id).toLowerCase().includes(q.toLowerCase())).slice(0, 6) : [];
+  return (
+    &lt;div style={{ position: "relative", width: 240 }}&gt;
+      &lt;div style={{ display: "flex", alignItems: "center", gap: 8, border: "1px solid var(--border-default)", borderRadius: "var(--radius-sm)", padding: "7px 11px", background: "var(--white)" }}&gt;
+        &lt;Ico n="search" s={16} c="var(--ink-400)" /&gt;
+        &lt;input value={q} onChange={(e) =&gt; setQ(e.target.value)} onFocus={() =&gt; setFocus(true)} onBlur={() =&gt; setTimeout(() =&gt; setFocus(false), 150)} placeholder="Search cases…" style={{ border: "none", outline: "none", background: "transparent", fontFamily: "var(--font-ui)", fontSize: 13.5, width: "100%", color: "var(--ink-800)" }} /&gt;
+      &lt;/div&gt;
+      {focus &amp;&amp; results.length &gt; 0 &amp;&amp; (
+        &lt;div style={{ position: "absolute", top: "calc(100% + 6px)", left: 0, right: 0, background: "var(--white)", border: "1px solid var(--border-default)", borderRadius: "var(--radius-md)", boxShadow: "var(--shadow-lg)", zIndex: 50, padding: 6 }}&gt;
+          {results.map((c) =&gt; (
+            &lt;button key={c.id} onMouseDown={() =&gt; { onOpen(c.id); setQ(""); }} style={{ display: "flex", width: "100%", alignItems: "center", gap: 9, border: "none", background: "transparent", borderRadius: "var(--radius-sm)", padding: "8px 10px", cursor: "pointer", textAlign: "left", fontFamily: "var(--font-ui)" }}
+              onMouseEnter={(e) =&gt; e.currentTarget.style.background = "var(--ink-50)"} onMouseLeave={(e) =&gt; e.currentTarget.style.background = "transparent"}&gt;
+              &lt;Ico n="folder" s={15} c="var(--stone-600)" /&gt;
+              &lt;span style={{ flex: 1 }}&gt;&lt;span style={{ fontSize: 13.5, color: "var(--ink-900)", fontWeight: 600 }}&gt;{c.name}&lt;/span&gt;&lt;span style={{ display: "block", fontSize: 11.5, color: "var(--ink-500)" }}&gt;{c.matterType} · {c.status}&lt;/span&gt;&lt;/span&gt;
+            &lt;/button&gt;
+          ))}
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+
+function Platform() {
+  const [user, setUser] = React.useState(() =&gt; window.DB.currentUser());
+  const [view, setView] = React.useState(() =&gt; { const u = window.DB.currentUser(); return u ? DEFAULT_VIEW[u.role] : null; });
+  const [openClientId, setOpenClientId] = React.useState(null);
+  const [, force] = React.useReducer((x) =&gt; x + 1, 0);
+  React.useEffect(() =&gt; window.DB.subscribe(force), []);
+  React.useEffect(refreshIcons);
+
+  if (!user) return &lt;AuthScreen onAuthed={(u) =&gt; { setUser(u); setView(DEFAULT_VIEW[u.role]); }} /&gt;;
+
+  const logout = async () =&gt; { await window.DB.logout(); setUser(null); setView(null); };
+  const nav = NAV[user.role];
+  const crumb = { admin: "Administrator", lawyer: "Attorney workspace", client: "Client portal" }[user.role];
+  const unread = window.DB.unreadFor(user);
+
+  const body =
+    user.role === "admin" ? &lt;AdminApp user={user} view={view} openClientId={openClientId} /&gt; :
+    user.role === "lawyer" ? &lt;LawyerApp user={user} initial={view} openClientId={openClientId} /&gt; :
+    &lt;ClientApp user={user} view={view} onNav={setView} /&gt;;
+
+  return (
+    &lt;Shell user={user} nav={nav} active={view} onNav={setView} onLogout={logout}
+      title={TITLES[view] || crumb} crumb={crumb}
+      actions={&lt;&gt;
+        {(user.role === "lawyer" || user.role === "admin") &amp;&amp; &lt;GlobalSearch user={user} onOpen={(id) =&gt; setOpenClientId(id + ":" + Date.now())} /&gt;}
+        {unread &gt; 0 &amp;&amp; (
+          &lt;button onClick={() =&gt; setView(user.role === "client" ? "messages" : "board")} title={unread + " unread message(s)"} style={{ position: "relative", border: "1px solid var(--border-default)", background: "var(--white)", borderRadius: "var(--radius-sm)", width: 38, height: 38, cursor: "pointer", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--ink-600)" }}&gt;
+            &lt;Ico n="bell" s={18} /&gt;
+            &lt;span style={{ position: "absolute", top: 5, right: 6, minWidth: 15, height: 15, padding: "0 3px", borderRadius: 8, background: "var(--danger-500)", color: "#fff", fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 0 0 2px var(--white)" }}&gt;{unread}&lt;/span&gt;
+          &lt;/button&gt;
+        )}
+      &lt;/&gt;}&gt;
+      {body}
+    &lt;/Shell&gt;
+  );
+}
+
+function Root() {
+  React.useEffect(refreshIcons);
+  return &lt;ToastHost&gt;&lt;Platform /&gt;&lt;/ToastHost&gt;;
+}
+
+function SetupNotice() {
+  return (
+    &lt;div className="setup"&gt;
+      &lt;h1&gt;Connect your Supabase project&lt;/h1&gt;
+      &lt;p&gt;This is the backend-connected build. Before it can run, point it at your project:&lt;/p&gt;
+      &lt;ol&gt;
+        &lt;li&gt;Run &lt;code&gt;supabase/schema.sql&lt;/code&gt; in the Supabase SQL Editor.&lt;/li&gt;
+        &lt;li&gt;Open &lt;code&gt;app-supabase/config.js&lt;/code&gt; and paste your &lt;b&gt;Project URL&lt;/b&gt; and &lt;b&gt;anon public key&lt;/b&gt; (Supabase → Project Settings → API).&lt;/li&gt;
+        &lt;li&gt;Create an admin: sign up once, then &lt;code&gt;update public.profiles set role='admin' where email='you@firm.com';&lt;/code&gt;&lt;/li&gt;
+        &lt;li&gt;Reload this page and sign in.&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;p style={{color:"var(--ink-500)",fontSize:13}}&gt;Full guide: &lt;code&gt;supabase/README.md&lt;/code&gt;. For a no-setup preview, open the demo build at &lt;code&gt;app/index.html&lt;/code&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+const rootEl = ReactDOM.createRoot(document.getElementById('root'));
+// Always render the app (login screen). Keys are baked in above.
+window.DB.init().catch((e) =&gt; console.error("init", e)).finally(() =&gt; {
+  rootEl.render(&lt;Root /&gt;);
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+<script>
+  const ta=document.getElementById('code'), ok=document.getElementById('ok');
+  document.getElementById('btn').onclick=async()=>{
+    try{ await navigator.clipboard.writeText(ta.value); }
+    catch(e){ ta.focus(); ta.select(); document.execCommand('copy'); }
+    ok.classList.add('show'); setTimeout(()=>ok.classList.remove('show'),1800);
+  };
+</script>
+</body></html>

@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"BergPCDesignSystem_eb13e3","components":[{"name":"AddressChip","sourcePath":"components/data/AddressChip.jsx"},{"name":"Avatar","sourcePath":"components/data/Avatar.jsx"},{"name":"Table","sourcePath":"components/data/Table.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Badge","sourcePath":"components/feedback/Badge.jsx"},{"name":"Tag","sourcePath":"components/feedback/Tag.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Button","sourcePath":"components/forms/Button.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Field","sourcePath":"components/forms/Field.jsx"},{"name":"IconButton","sourcePath":"components/forms/IconButton.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"Card","sourcePath":"components/layout/Card.jsx"},{"name":"CardHeader","sourcePath":"components/layout/Card.jsx"},{"name":"Stat","sourcePath":"components/layout/Stat.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"Dialog","sourcePath":"components/overlay/Dialog.jsx"}],"sourceHashes":{"app-supabase/admin.jsx":"6c8ec6cbd057","app-supabase/auth.jsx":"4717d8a31914","app-supabase/casedetail.jsx":"a5a56c27c7c1","app-supabase/client.jsx":"0691c2b7026c","app-supabase/config.js":"3901937e49c5","app-supabase/db.supabase.js":"9902718119b8","app-supabase/lawyer.jsx":"e716a54870ee","app-supabase/logos.js":"3bf0ffea6e45","app-supabase/shared.jsx":"5e4592e28acd","app-supabase/trace.jsx":"679e080196cc","app/admin.jsx":"6c8ec6cbd057","app/auth.jsx":"d1193e08109b","app/casedetail.jsx":"a5a56c27c7c1","app/client.jsx":"0691c2b7026c","app/db.js":"ed0baeb662bc","app/lawyer.jsx":"e716a54870ee","app/logos.js":"3bf0ffea6e45","app/shared.jsx":"5e4592e28acd","app/trace.jsx":"679e080196cc","components/data/AddressChip.jsx":"65cd6cf493b7","components/data/Avatar.jsx":"a53a9c58c623","components/data/Table.jsx":"0096176a6e62","components/feedback/Alert.jsx":"01d639b2f4cf","components/feedback/Badge.jsx":"9f5470b0270e","components/feedback/Tag.jsx":"16fbc7b6c00e","components/feedback/Toast.jsx":"2035c63d7ddf","components/feedback/Tooltip.jsx":"6b1bbb51e6a2","components/forms/Button.jsx":"74d6c69b1b72","components/forms/Checkbox.jsx":"9340ecdb6034","components/forms/Field.jsx":"52da74968576","components/forms/IconButton.jsx":"c702574eef96","components/forms/Input.jsx":"cfc8555dfe6a","components/forms/Radio.jsx":"e4d6602a2228","components/forms/Select.jsx":"09ca66b06999","components/forms/Switch.jsx":"9ce28c55ac75","components/forms/Textarea.jsx":"4f17d5a8c707","components/layout/Card.jsx":"785c4009e1e2","components/layout/Stat.jsx":"047e0e93e3a4","components/navigation/Tabs.jsx":"c4ad733a1e65","components/overlay/Dialog.jsx":"66ded3d1d9ba","marketing.js":"1382c600ddc9","pwa/sw.js":"72f13620ea36","slides/parts.jsx":"a25e4f98f3e0","supabase/config.js":"27825b191639","supabase/db.supabase.js":"e3f1138fb79c","ui_kits/dashboard/TraceGraph.jsx":"f5c0fa5fd1de","ui_kits/dashboard/screens.jsx":"c39b82b8c421","ui_kits/dashboard/shell.jsx":"827bd7e4898c","ui_kits/website/parts.jsx":"623df4e744fc","ui_kits/website/screens.jsx":"e3ef307dd5ac"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"BergPCDesignSystem_eb13e3","components":[{"name":"AddressChip","sourcePath":"components/data/AddressChip.jsx"},{"name":"AttorneyCard","sourcePath":"components/data/AttorneyCard.jsx"},{"name":"Avatar","sourcePath":"components/data/Avatar.jsx"},{"name":"Table","sourcePath":"components/data/Table.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Badge","sourcePath":"components/feedback/Badge.jsx"},{"name":"Tag","sourcePath":"components/feedback/Tag.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Button","sourcePath":"components/forms/Button.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Field","sourcePath":"components/forms/Field.jsx"},{"name":"IconButton","sourcePath":"components/forms/IconButton.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"Textarea","sourcePath":"components/forms/Textarea.jsx"},{"name":"Card","sourcePath":"components/layout/Card.jsx"},{"name":"CardHeader","sourcePath":"components/layout/Card.jsx"},{"name":"EmptyState","sourcePath":"components/layout/EmptyState.jsx"},{"name":"Stat","sourcePath":"components/layout/Stat.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"Stepper","sourcePath":"components/navigation/Stepper.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"Dialog","sourcePath":"components/overlay/Dialog.jsx"}],"sourceHashes":{"app-supabase/admin.jsx":"d195cd53ecd1","app-supabase/attorneys.js":"36db40a2d597","app-supabase/auth.jsx":"9df4361e11d9","app-supabase/casedetail.jsx":"20a15332dd05","app-supabase/client.jsx":"60a341823a9e","app-supabase/config.js":"d3f5ff3cc8bb","app-supabase/db.supabase.js":"d2db9c76cd12","app-supabase/extras.jsx":"67254403ae45","app-supabase/lawyer.jsx":"b481b927939e","app-supabase/logos.js":"3bf0ffea6e45","app-supabase/shared.jsx":"b2f8f28e9072","app-supabase/trace.jsx":"679e080196cc","app/admin.jsx":"5f26378c8680","app/auth.jsx":"d1193e08109b","app/casedetail.jsx":"46028ab3b0c8","app/client.jsx":"60a341823a9e","app/db.js":"c3428da15310","app/extras.jsx":"7ed59f6325af","app/lawyer.jsx":"e716a54870ee","app/logos.js":"3bf0ffea6e45","app/shared.jsx":"321f9cd897b8","app/trace.jsx":"679e080196cc","assets/team/roster.js":"529bbe34c638","components/data/AddressChip.jsx":"65cd6cf493b7","components/data/AttorneyCard.jsx":"e0912874c9f4","components/data/Avatar.jsx":"1f29b1440971","components/data/Table.jsx":"0096176a6e62","components/data/tweaks-panel.jsx":"6591467622ed","components/feedback/Alert.jsx":"01d639b2f4cf","components/feedback/Badge.jsx":"022179958e63","components/feedback/Tag.jsx":"16fbc7b6c00e","components/feedback/Toast.jsx":"2035c63d7ddf","components/feedback/Tooltip.jsx":"93a78a6f35d6","components/forms/Button.jsx":"74d6c69b1b72","components/forms/Checkbox.jsx":"4146588c468e","components/forms/Field.jsx":"52da74968576","components/forms/IconButton.jsx":"c9adecf16807","components/forms/Input.jsx":"cfc8555dfe6a","components/forms/Radio.jsx":"e058115eabb5","components/forms/Select.jsx":"09ca66b06999","components/forms/Switch.jsx":"9127e6a3e968","components/forms/Textarea.jsx":"4f17d5a8c707","components/layout/Card.jsx":"785c4009e1e2","components/layout/EmptyState.jsx":"c22d6931e01d","components/layout/Stat.jsx":"047e0e93e3a4","components/navigation/Breadcrumb.jsx":"3845ba38ca3f","components/navigation/Pagination.jsx":"779fe6b9a08a","components/navigation/Stepper.jsx":"0f74fe21ab1d","components/navigation/Tabs.jsx":"c4ad733a1e65","components/overlay/Dialog.jsx":"66ded3d1d9ba","marketing.js":"1382c600ddc9","pwa/push.js":"9e8dd4a09da0","pwa/sw.js":"7af3a303e658","slides/parts.jsx":"a25e4f98f3e0","supabase/config.js":"27825b191639","supabase/db.supabase.js":"e3f1138fb79c","ui_kits/dashboard/TraceGraph.jsx":"1543fb65d0a4","ui_kits/dashboard/screens.jsx":"4be221f68892","ui_kits/dashboard/shell.jsx":"30733769efef","ui_kits/website/parts.jsx":"623df4e744fc","ui_kits/website/screens.jsx":"e3ef307dd5ac"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -31,7 +31,8 @@ const {
   PageWrap: AdWrap,
   SectionTitle: AdSec,
   EditRow: AdEdit,
-  useToast: adToast
+  useToast: adToast,
+  attorneyPhoto: adPhoto
 } = window.BergUI;
 const {
   CaseDetail: AdCaseDetail
@@ -52,6 +53,9 @@ function AdminApp({
     onBack: () => setOpenId(null)
   });
   if (view === "users") return /*#__PURE__*/React.createElement(Users, null);
+  if (view === "analytics") return /*#__PURE__*/React.createElement(window.BergAnalytics, {
+    user: user
+  });
   if (view === "assign") return /*#__PURE__*/React.createElement(Assignments, {
     onOpen: setOpenId
   });
@@ -161,6 +165,7 @@ function AdminOverview({
       }
     }, /*#__PURE__*/React.createElement(AdAvatar, {
       name: l.name,
+      src: adPhoto(l.email),
       size: 36,
       tone: "stone"
     }), /*#__PURE__*/React.createElement("div", {
@@ -276,7 +281,7 @@ function Users() {
     title: ""
   });
   const users = window.DB.users();
-  function add() {
+  async function add() {
     if (!f.name.trim() || !f.email.trim() || !f.password.trim()) {
       toast({
         tone: "warning",
@@ -293,13 +298,21 @@ function Users() {
       });
       return;
     }
-    window.DB.addUser({
+    const r = await window.DB.addUser({
       name: f.name.trim(),
       email: f.email.trim(),
       password: f.password.trim(),
       role: f.role,
       title: f.title.trim()
     });
+    if (r && r.error) {
+      toast({
+        tone: "danger",
+        icon: "alert-circle",
+        title: r.error
+      });
+      return;
+    }
     setDlg(false);
     setF({
       name: "",
@@ -312,7 +325,40 @@ function Users() {
       tone: "success",
       icon: "user-plus",
       title: "Account created",
-      msg: f.name
+      msg: f.name + (r && r.needsConfirmation ? " — confirmation email sent" : "")
+    });
+  }
+  async function seedAttorneys() {
+    const list = (window.BERG_ATTORNEYS || []).filter(a => a.email && a.email.trim());
+    if (!list.length) {
+      toast({
+        tone: "warning",
+        icon: "alert-triangle",
+        title: "Add attorney emails in attorneys.js first"
+      });
+      return;
+    }
+    let created = 0,
+      skipped = 0,
+      failed = 0;
+    for (const a of list) {
+      if (users.some(u => u.email.toLowerCase() === a.email.toLowerCase().trim())) {
+        skipped++;
+        continue;
+      }
+      const r = await window.DB.addUser({
+        name: a.name,
+        email: a.email.trim(),
+        password: window.BERG_ATTORNEY_PW || "BergPC-Welcome-2026",
+        role: "lawyer",
+        title: a.title || ""
+      });
+      if (r && r.error) failed++;else created++;
+    }
+    toast({
+      tone: failed ? "warning" : "success",
+      icon: "users",
+      title: `Attorneys: ${created} created, ${skipped} already existed` + (failed ? `, ${failed} failed` : "")
     });
   }
   const roleTone = {
@@ -323,14 +369,26 @@ function Users() {
   return /*#__PURE__*/React.createElement(AdWrap, null, /*#__PURE__*/React.createElement(AdSec, {
     eyebrow: "Accounts",
     title: `User management (${users.length})`,
-    right: /*#__PURE__*/React.createElement(AdBtn, {
+    right: /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 10
+      }
+    }, /*#__PURE__*/React.createElement(AdBtn, {
+      variant: "secondary",
+      iconLeft: /*#__PURE__*/React.createElement(AdIco, {
+        n: "users",
+        s: 16
+      }),
+      onClick: seedAttorneys
+    }, "Create attorney accounts"), /*#__PURE__*/React.createElement(AdBtn, {
       variant: "primary",
       iconLeft: /*#__PURE__*/React.createElement(AdIco, {
         n: "user-plus",
         s: 16
       }),
       onClick: () => setDlg(true)
-    }, "New account")
+    }, "New account"))
   }), /*#__PURE__*/React.createElement(AdCard, {
     padding: "none"
   }, /*#__PURE__*/React.createElement(AdTable, {
@@ -346,6 +404,7 @@ function Users() {
         }
       }, /*#__PURE__*/React.createElement(AdAvatar, {
         name: v,
+        src: adPhoto(r.email),
         size: 30,
         tone: r.role === "client" ? "navy" : "stone"
       }), v)
@@ -656,6 +715,51 @@ window.BergAdmin = {
 };
 })(); } catch (e) { __ds_ns.__errors.push({ path: "app-supabase/admin.jsx", error: String((e && e.message) || e) }); }
 
+// app-supabase/attorneys.js
+try { (() => {
+/* Berg PC — real attorney roster for the platform (source: www.bergppc.com).
+   HOW TO ONBOARD THE ATTORNEYS AS REAL LOGINS:
+   1. Fill in each attorney's email below (leave Tracy out — business manager).
+   2. Open the deployed app, sign in as admin.
+   3. Go to User management → click "Create attorney accounts".
+      Every attorney with an email gets a real account at once (role: lawyer),
+      using the initial password below. Each then signs in (after confirming
+      their email, if confirmation is on) and can change it via "Forgot password".
+   Headshots reference the live site; lists fall back to initials if blocked. */
+window.BERG_ATTORNEY_PW = "BergPC-Welcome-2026";
+window.BERG_ATTORNEYS = [{
+  name: "Geoffrey Berg",
+  title: "Trial Lawyer, Managing Partner",
+  email: "geoffrey.berg@bergpclawfirms.com",
+  photo: "https://www.bergppc.com/wp-content/uploads/2025/04/DSC02815-scaled-e1744302932965-1024x684.jpg"
+}, {
+  name: "Kathryn E. Nelson",
+  title: "Trial Lawyer, Partner",
+  email: "kathryn.e.nelson@bergpclawfirms.com",
+  photo: "https://www.bergppc.com/wp-content/uploads/2025/04/Kathryn-Nelson094-Edit-2-scaled-e1744216498364.jpg"
+}, {
+  name: "Tomas Tijerina",
+  title: "Business & Transactional Lawyer, Of Counsel",
+  email: "tomas.f.tijerina@bergpclawfirms.com",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/tomas-f-tijerina.png"
+}, {
+  name: "Lisa Clark",
+  title: "Cryptocurrency & Cybersecurity Legal Counsel",
+  email: "lisa.clark@bergpclawfirms.com",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/lisa-clark.png"
+}, {
+  name: "Denise Pack",
+  title: "Cybersecurity Legal Consultant",
+  email: "denise.pack@bergpclawfirms.com",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/denise-pack.jpg"
+}, {
+  name: "Frank Feltes",
+  title: "Cybersecurity Legal Consultant",
+  email: "frank.feltes@bergpclawfirms.com",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/frank-feltes.jpg"
+}];
+})(); } catch (e) { __ds_ns.__errors.push({ path: "app-supabase/attorneys.js", error: String((e && e.message) || e) }); }
+
 // app-supabase/auth.jsx
 try { (() => {
 /* Berg PC Platform — auth (login + register), Supabase build. Exports window.BergAuth */
@@ -784,13 +888,23 @@ function AuthScreen({
   const [form, setForm] = React.useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
+    invite: ""
   });
   const [err, setErr] = React.useState("");
+  const [notice, setNotice] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [show, setShow] = React.useState(false);
   React.useEffect(() => {
     refreshIcons();
+    if (window.BERG_RECOVERY) {
+      setMode("reset");
+      setNotice("Choose a new password for your account.");
+    } else if (window.BERG_CONFIRM_RETURN && !window.BERG_JUST_CONFIRMED) {
+      setMode("login");
+      setNotice("Your email is confirmed \u2014 sign in below to continue.");
+      window.BERG_CONFIRM_RETURN = false;
+    }
     const c = document.getElementById('authnet');
     if (c && !c.dataset.on) {
       c.dataset.on = '1';
@@ -801,19 +915,52 @@ function AuthScreen({
     ...f,
     [k]: e.target.value
   }));
+  React.useEffect(() => {
+    refreshIcons();
+  }, [mode]);
   async function submit(e) {
     e.preventDefault();
     setErr("");
+    setNotice("");
     setBusy(true);
     try {
+      if (mode === "forgot") {
+        const r = await window.DB.requestPasswordReset(form.email);
+        if (r.error) {
+          setErr(r.error);
+          return;
+        }
+        setMode("login");
+        setNotice("If an account exists for " + form.email + ", we've sent a password-reset link. Open it to choose a new password.");
+        return;
+      }
+      if (mode === "reset") {
+        if (!form.password || form.password.length < 8) {
+          setErr("Choose a password of at least 8 characters.");
+          return;
+        }
+        const r = await window.DB.setNewPassword(form.password);
+        if (r.error) {
+          setErr(r.error);
+          return;
+        }
+        onAuthed(r.user);
+        return;
+      }
       const res = mode === "login" ? await window.DB.login(form.email, form.password) : await window.DB.register({
         name: form.name,
         email: form.email,
         password: form.password,
-        role: "client"
+        role: "client",
+        code: form.invite
       });
       if (res.error) {
         setErr(res.error);
+        return;
+      }
+      if (res.needsConfirmation) {
+        setMode("login");
+        setNotice("Check your inbox — we sent a confirmation link to " + res.email + ". Click it to activate your account, then sign in below.");
         return;
       }
       onAuthed(res.user);
@@ -883,21 +1030,46 @@ function AuthScreen({
       margin: 0,
       letterSpacing: "-0.015em"
     }
-  }, mode === "login" ? "Welcome back" : "Create your account"), /*#__PURE__*/React.createElement("p", {
+  }, {
+    login: "Welcome back",
+    register: "Create your account",
+    forgot: "Reset your password",
+    reset: "Set a new password"
+  }[mode]), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 14.5,
       color: "var(--ink-500)",
       margin: "9px 0 28px",
       lineHeight: 1.55
     }
-  }, mode === "login" ? "Sign in to manage your cases, evidence, and tracing progress." : "Register to file your case, upload evidence, and track recovery."), /*#__PURE__*/React.createElement("form", {
+  }, {
+    login: "Sign in to manage your cases, evidence, and tracing progress.",
+    register: "Register to file your case, upload evidence, and track recovery.",
+    forgot: "Enter your email and we'll send you a link to reset your password.",
+    reset: "Almost there — choose a new password to finish signing in."
+  }[mode]), /*#__PURE__*/React.createElement("form", {
     onSubmit: submit,
     style: {
       display: "flex",
       flexDirection: "column",
       gap: 16
     }
-  }, mode === "register" && /*#__PURE__*/React.createElement(Field, {
+  }, notice && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "flex-start",
+      gap: 8,
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: "var(--success-700)",
+      background: "var(--success-100)",
+      borderRadius: "var(--radius-sm)",
+      padding: "10px 12px"
+    }
+  }, /*#__PURE__*/React.createElement(Ico, {
+    n: "mail-check",
+    s: 16
+  }), " ", /*#__PURE__*/React.createElement("span", null, notice)), mode === "register" && /*#__PURE__*/React.createElement(Field, {
     label: "Full name",
     required: true
   }, /*#__PURE__*/React.createElement(Input, {
@@ -908,7 +1080,19 @@ function AuthScreen({
       n: "user",
       s: 16
     })
-  })), /*#__PURE__*/React.createElement(Field, {
+  })), mode === "register" && window.BERG_INVITE_REQUIRED && /*#__PURE__*/React.createElement(Field, {
+    label: "Invite code",
+    required: true,
+    hint: "Berg PC sends this with your invitation."
+  }, /*#__PURE__*/React.createElement(Input, {
+    value: form.invite,
+    onChange: up("invite"),
+    placeholder: "e.g. BERGPC-2026",
+    iconLeft: /*#__PURE__*/React.createElement(Ico, {
+      n: "ticket",
+      s: 16
+    })
+  })), mode !== "reset" && /*#__PURE__*/React.createElement(Field, {
     label: "Email",
     required: true
   }, /*#__PURE__*/React.createElement(Input, {
@@ -920,8 +1104,8 @@ function AuthScreen({
       n: "mail",
       s: 16
     })
-  })), /*#__PURE__*/React.createElement(Field, {
-    label: "Password",
+  })), mode !== "forgot" && /*#__PURE__*/React.createElement(Field, {
+    label: mode === "reset" ? "New password" : "Password",
     required: true
   }, /*#__PURE__*/React.createElement(Input, {
     type: show ? "text" : "password",
@@ -966,36 +1150,70 @@ function AuthScreen({
       n: "arrow-right",
       s: 18
     })
-  }, busy ? "Please wait…" : mode === "login" ? "Sign in" : "Register & continue")), /*#__PURE__*/React.createElement("div", {
+  }, busy ? "Please wait…" : {
+    login: "Sign in",
+    register: "Register & continue",
+    forgot: "Send reset link",
+    reset: "Update password"
+  }[mode])), /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: "center",
       margin: "18px 0",
       fontSize: 14,
-      color: "var(--ink-500)"
+      color: "var(--ink-500)",
+      display: "flex",
+      flexDirection: "column",
+      gap: 8
     }
-  }, mode === "login" ? /*#__PURE__*/React.createElement(React.Fragment, null, "Don't have an account? ", /*#__PURE__*/React.createElement("a", {
+  }, mode === "login" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    onClick: e => {
+      e.preventDefault();
+      setMode("forgot");
+      setErr("");
+      setNotice("");
+    },
+    style: {
+      color: "var(--navy-700)",
+      fontWeight: 600
+    }
+  }, "Forgot your password?"), /*#__PURE__*/React.createElement("span", null, "Don't have an account? ", /*#__PURE__*/React.createElement("a", {
     href: "#",
     onClick: e => {
       e.preventDefault();
       setMode("register");
       setErr("");
+      setNotice("");
     },
     style: {
       color: "var(--navy-700)",
       fontWeight: 600
     }
-  }, "Register")) : /*#__PURE__*/React.createElement(React.Fragment, null, "Already have an account? ", /*#__PURE__*/React.createElement("a", {
+  }, "Register"))), mode === "register" && /*#__PURE__*/React.createElement("span", null, "Already have an account? ", /*#__PURE__*/React.createElement("a", {
     href: "#",
     onClick: e => {
       e.preventDefault();
       setMode("login");
       setErr("");
+      setNotice("");
     },
     style: {
       color: "var(--navy-700)",
       fontWeight: 600
     }
-  }, "Back to sign in"))), /*#__PURE__*/React.createElement("div", {
+  }, "Back to sign in")), (mode === "forgot" || mode === "reset") && /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    onClick: e => {
+      e.preventDefault();
+      setMode("login");
+      setErr("");
+      setNotice("");
+    },
+    style: {
+      color: "var(--navy-700)",
+      fontWeight: 600
+    }
+  }, "Back to sign in")), /*#__PURE__*/React.createElement("div", {
     style: {
       borderTop: "1px solid var(--border-subtle)",
       paddingTop: 16,
@@ -1347,7 +1565,21 @@ function CaseDetail({
       n: "folder-lock",
       s: 15
     })
+  }, ...(editable ? [{
+    id: "drafts",
+    label: "Drafts",
+    icon: /*#__PURE__*/React.createElement(CIco, {
+      n: "file-pen",
+      s: 15
+    })
   }, {
+    id: "explorer",
+    label: "Explorer",
+    icon: /*#__PURE__*/React.createElement(CIco, {
+      n: "radar",
+      s: 15
+    })
+  }] : []), {
     id: "messages",
     label: "Messages",
     icon: /*#__PURE__*/React.createElement(CIco, {
@@ -1687,6 +1919,11 @@ function CaseDetail({
   }), tab === "notes" && /*#__PURE__*/React.createElement(CNotes, {
     client: client,
     user: user
+  }), tab === "drafts" && /*#__PURE__*/React.createElement(window.BergDocGen, {
+    client: client,
+    user: user
+  }), tab === "explorer" && /*#__PURE__*/React.createElement(window.BergExplorer, {
+    client: client
   }), tab === "timeline" && /*#__PURE__*/React.createElement(TimelineTab, {
     client: client,
     user: user,
@@ -2538,6 +2775,7 @@ function ClientApp({
     client: client,
     user: user
   });
+  if (view === "help") return /*#__PURE__*/React.createElement(window.BergEducation, null);
   if (view === "profile") return /*#__PURE__*/React.createElement(ClientProfile, {
     client: client,
     user: user
@@ -2819,6 +3057,17 @@ function ClientHome({
   const STEPS_MAP = window.DB.STAGES;
   const idx = STEPS_MAP.indexOf(client.status);
   const traced = client.wallets.length ? Math.min(99, 40 + client.wallets.length * 12) : 0;
+  const EST = {
+    "Intake": "~1 week",
+    "Investigating": "~2–4 weeks",
+    "Filed": "~4–8 weeks",
+    "Frozen": "~1–3 months",
+    "Recovered": "",
+    "Closed": ""
+  };
+  const tracedAmt = Math.round((+client.amountLost || 0) * traced / 100);
+  const frozenAmt = idx >= 3 ? Math.round((+client.amountLost || 0) * 0.7) : 0;
+  const recoveredAmt = idx >= 4 ? +client.amountLost || 0 : 0;
   const lawyer = window.DB.users().find(u => u.id === client.lawyerId);
   const [grown, setGrown] = React.useState(false);
   const [tv, setTv] = React.useState(0);
@@ -2960,7 +3209,14 @@ function ClientHome({
         fontWeight: st === "todo" ? 500 : 600,
         color: st === "todo" ? "var(--ink-400)" : "var(--ink-900)"
       }
-    }, t)));
+    }, t, st === "active" && EST[t] ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontWeight: 500,
+        fontSize: 12.5,
+        color: "var(--stone-600)",
+        marginLeft: 8
+      }
+    }, "\xB7 typically ", EST[t]) : null)));
   }))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
@@ -2988,6 +3244,61 @@ function ClientHome({
     value: tv + "%",
     caption: "of fund flow"
   })), /*#__PURE__*/React.createElement(ClCard, {
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(ClCH, {
+    title: "Recovery progress"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 13
+    }
+  }, [["Traced", tracedAmt, "var(--info-500)", "search"], ["Frozen", frozenAmt, "var(--warning-500)", "snowflake"], ["Recovered", recoveredAmt, "var(--success-500)", "badge-check"]].map(([lbl, amt, col, ic]) => {
+    const pct = client.amountLost ? Math.round(amt / client.amountLost * 100) : 0;
+    return /*#__PURE__*/React.createElement("div", {
+      key: lbl
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        fontFamily: "var(--font-ui)",
+        fontSize: 13,
+        marginBottom: 5
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 7,
+        color: "var(--ink-700)",
+        fontWeight: 500
+      }
+    }, /*#__PURE__*/React.createElement(ClIco, {
+      n: ic,
+      s: 14,
+      c: col
+    }), " ", lbl), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "var(--ink-500)"
+      }
+    }, window.DB.fmtMoney(amt))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 7,
+        borderRadius: 4,
+        background: "var(--ink-100)",
+        overflow: "hidden"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: "100%",
+        borderRadius: 4,
+        background: col,
+        width: (grown ? pct : 0) + "%",
+        transition: "width 1s cubic-bezier(.16,1,.3,1)"
+      }
+    })));
+  }))), /*#__PURE__*/React.createElement(ClCard, {
     padding: "lg"
   }, /*#__PURE__*/React.createElement(ClCH, {
     title: "Your team"
@@ -3231,6 +3542,26 @@ try { (() => {
    The publishable/anon key is safe to expose in the browser; row-level security protects data. */
 window.BERG_SUPABASE_URL = "https://wfaloikmocgbxtgiwcrk.supabase.co";
 window.BERG_SUPABASE_ANON_KEY = "sb_publishable_e5bo2j5ZLq0lgUQYRLZHCw_pmao2kXG";
+
+/* ---- Invite-only registration ----------------------------------------------
+   When BERG_INVITE_REQUIRED is true, the public Register form asks for an invite
+   code. Only people you've given a current code to can create an account.
+   • Share a code with each invited client (e.g. in your intake email).
+   • Rotate / add codes here anytime — edit the list and re-deploy.
+   • Set BERG_INVITE_REQUIRED = false to allow open self-registration again.
+   Note: codes here gate casual signups but are visible in the browser. For
+   server-enforced invites, issue per-email codes from an `invite_codes` table. */
+window.BERG_INVITE_REQUIRED = true;
+window.BERG_INVITE_CODES = ["BERGPC-2026",
+// general intake code
+"BERGPC-VIP",
+// priority / referred clients
+"RECOVERY-2026",
+// crypto fraud & recovery intake
+"COINBASE-BREACH",
+// Coinbase data-breach matters
+"META-SCAM-ADS" // Meta scam-ad investigation intake
+];
 })(); } catch (e) { __ds_ns.__errors.push({ path: "app-supabase/config.js", error: String((e && e.message) || e) }); }
 
 // app-supabase/db.supabase.js
@@ -3258,7 +3589,7 @@ try { (() => {
   // Loaded globals (see README for script tags):
   //   window.supabase            — @supabase/supabase-js UMD
   //   window.BERG_SUPABASE_URL / window.BERG_SUPABASE_ANON_KEY  (config.js)
-  const sb = window.supabase.createClient(window.BERG_SUPABASE_URL, window.BERG_SUPABASE_ANON_KEY);
+  const sb = window.supabase.createClient(window.BERG_SUPABASE_URL && window.BERG_SUPABASE_URL.indexOf("YOUR-PROJECT") === -1 ? window.BERG_SUPABASE_URL : "https://wfaloikmocgbxtgiwcrk.supabase.co", window.BERG_SUPABASE_ANON_KEY && window.BERG_SUPABASE_ANON_KEY.indexOf("YOUR-") === -1 ? window.BERG_SUPABASE_ANON_KEY : "sb_publishable_e5bo2j5ZLq0lgUQYRLZHCw_pmao2kXG");
 
   /* ---- constants (identical to db.js — kept client-side) ---- */
   const STRATEGIES = [{
@@ -3404,7 +3735,15 @@ try { (() => {
         ...m,
         fromId: m.from_id,
         fromName: m.from_name,
-        fromRole: m.from_role
+        fromRole: m.from_role,
+        recalled: !!m.recalled,
+        attachment: m.att_name ? {
+          name: m.att_name,
+          type: m.att_type,
+          size: m.att_size,
+          dataUrl: m.att_data,
+          url: m.att_url
+        } : null
       })).sort((a, b) => new Date(a.ts) - new Date(b.ts)),
       notes: (row.notes || []).slice().sort((a, b) => new Date(b.ts) - new Date(a.ts))
     };
@@ -3475,6 +3814,10 @@ try { (() => {
     },
     /* Call once at boot BEFORE rendering: restores an existing session. */
     async init() {
+      // Did the user just arrive from a confirmation / magic link? (Option B)
+      // supabase-js auto-detects the tokens in the URL and creates a session.
+      const cameFromAuthLink = /[#&?](access_token|code|type=signup|type=magiclink|type=recovery)=?/.test(window.location.href);
+      const isRecovery = /type=recovery/.test(window.location.href);
       try {
         const {
           data
@@ -3498,6 +3841,15 @@ try { (() => {
       } catch (e) {
         console.error("init failed (continuing to login):", e);
       }
+      // Scrub the confirmation tokens out of the address bar so a refresh is clean.
+      if (cameFromAuthLink) {
+        try {
+          history.replaceState(null, "", window.location.origin + window.location.pathname);
+        } catch (e) {}
+        window.BERG_CONFIRM_RETURN = true; // arrived via a confirmation/magic link
+        window.BERG_JUST_CONFIRMED = !!me; // and the link actually signed them in
+        window.BERG_RECOVERY = isRecovery; // arrived via a password-reset link
+      }
       return me;
     },
     currentUser() {
@@ -3511,9 +3863,15 @@ try { (() => {
         email: String(email).trim(),
         password
       });
-      if (error) return {
-        error: error.message || "Incorrect email or password"
-      };
+      if (error) {
+        const m = (error.message || "").toLowerCase();
+        if (m.indexOf("not confirmed") >= 0 || m.indexOf("confirm") >= 0) return {
+          error: "Please confirm your email first — check your inbox for the link we sent."
+        };
+        return {
+          error: error.message || "Incorrect email or password"
+        };
+      }
       const {
         data: prof
       } = await sb.from("profiles").select("*").eq("id", data.user.id).single();
@@ -3545,12 +3903,78 @@ try { (() => {
       };
       emit();
     },
+    /* ---- password reset ---- */
+    async requestPasswordReset(email) {
+      const redirectTo = window.location.origin + window.location.pathname;
+      const {
+        error
+      } = await sb.auth.resetPasswordForEmail(String(email).trim(), {
+        redirectTo
+      });
+      if (error) return {
+        error: error.message
+      };
+      return {
+        sent: true,
+        email: String(email).trim()
+      };
+    },
+    async setNewPassword(password) {
+      const {
+        data,
+        error
+      } = await sb.auth.updateUser({
+        password
+      });
+      if (error) return {
+        error: error.message
+      };
+      window.BERG_RECOVERY = false;
+      // hydrate the profile/session so the app can continue signed in
+      try {
+        const {
+          data: prof
+        } = await sb.from("profiles").select("*").eq("id", data.user.id).single();
+        me = prof ? {
+          id: prof.id,
+          role: prof.role,
+          name: prof.name,
+          email: prof.email,
+          title: prof.title
+        } : {
+          id: data.user.id,
+          role: "client",
+          name: data.user.email,
+          email: data.user.email
+        };
+        await hydrate();
+        subscribeRealtime();
+      } catch (e) {}
+      return {
+        user: me
+      };
+    },
     async register({
       name,
       email,
       password,
-      role = "client"
+      role = "client",
+      code
     }) {
+      // Invite-only gate (config.js → BERG_INVITE_REQUIRED / BERG_INVITE_CODES).
+      if (window.BERG_INVITE_REQUIRED) {
+        const codes = (window.BERG_INVITE_CODES || []).map(c => String(c).trim().toLowerCase());
+        const given = String(code || "").trim().toLowerCase();
+        if (!given) return {
+          error: "An invite code is required. Please contact Berg PC for your invitation."
+        };
+        if (codes.indexOf(given) === -1) return {
+          error: "That invite code isn\u2019t valid. Check it, or contact Berg PC for a current code."
+        };
+      }
+      // Return the confirmation link to THIS app (must also be whitelisted in
+      // Supabase → Authentication → URL Configuration → Redirect URLs).
+      const redirectTo = window.location.origin + window.location.pathname;
       const {
         data,
         error
@@ -3561,13 +3985,25 @@ try { (() => {
           data: {
             name,
             role
-          }
+          },
+          emailRedirectTo: redirectTo
         }
       });
       if (error) return {
         error: error.message
       };
-      // the DB trigger creates profile + blank case; sign in to get a session
+      // Email-confirmation ON: signUp returns NO session until the link is clicked.
+      if (!data.session) {
+        // identities empty ⇒ email already registered (Supabase hides this to prevent enumeration)
+        if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) return {
+          error: "An account with this email already exists. Try signing in instead."
+        };
+        return {
+          needsConfirmation: true,
+          email: String(email).trim()
+        };
+      }
+      // Email-confirmation OFF: we already have a session — sign in to hydrate the cache.
       return await this.login(email, password);
     },
     /* ---- synchronous reads (against cache) ---- */
@@ -3601,23 +4037,55 @@ try { (() => {
     },
     /* ---- writes (async; update cache + emit) ---- */
     async addUser(u) {
-      // admin-created accounts: use a server function or the Admin API in production.
-      // For now, register through normal signup (requires email confirmation off).
-      const r = (await sb.auth.admin) ? null : null;
-      const res = await sb.auth.signUp({
-        email: u.email,
+      // Staff (admin/lawyer) creating a login for someone else.
+      // No service-role key in the browser, so we use normal signUp — but that
+      // can mint a session for the NEW user (when email-confirmation is OFF),
+      // which would log the current staff member out. So we snapshot the staff
+      // session first and restore it afterward. With email-confirmation ON
+      // (recommended), signUp returns no session and nothing changes.
+      const {
+        data: keep
+      } = await sb.auth.getSession();
+      const redirectTo = window.location.origin + window.location.pathname;
+      const {
+        data,
+        error
+      } = await sb.auth.signUp({
+        email: String(u.email).trim(),
         password: u.password,
         options: {
           data: {
             name: u.name,
-            role: u.role,
+            role: u.role || "client",
             title: u.title || ""
-          }
+          },
+          emailRedirectTo: redirectTo
         }
       });
-      await logActivity("created " + ROLE_LABEL[u.role] + " account", u.name);
+      // Restore the staff session if signUp replaced it.
+      if (keep && keep.session) {
+        const {
+          data: now
+        } = await sb.auth.getSession();
+        if (!now.session || now.session.user && now.session.user.id !== keep.session.user.id) {
+          await sb.auth.setSession({
+            access_token: keep.session.access_token,
+            refresh_token: keep.session.refresh_token
+          });
+        }
+      }
+      if (error) return {
+        error: error.message
+      };
+      if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) return {
+        error: "An account with this email already exists."
+      };
+      await logActivity("created " + (ROLE_LABEL[u.role] || "client") + " account", u.name);
       await hydrate();
-      return res.data && res.data.user;
+      return {
+        user: data.user,
+        needsConfirmation: !data.session
+      };
     },
     async updateUser(id, patch) {
       const p = {};
@@ -3742,17 +4210,40 @@ try { (() => {
       await logActivity("changed stage to “" + stage + "”", (cache.clients.find(c => c.id === clientId) || {}).name);
       await refreshClient(clientId);
     },
-    async sendMessage(clientId, fromUser, text) {
-      if (!text.trim()) return;
-      await sb.from("messages").insert({
+    async sendMessage(clientId, fromUser, text, attachment) {
+      const body = (text || "").trim();
+      if (!body && !attachment) return;
+      const row = {
         client_id: clientId,
         from_id: fromUser.id,
         from_name: fromUser.name,
         from_role: fromUser.role,
-        text: text.trim(),
+        text: body,
         read: false
-      });
-      await logActivity("sent a secure message", (cache.clients.find(c => c.id === clientId) || {}).name);
+      };
+      if (attachment) {
+        row.att_name = attachment.name;
+        row.att_type = attachment.type;
+        row.att_size = attachment.size;
+        row.att_data = attachment.dataUrl || null;
+        row.att_url = attachment.url || null;
+      }
+      await sb.from("messages").insert(row);
+      await logActivity(attachment ? "shared a file in secure chat" : "sent a secure message", (cache.clients.find(c => c.id === clientId) || {}).name);
+      await refreshClient(clientId);
+    },
+    async recallMessage(clientId, msgId, user) {
+      // RLS + the from_id filter ensure only the sender can recall their own message.
+      await sb.from("messages").update({
+        recalled: true,
+        text: "",
+        att_name: null,
+        att_type: null,
+        att_size: null,
+        att_data: null,
+        att_url: null
+      }).eq("id", msgId).eq("from_id", user.id);
+      await logActivity("recalled a message", (cache.clients.find(c => c.id === clientId) || {}).name);
       await refreshClient(clientId);
     },
     async markMessagesRead(clientId, userId) {
@@ -3788,6 +4279,906 @@ try { (() => {
   window.DB = DB;
 })();
 })(); } catch (e) { __ds_ns.__errors.push({ path: "app-supabase/db.supabase.js", error: String((e && e.message) || e) }); }
+
+// app-supabase/extras.jsx
+try { (() => {
+/* Berg PC Platform — extra features: Analytics (admin) + Education (client).
+   Exposes window.BergAnalytics and window.BergEducation. */
+const DSX = window.BergPCDesignSystem_eb13e3;
+const {
+  Card: XCard,
+  CardHeader: XCH,
+  Stat: XStat,
+  Badge: XBadge
+} = DSX;
+const {
+  Ico: XIco,
+  refreshIcons: xRefresh,
+  PageWrap: XWrap,
+  SectionTitle: XSec
+} = window.BergUI;
+
+/* ---------------- Admin Analytics dashboard ---------------- */
+function Analytics({
+  user
+}) {
+  xRefresh();
+  const clients = window.DB.clientsFor({
+    role: "admin"
+  });
+  const lawyers = window.DB.lawyers();
+  const n = clients.length || 1;
+  const recovered = clients.filter(c => c.status === "Recovered");
+  const closed = clients.filter(c => c.status === "Closed");
+  const recoveryRate = Math.round(recovered.length / n * 100);
+  const atIssue = clients.reduce((s, c) => s + (+c.amountLost || 0), 0);
+  const recoveredAmt = recovered.reduce((s, c) => s + (+c.amountLost || 0), 0);
+  const pipeline = clients.filter(c => !["Recovered", "Closed", "Intake"].includes(c.status)).reduce((s, c) => s + (+c.amountLost || 0), 0);
+  const CONTINGENCY = 0.30;
+  const projected = Math.round((recoveredAmt + pipeline * 0.5) * CONTINGENCY);
+  const avgDays = Math.round(clients.reduce((s, c) => s + Math.max(1, (Date.now() - new Date(c.createdAt)) / 86400000), 0) / n);
+  const overseas = clients.filter(c => c.overseas).length;
+
+  // case-type mix
+  const typeMap = {};
+  clients.forEach(c => {
+    typeMap[c.matterType] = (typeMap[c.matterType] || 0) + 1;
+  });
+  const types = Object.entries(typeMap).sort((a, b) => b[1] - a[1]);
+  // stage funnel
+  const stageMap = window.DB.STAGES.map(s => ({
+    s,
+    n: clients.filter(c => c.status === s).length
+  }));
+  const stageTone = {
+    "Intake": "var(--ink-300)",
+    "Investigating": "var(--info-500)",
+    "Filed": "var(--stone-500)",
+    "Frozen": "var(--warning-500)",
+    "Recovered": "var(--success-500)",
+    "Closed": "var(--ink-500)"
+  };
+  const typeColors = ["var(--navy-700)", "var(--stone-500)", "var(--info-500)", "var(--warning-500)", "var(--success-500)", "var(--ink-400)"];
+  const [grown, setGrown] = React.useState(false);
+  React.useEffect(() => {
+    const t = setTimeout(() => setGrown(true), 70);
+    return () => clearTimeout(t);
+  }, []);
+  const kpis = [["Recovery rate", recoveryRate + "%", "trending-up", recovered.length + " of " + clients.length + " recovered"], ["Recovered to date", window.DB.fmtMoney(recoveredAmt), "badge-check", "across " + recovered.length + " cases"], ["Projected fees", window.DB.fmtMoney(projected), "scale", "~30% contingency"], ["Avg. case age", avgDays + " days", "clock", "open cases"]];
+  return /*#__PURE__*/React.createElement(XWrap, null, /*#__PURE__*/React.createElement(XSec, {
+    eyebrow: "Console",
+    title: "Analytics"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gap: 14
+    }
+  }, kpis.map(([l, v, ic, cap]) => /*#__PURE__*/React.createElement(XCard, {
+    key: l,
+    padding: "md"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement(XStat, {
+    label: l,
+    value: v,
+    caption: cap
+  })), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: 38,
+      height: 38,
+      borderRadius: "var(--radius-md)",
+      background: "var(--stone-100)",
+      color: "var(--stone-700)",
+      flex: "none"
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: ic,
+    s: 19
+  })))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: 18,
+      alignItems: "start"
+    }
+  }, /*#__PURE__*/React.createElement(XCard, {
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(XCH, {
+    eyebrow: "Portfolio",
+    title: "Case-type mix"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 13
+    }
+  }, types.map(([t, c], i) => /*#__PURE__*/React.createElement("div", {
+    key: t
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      fontFamily: "var(--font-ui)",
+      fontSize: 13.5,
+      marginBottom: 5
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-800)",
+      fontWeight: 500
+    }
+  }, t), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-500)"
+    }
+  }, c)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 8,
+      borderRadius: 4,
+      background: "var(--ink-100)",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: "100%",
+      borderRadius: 4,
+      background: typeColors[i % typeColors.length],
+      width: (grown ? c / n * 100 : 0) + "%",
+      transition: "width .9s cubic-bezier(.16,1,.3,1) " + i * 0.08 + "s"
+    }
+  })))))), /*#__PURE__*/React.createElement(XCard, {
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(XCH, {
+    eyebrow: "Pipeline",
+    title: "Cases by stage"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 11
+    }
+  }, stageMap.map(({
+    s,
+    n: cnt
+  }, i) => {
+    const max = Math.max(1, ...stageMap.map(x => x.n));
+    return /*#__PURE__*/React.createElement("div", {
+      key: s,
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 92,
+        fontFamily: "var(--font-ui)",
+        fontSize: 12.5,
+        color: "var(--ink-600)",
+        textAlign: "right",
+        flex: "none"
+      }
+    }, s), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1,
+        height: 22,
+        borderRadius: 4,
+        background: "var(--ink-50)",
+        overflow: "hidden"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: "100%",
+        borderRadius: 4,
+        background: stageTone[s],
+        width: (grown ? cnt / max * 100 : 0) + "%",
+        transition: "width .9s cubic-bezier(.16,1,.3,1) " + i * 0.07 + "s"
+      }
+    })), /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 22,
+        fontFamily: "var(--font-mono)",
+        fontSize: 13,
+        color: "var(--ink-800)",
+        flex: "none"
+      }
+    }, cnt));
+  })))), /*#__PURE__*/React.createElement(XCard, {
+    padding: "none"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "15px 20px",
+      borderBottom: "1px solid var(--border-subtle)"
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 17,
+      margin: 0,
+      color: "var(--ink-900)"
+    }
+  }, "Attorney performance")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflowX: "auto"
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: "100%",
+      borderCollapse: "collapse",
+      fontFamily: "var(--font-ui)"
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, ["Attorney", "Cases", "At issue", "Recovered", "Rate"].map((h, i) => /*#__PURE__*/React.createElement("th", {
+    key: h,
+    style: {
+      textAlign: i === 0 ? "left" : "right",
+      padding: "11px 18px",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      color: "var(--ink-500)",
+      borderBottom: "1px solid var(--border-default)",
+      background: "var(--ink-50)"
+    }
+  }, h)))), /*#__PURE__*/React.createElement("tbody", null, lawyers.map((l, i) => {
+    const cs = window.DB.clientsFor(l);
+    const rec = cs.filter(c => c.status === "Recovered");
+    const ai = cs.reduce((s, c) => s + (+c.amountLost || 0), 0);
+    const rc = rec.reduce((s, c) => s + (+c.amountLost || 0), 0);
+    const rate = cs.length ? Math.round(rec.length / cs.length * 100) : 0;
+    return /*#__PURE__*/React.createElement("tr", {
+      key: l.id,
+      style: {
+        borderBottom: i < lawyers.length - 1 ? "1px solid var(--border-subtle)" : "none"
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--ink-900)",
+        fontWeight: 500
+      }
+    }, l.name), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--ink-700)",
+        textAlign: "right"
+      }
+    }, cs.length), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--ink-700)",
+        textAlign: "right"
+      }
+    }, window.DB.fmtMoney(ai)), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--success-700)",
+        textAlign: "right",
+        fontWeight: 600
+      }
+    }, window.DB.fmtMoney(rc)), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        textAlign: "right"
+      }
+    }, /*#__PURE__*/React.createElement(XBadge, {
+      tone: rate >= 50 ? "success" : rate > 0 ? "warning" : "neutral"
+    }, rate, "%")));
+  }))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 12,
+      color: "var(--ink-400)",
+      textAlign: "center"
+    }
+  }, "Projected fees assume a 30% contingency on recovered funds plus 50%-weighted active pipeline. Indicative only."));
+}
+
+/* ---------------- Client Education / FAQ ---------------- */
+function Education() {
+  xRefresh();
+  const [open, setOpen] = React.useState(0);
+  const faqs = [["Can my stolen crypto really be recovered?", "Sometimes — it depends on where the funds went and how quickly we act. We trace the assets, and if they reach a regulated exchange or identifiable wallet, we can pursue freezing and recovery through the courts. We'll give you an honest assessment after reviewing your case."], ["How long does recovery take?", "It varies. Tracing and identifying funds takes days to weeks; freezing and litigation can take months. Cross-border cases take longer. Your case page shows the current stage and what's next."], ["What does it cost?", "We work on a contingency basis for recovery matters — no recovery, no fee. We never ask for upfront payment to 'release' your funds. Anyone who does is running a scam."], ["Why can't you guarantee recovery?", "No honest firm can. Criminals move fast and some funds are unrecoverable. We can guarantee a rigorous, evidence-led effort — not an outcome."], ["What should I send you?", "Anything documenting the loss: transaction IDs, wallet addresses, bank/wire records, screenshots of chats, and the platform or app involved. Upload them under 'My Documents'."]];
+  const warnings = [["shield-alert", "Never pay an upfront 'recovery fee'", "Berg PC is paid only from recovered funds. A demand for money to unlock or recover your assets is always a scam."], ["user-x", "Beware of 'recovery agents' who contact you", "Scammers target victims a second time, posing as recovery experts or even government agencies. Verify independently before trusting anyone."], ["lock", "We will never ask for your seed phrase", "Your recovery phrase or private keys are never needed for our work. Anyone asking for them is trying to steal what's left."]];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 760,
+      margin: "0 auto",
+      padding: "30px 26px 60px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      fontWeight: 600,
+      letterSpacing: ".16em",
+      textTransform: "uppercase",
+      color: "var(--stone-600)"
+    }
+  }, "Help & Safety"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 28,
+      margin: "8px 0 18px",
+      color: "var(--ink-900)"
+    }
+  }, "Understanding your case"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 11,
+      marginBottom: 30
+    }
+  }, warnings.map(([ic, t, d]) => /*#__PURE__*/React.createElement("div", {
+    key: t,
+    style: {
+      display: "flex",
+      gap: 13,
+      background: "var(--warning-100)",
+      borderLeft: "3px solid var(--warning-500)",
+      borderRadius: "var(--radius-md)",
+      padding: "15px 16px"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--warning-700)",
+      flex: "none",
+      marginTop: 1
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: ic,
+    s: 19
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 14.5,
+      fontWeight: 600,
+      color: "var(--ink-900)",
+      marginBottom: 3
+    }
+  }, t), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 13.5,
+      color: "var(--ink-700)",
+      lineHeight: 1.55
+    }
+  }, d))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 12,
+      fontWeight: 600,
+      letterSpacing: ".14em",
+      textTransform: "uppercase",
+      color: "var(--stone-600)",
+      marginBottom: 12
+    }
+  }, "Frequently asked"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 9
+    }
+  }, faqs.map(([q, a], i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      border: "1px solid var(--ink-100)",
+      borderRadius: "var(--radius-md)",
+      background: "var(--white)",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setOpen(open === i ? -1 : i),
+    style: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      gap: 12,
+      border: "none",
+      background: "none",
+      padding: "15px 16px",
+      cursor: "pointer",
+      textAlign: "left",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14.5,
+      fontWeight: 600,
+      color: "var(--ink-900)"
+    }
+  }, q, /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: "none",
+      transform: open === i ? "rotate(180deg)" : "none",
+      transition: "transform .2s",
+      color: "var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: "chevron-down",
+    s: 18
+  }))), open === i && /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "0 16px 16px",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      color: "var(--ink-600)",
+      lineHeight: 1.6
+    }
+  }, a)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 26,
+      background: "var(--navy-900)",
+      borderRadius: "var(--radius-lg)",
+      padding: "22px 24px",
+      color: "var(--cream)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 19,
+      marginBottom: 6
+    }
+  }, "Still have a question?"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      color: "var(--navy-100)",
+      lineHeight: 1.55
+    }
+  }, "Use ", /*#__PURE__*/React.createElement("b", {
+    style: {
+      color: "var(--cream)"
+    }
+  }, "Secure messages"), " to ask your handling attorney directly \u2014 it's confidential and goes straight to your team.")));
+}
+
+/* ---------------- Lawyer: document generator ---------------- */
+function DocGen({
+  client,
+  user
+}) {
+  xRefresh();
+  const toast = window.BergUI.useToast();
+  const today = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  const wallets = client.wallets || [];
+  const walletRows = wallets.map(w => `<tr><td style="font-family:monospace;font-size:12px">${w.addr}</td><td>${w.role}</td><td>${w.usd || w.balance || "—"}</td></tr>`).join("");
+  const templates = [{
+    id: "demand",
+    icon: "mail",
+    title: "Demand letter",
+    desc: "Formal demand to an identified party to return misappropriated assets.",
+    body: () => `
+        <p>${today}</p>
+        <p><b>RE: Demand for Return of Misappropriated Digital Assets — Matter ${client.id.toUpperCase()}</b></p>
+        <p>To Whom It May Concern:</p>
+        <p>This firm represents ${client.name} in connection with the theft of cryptocurrency assets valued at approximately ${window.DB.fmtMoney(client.amountLost)}, occurring on or about ${client.dateOfLoss || "[date]"} via ${client.platform || "[platform]"}.</p>
+        <p>Our forensic investigation has traced the movement of these assets across the blockchain. Demand is hereby made for the immediate return of all misappropriated funds. Should you fail to respond within ten (10) business days, we are prepared to pursue all available legal and equitable remedies, including injunctive relief.</p>
+        <p>Sincerely,<br/>${user.name}<br/>Berg PC · 24 Greenway Plaza, Suite 1800, Houston, Texas 77046</p>`
+  }, {
+    id: "freeze",
+    icon: "snowflake",
+    title: "Application to freeze wallets",
+    desc: "Petition supporting an injunction freezing the identified wallets.",
+    body: () => `
+        <p>${today}</p>
+        <p><b>APPLICATION FOR TEMPORARY RESTRAINING ORDER — Matter ${client.id.toUpperCase()}</b></p>
+        <p>Applicant ${client.name} respectfully moves this Court for an order freezing the digital asset wallets identified below, which our forensic tracing has linked to the misappropriation of Applicant's funds (${window.DB.fmtMoney(client.amountLost)}).</p>
+        <table style="width:100%;border-collapse:collapse;margin:10px 0"><tr><th align="left">Wallet address</th><th align="left">Role</th><th align="left">Value</th></tr>${walletRows || '<tr><td colspan=3>[wallets pending]</td></tr>'}</table>
+        <p>Absent immediate relief, these assets are likely to be dissipated beyond recovery. Applicant therefore requests that the Court enjoin any transfer from the above addresses pending further proceedings.</p>
+        <p>Respectfully submitted,<br/>${user.name}, Counsel for Applicant</p>`
+  }, {
+    id: "forensic",
+    icon: "file-search",
+    title: "Forensic tracing summary",
+    desc: "Chain-of-funds summary suitable for enforcement referral.",
+    body: () => `
+        <p>${today}</p>
+        <p><b>BLOCKCHAIN FORENSIC SUMMARY — Matter ${client.id.toUpperCase()}</b></p>
+        <p><b>Subject:</b> ${client.name} &nbsp; <b>Loss:</b> ${window.DB.fmtMoney(client.amountLost)} &nbsp; <b>Date:</b> ${client.dateOfLoss || "—"}</p>
+        <p>The following wallets were identified in the flow of funds originating from the victim's account. Tracing was performed across ${wallets.length} hop(s), including pass-through, mixing, and off-ramp addresses.</p>
+        <table style="width:100%;border-collapse:collapse;margin:10px 0"><tr><th align="left">Wallet address</th><th align="left">Role</th><th align="left">Value</th></tr>${walletRows || '<tr><td colspan=3>[wallets pending]</td></tr>'}</table>
+        <p>Recovery strategies under consideration: ${(client.strategies || []).map(s => {
+      const st = window.DB.strategyById(s);
+      return st ? st.label : s;
+    }).join("; ") || "—"}.</p>
+        <p>Prepared by ${user.name}, Berg PC. For authorized use only.</p>`
+  }];
+  function open(tpl) {
+    const w = window.open("", "_blank");
+    if (!w) {
+      toast({
+        tone: "warning",
+        icon: "alert-triangle",
+        title: "Please allow pop-ups"
+      });
+      return;
+    }
+    w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${tpl.title} — ${client.name}</title>
+      <style>body{font-family:Georgia,serif;color:#1A1714;max-width:720px;margin:48px auto;padding:0 28px;line-height:1.7;font-size:15px}
+      .ey{font-family:Arial;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A7B66}
+      hr{border:0;border-top:3px solid #8A7B66;width:54px;margin:14px 0 22px}
+      table td,table th{border-bottom:1px solid #ddd;padding:6px 8px;font-family:Arial;font-size:12.5px}
+      b{color:#16202E}</style></head><body>
+      <div class="ey">Berg PC · Confidential Draft</div><hr>${tpl.body()}
+      <p style="font-family:Arial;font-size:11px;color:#8C867D;margin-top:34px">Auto-generated draft — review and adapt before filing or sending. Not legal advice until reviewed by counsel.</p>
+      <script>setTimeout(()=>window.print(),350)<\/script></body></html>`);
+    w.document.close();
+    window.DB.addTimeline(client.id, {
+      icon: tpl.icon,
+      text: "Generated draft: " + tpl.title
+    }, user.name);
+    toast({
+      tone: "success",
+      icon: "file-down",
+      title: "Draft generated",
+      msg: "Print or save as PDF in the new tab."
+    });
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      color: "var(--ink-500)",
+      fontFamily: "var(--font-ui)",
+      marginBottom: 14
+    }
+  }, "Auto-fill legal drafts from this case's data, then print or save as PDF."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 11
+    }
+  }, templates.map(t => /*#__PURE__*/React.createElement("div", {
+    key: t.id,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 14,
+      border: "1px solid var(--ink-100)",
+      borderRadius: "var(--radius-md)",
+      background: "var(--white)",
+      padding: "15px 16px"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 42,
+      height: 42,
+      borderRadius: "var(--radius-md)",
+      background: "var(--stone-100)",
+      color: "var(--stone-700)",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none"
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: t.icon,
+    s: 20
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 15,
+      fontWeight: 600,
+      color: "var(--ink-900)"
+    }
+  }, t.title), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 13,
+      color: "var(--ink-500)",
+      lineHeight: 1.45
+    }
+  }, t.desc)), /*#__PURE__*/React.createElement("button", {
+    onClick: () => open(t),
+    style: {
+      border: "1px solid var(--border-strong)",
+      background: "var(--white)",
+      color: "var(--ink-900)",
+      borderRadius: "var(--radius-sm)",
+      padding: "9px 15px",
+      fontFamily: "var(--font-ui)",
+      fontSize: 13.5,
+      fontWeight: 600,
+      cursor: "pointer",
+      flex: "none",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: "printer",
+    s: 15
+  }), " Generate")))));
+}
+
+/* ---------------- Lawyer: blockchain explorer (API-ready + mock) ---------------- */
+function Explorer({
+  client
+}) {
+  xRefresh();
+  const [addr, setAddr] = React.useState(client.wallets && client.wallets[0] && client.wallets[0].addr || "");
+  const [data, setData] = React.useState(null);
+  const [busy, setBusy] = React.useState(false);
+  const [live, setLive] = React.useState(false);
+  function mock(a) {
+    let h = 0;
+    for (let i = 0; i < a.length; i++) h = h * 31 + a.charCodeAt(i) >>> 0;
+    const isBtc = /^(bc1|[13])/.test(a);
+    const bal = (h % 90000 / 1000 + 0.3).toFixed(4);
+    const txc = h % 480 + 3;
+    const usd = Math.round(bal * (isBtc ? 64000 : 3400));
+    const txs = Array.from({
+      length: 5
+    }, (_, i) => {
+      const hh = h + i * 2654435761 >>> 0;
+      return {
+        hash: (isBtc ? "" : "0x") + hh.toString(16).padStart(8, "0") + "…" + (hh * 7 >>> 0).toString(16).slice(0, 6),
+        val: (hh % 40000 / 1000).toFixed(4),
+        dir: hh % 2 ? "in" : "out",
+        age: hh % 60 + "d ago"
+      };
+    });
+    return {
+      isBtc,
+      bal,
+      txc,
+      usd,
+      txs
+    };
+  }
+  async function lookup() {
+    if (!addr.trim()) return;
+    setBusy(true);
+    setData(null);
+    setLive(false);
+    const a = addr.trim();
+    try {
+      const isBtc = /^(bc1|[13])/.test(a);
+      const url = isBtc ? "https://api.blockchair.com/bitcoin/dashboards/address/" + a : "https://api.blockchair.com/ethereum/dashboards/address/" + a;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("api");
+      const j = await res.json();
+      const d = j.data && j.data[a];
+      if (!d) throw new Error("nodata");
+      const addrInfo = d.address || {};
+      setData({
+        isBtc,
+        bal: isBtc ? (addrInfo.balance / 1e8).toFixed(4) : (addrInfo.balance / 1e18).toFixed(4),
+        txc: addrInfo.transaction_count || (d.transactions ? d.transactions.length : 0),
+        usd: Math.round(addrInfo.balance_usd || 0),
+        txs: (d.transactions || []).slice(0, 5).map(t => ({
+          hash: (typeof t === "string" ? t : t.hash || "").slice(0, 12) + "…",
+          val: "—",
+          dir: "—",
+          age: ""
+        }))
+      });
+      setLive(true);
+    } catch (e) {
+      setData(mock(a));
+      setLive(false);
+    } finally {
+      setBusy(false);
+    }
+  }
+  const roleColor = {
+    tainted: "var(--trace-tainted)",
+    hop: "var(--trace-hop)",
+    exchange: "var(--trace-exchange)",
+    mixer: "var(--trace-mixer)",
+    frozen: "var(--trace-frozen)"
+  };
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      color: "var(--ink-500)",
+      fontFamily: "var(--font-ui)",
+      marginBottom: 12
+    }
+  }, "Paste any wallet address to look up its balance and recent activity."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 8,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    value: addr,
+    onChange: e => setAddr(e.target.value),
+    onKeyDown: e => {
+      if (e.key === "Enter") lookup();
+    },
+    placeholder: "bc1q\u2026 or 0x\u2026",
+    style: {
+      flex: 1,
+      fontFamily: "var(--font-mono)",
+      fontSize: 13.5,
+      border: "1px solid var(--border-default)",
+      borderRadius: "var(--radius-sm)",
+      padding: "11px 13px",
+      outline: "none",
+      color: "var(--ink-900)"
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: lookup,
+    disabled: busy,
+    style: {
+      border: "none",
+      background: "var(--ink-900)",
+      color: "var(--cream)",
+      borderRadius: "var(--radius-sm)",
+      padding: "0 18px",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      fontWeight: 600,
+      cursor: "pointer",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: busy ? "loader" : "search",
+    s: 16
+  }), " ", busy ? "…" : "Look up")), client.wallets && client.wallets.length > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 7,
+      marginBottom: 16
+    }
+  }, client.wallets.map((w, i) => /*#__PURE__*/React.createElement("button", {
+    key: i,
+    onClick: () => {
+      setAddr(w.addr);
+    },
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 7,
+      border: "1px solid var(--border-default)",
+      background: "var(--white)",
+      borderRadius: "var(--radius-pill)",
+      padding: "5px 11px",
+      fontFamily: "var(--font-mono)",
+      fontSize: 12,
+      color: "var(--ink-700)",
+      cursor: "pointer"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: "50%",
+      background: roleColor[w.role] || "var(--ink-400)"
+    }
+  }), w.addr.slice(0, 8), "\u2026", w.addr.slice(-4)))), data && /*#__PURE__*/React.createElement("div", {
+    style: {
+      border: "1px solid var(--ink-100)",
+      borderRadius: "var(--radius-lg)",
+      background: "var(--white)",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 0,
+      borderBottom: "1px solid var(--ink-100)"
+    }
+  }, [["Balance", data.bal + " " + (data.isBtc ? "BTC" : "ETH")], ["Approx. USD", "$" + Number(data.usd).toLocaleString("en-US")], ["Transactions", data.txc]].map(([l, v], i) => /*#__PURE__*/React.createElement("div", {
+    key: l,
+    style: {
+      flex: 1,
+      padding: "16px 18px",
+      borderLeft: i ? "1px solid var(--ink-100)" : "none"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      color: "var(--ink-500)"
+    }
+  }, l), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 22,
+      color: "var(--ink-900)",
+      marginTop: 4
+    }
+  }, v)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "12px 18px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      color: "var(--ink-500)",
+      marginBottom: 8
+    }
+  }, "Recent transactions"), data.txs.map((t, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      padding: "8px 0",
+      borderTop: i ? "1px solid var(--ink-50)" : "none",
+      fontFamily: "var(--font-mono)",
+      fontSize: 12.5
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: t.dir === "in" ? "var(--success-600)" : t.dir === "out" ? "var(--danger-500)" : "var(--ink-400)",
+      flex: "none"
+    }
+  }, t.dir === "in" ? "↓" : t.dir === "out" ? "↑" : "·"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      color: "var(--ink-700)",
+      overflow: "hidden",
+      textOverflow: "ellipsis"
+    }
+  }, t.hash), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-600)"
+    }
+  }, t.val !== "—" ? t.val : ""), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-400)",
+      width: 56,
+      textAlign: "right"
+    }
+  }, t.age)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "10px 18px",
+      background: live ? "var(--success-100)" : "var(--ink-50)",
+      fontFamily: "var(--font-ui)",
+      fontSize: 12,
+      color: live ? "var(--success-700)" : "var(--ink-500)",
+      display: "flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: live ? "wifi" : "info",
+    s: 14
+  }), " ", live ? "Live data from Blockchair." : "Demo figures (live blockchain API blocked offline — works once deployed).")));
+}
+Object.assign(window, {
+  BergAnalytics: Analytics,
+  BergEducation: Education,
+  BergDocGen: DocGen,
+  BergExplorer: Explorer
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "app-supabase/extras.jsx", error: String((e && e.message) || e) }); }
 
 // app-supabase/lawyer.jsx
 try { (() => {
@@ -4238,11 +5629,19 @@ function ClientList({
   return /*#__PURE__*/React.createElement(LWrap, null, /*#__PURE__*/React.createElement(LSec, {
     eyebrow: "My clients",
     title: `Cases (${clients.length})`,
-    right: /*#__PURE__*/React.createElement(NewCaseButton, {
+    right: /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 10
+      }
+    }, /*#__PURE__*/React.createElement(NewClientAccountButton, {
+      user: user,
+      toast: toast
+    }), /*#__PURE__*/React.createElement(NewCaseButton, {
       user: user,
       onCreated: onOpen,
       toast: toast
-    })
+    }))
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
@@ -4443,6 +5842,147 @@ const tdBulk = {
   color: "var(--ink-700)",
   verticalAlign: "middle"
 };
+
+/* ---- new client login dialog (lawyer creates a portal account) ---- */
+function NewClientAccountButton({
+  user,
+  toast
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [busy, setBusy] = React.useState(false);
+  const [f, setF] = React.useState({
+    name: "",
+    email: "",
+    password: ""
+  });
+  lRefresh();
+  function gen() {
+    const s = "Berg-" + Math.random().toString(36).slice(2, 8) + Math.floor(10 + Math.random() * 89);
+    setF(v => ({
+      ...v,
+      password: s
+    }));
+  }
+  async function create() {
+    if (!f.name.trim() || !f.email.trim()) {
+      toast({
+        tone: "warning",
+        icon: "alert-triangle",
+        title: "Name and email are required"
+      });
+      return;
+    }
+    if (!f.password.trim() || f.password.trim().length < 8) {
+      toast({
+        tone: "warning",
+        icon: "alert-triangle",
+        title: "Set a password of 8+ characters (or Generate one)"
+      });
+      return;
+    }
+    setBusy(true);
+    const r = await window.DB.addUser({
+      name: f.name.trim(),
+      email: f.email.trim(),
+      password: f.password.trim(),
+      role: "client"
+    });
+    setBusy(false);
+    if (r && r.error) {
+      toast({
+        tone: "danger",
+        icon: "alert-circle",
+        title: r.error
+      });
+      return;
+    }
+    setOpen(false);
+    toast({
+      tone: "success",
+      icon: "user-plus",
+      title: "Client login created",
+      msg: f.name.trim() + (r && r.needsConfirmation ? " — confirmation email sent" : "")
+    });
+    setF({
+      name: "",
+      email: "",
+      password: ""
+    });
+  }
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(LBtn, {
+    variant: "secondary",
+    iconLeft: /*#__PURE__*/React.createElement(LIco, {
+      n: "user-plus",
+      s: 16
+    }),
+    onClick: () => setOpen(true)
+  }, "New client login"), /*#__PURE__*/React.createElement(LDialog, {
+    open: open,
+    onClose: () => setOpen(false),
+    title: "New client login",
+    description: "Creates a portal account for your client. They get a confirmation email; share the password so they can sign in once confirmed.",
+    width: 460,
+    footer: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(LBtn, {
+      variant: "ghost",
+      onClick: () => setOpen(false)
+    }, "Cancel"), /*#__PURE__*/React.createElement(LBtn, {
+      variant: "primary",
+      onClick: create,
+      disabled: busy,
+      iconLeft: /*#__PURE__*/React.createElement(LIco, {
+        n: "check",
+        s: 16
+      })
+    }, busy ? "Creating…" : "Create login"))
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 13
+    }
+  }, /*#__PURE__*/React.createElement(LEdit, {
+    label: "Client name",
+    value: f.name,
+    onChange: v => setF({
+      ...f,
+      name: v
+    })
+  }), /*#__PURE__*/React.createElement(LEdit, {
+    label: "Email",
+    value: f.email,
+    onChange: v => setF({
+      ...f,
+      email: v
+    }),
+    type: "email"
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(LEdit, {
+    label: "Initial password",
+    value: f.password,
+    onChange: v => setF({
+      ...f,
+      password: v
+    })
+  }), /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    onClick: e => {
+      e.preventDefault();
+      gen();
+    },
+    style: {
+      fontSize: 12.5,
+      color: "var(--navy-700)",
+      fontWeight: 600,
+      display: "inline-block",
+      marginTop: 6
+    }
+  }, "Generate a strong password")), /*#__PURE__*/React.createElement(LAlert, {
+    tone: "info",
+    icon: /*#__PURE__*/React.createElement(LIco, {
+      n: "info",
+      s: 16
+    })
+  }, "The client must click the email confirmation link before their first sign-in. They can reset this anytime via \u201CForgot password\u201D."))));
+}
 
 /* ---- new case dialog ---- */
 function NewCaseButton({
@@ -5098,6 +6638,7 @@ function EditRow({
     }
   }) : /*#__PURE__*/React.createElement("input", {
     type: type,
+    lang: "en",
     value: value,
     onChange: e => onChange(e.target.value),
     style: base
@@ -5111,7 +6652,11 @@ function MessageThread({
   height = 360
 }) {
   const [text, setText] = React.useState("");
+  const [hover, setHover] = React.useState(null);
+  const [busy, setBusy] = React.useState(false);
+  const fileRef = React.useRef(null);
   const endRef = React.useRef(null);
+  const toast = useToast();
   const msgs = client.messages || [];
   React.useEffect(() => {
     window.DB.markMessagesRead(client.id, user.id);
@@ -5124,6 +6669,48 @@ function MessageThread({
     if (!text.trim()) return;
     window.DB.sendMessage(client.id, user, text);
     setText("");
+  }
+  function recall(m) {
+    if (window.confirm("Recall this message? It will be removed for everyone on this case.")) window.DB.recallMessage(client.id, m.id, user);
+  }
+  async function pickFile(e) {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    const MAX = 3 * 1024 * 1024;
+    if (file.size > MAX) {
+      toast({
+        tone: "danger",
+        icon: "alert-circle",
+        title: "File too large",
+        msg: "Max 3 MB in chat — use Documents for larger files."
+      });
+      return;
+    }
+    setBusy(true);
+    try {
+      const dataUrl = await new Promise((res, rej) => {
+        const r = new FileReader();
+        r.onload = () => res(r.result);
+        r.onerror = rej;
+        r.readAsDataURL(file);
+      });
+      await window.DB.sendMessage(client.id, user, "", {
+        name: file.name,
+        type: extType(file.name),
+        size: fmtSize(file.size),
+        dataUrl
+      });
+    } catch (err) {
+      toast({
+        tone: "danger",
+        icon: "alert-circle",
+        title: "Couldn't attach",
+        msg: String(err && err.message || err)
+      });
+    } finally {
+      setBusy(false);
+    }
   }
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -5147,8 +6734,12 @@ function MessageThread({
     }
   }, msgs.length ? msgs.map(m => {
     const mine = m.fromId === user.id;
+    const att = m.attachment;
+    const imgOnly = att && att.type === "img" && att.dataUrl && !m.text;
     return /*#__PURE__*/React.createElement("div", {
       key: m.id,
+      onMouseEnter: () => setHover(m.id),
+      onMouseLeave: () => setHover(h => h === m.id ? null : h),
       style: {
         display: "flex",
         flexDirection: "column",
@@ -5156,17 +6747,121 @@ function MessageThread({
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
-        maxWidth: "78%",
-        background: mine ? "var(--navy-800)" : "var(--white)",
+        display: "flex",
+        alignItems: "center",
+        gap: 6,
+        flexDirection: mine ? "row" : "row-reverse",
+        maxWidth: "82%"
+      }
+    }, mine && !m.recalled && /*#__PURE__*/React.createElement("button", {
+      onClick: () => recall(m),
+      title: "Recall message",
+      "aria-label": "Recall message",
+      style: {
+        border: "none",
+        background: "transparent",
+        cursor: "pointer",
+        color: "var(--ink-400)",
+        padding: 4,
+        lineHeight: 0,
+        opacity: hover === m.id ? 1 : 0,
+        transition: "opacity var(--duration-fast) var(--ease-standard)",
+        flex: "none"
+      }
+    }, /*#__PURE__*/React.createElement(Ico, {
+      n: "undo-2",
+      s: 14
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: m.recalled ? "transparent" : mine ? "var(--navy-800)" : "var(--white)",
         color: mine ? "var(--cream)" : "var(--ink-800)",
-        border: mine ? "none" : "1px solid var(--border-subtle)",
+        border: m.recalled ? "1px dashed var(--border-default)" : mine ? "none" : "1px solid var(--border-subtle)",
         borderRadius: "var(--radius-md)",
-        padding: "9px 13px",
+        padding: imgOnly ? 4 : "9px 13px",
         fontFamily: "var(--font-ui)",
         fontSize: 14,
-        lineHeight: 1.5
+        lineHeight: 1.5,
+        minWidth: 0
       }
-    }, m.text), /*#__PURE__*/React.createElement("div", {
+    }, m.recalled ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontStyle: "italic",
+        color: "var(--ink-400)",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+        fontSize: 13
+      }
+    }, /*#__PURE__*/React.createElement(Ico, {
+      n: "ban",
+      s: 14
+    }), " ", mine ? "You recalled a message" : m.fromName + " recalled a message") : /*#__PURE__*/React.createElement(React.Fragment, null, att && att.type === "img" && att.dataUrl ? /*#__PURE__*/React.createElement("a", {
+      href: att.dataUrl,
+      target: "_blank",
+      rel: "noreferrer",
+      style: {
+        display: "block"
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: att.dataUrl,
+      alt: att.name,
+      style: {
+        maxWidth: 230,
+        maxHeight: 220,
+        borderRadius: 7,
+        display: "block"
+      }
+    })) : att ? /*#__PURE__*/React.createElement("a", {
+      href: att.dataUrl || att.url || undefined,
+      download: att.name,
+      target: "_blank",
+      rel: "noreferrer",
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 9,
+        textDecoration: "none",
+        color: mine ? "var(--cream)" : "var(--ink-800)",
+        background: mine ? "rgba(255,255,255,0.10)" : "var(--ink-50)",
+        border: mine ? "none" : "1px solid var(--border-subtle)",
+        borderRadius: "var(--radius-sm)",
+        padding: "8px 10px",
+        minWidth: 180
+      }
+    }, /*#__PURE__*/React.createElement(Ico, {
+      n: "file-text",
+      s: 18
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "block",
+        fontSize: 13,
+        fontWeight: 600,
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        textOverflow: "ellipsis"
+      }
+    }, att.name), /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "block",
+        fontFamily: "var(--font-mono)",
+        fontSize: 10.5,
+        opacity: 0.7
+      }
+    }, att.size)), /*#__PURE__*/React.createElement(Ico, {
+      n: "download",
+      s: 15
+    })) : null, m.text ? /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: att ? 6 : 0,
+        whiteSpace: "pre-wrap",
+        wordBreak: "break-word"
+      }
+    }, m.text) : null))), /*#__PURE__*/React.createElement("div", {
       style: {
         fontFamily: "var(--font-mono)",
         fontSize: 10.5,
@@ -5178,7 +6873,7 @@ function MessageThread({
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit"
-    })));
+    }), m.recalled ? " · recalled" : ""));
   }) : /*#__PURE__*/React.createElement("div", {
     style: {
       margin: "auto",
@@ -5200,9 +6895,39 @@ function MessageThread({
       gap: 8,
       padding: 12,
       borderTop: "1px solid var(--border-subtle)",
-      background: "var(--white)"
+      background: "var(--white)",
+      alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("input", {
+    ref: fileRef,
+    type: "file",
+    accept: "image/*,.pdf,.csv,.xls,.xlsx,.zip,.doc,.docx,.txt",
+    onChange: pickFile,
+    style: {
+      display: "none"
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: () => fileRef.current && fileRef.current.click(),
+    disabled: busy,
+    title: "Attach file or image",
+    "aria-label": "Attach file or image",
+    style: {
+      border: "1px solid var(--border-default)",
+      background: "var(--white)",
+      color: busy ? "var(--ink-300)" : "var(--ink-600)",
+      borderRadius: "var(--radius-sm)",
+      width: 40,
+      height: 40,
+      cursor: busy ? "default" : "pointer",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none"
+    }
+  }, /*#__PURE__*/React.createElement(Ico, {
+    n: busy ? "loader" : "paperclip",
+    s: 18
+  })), /*#__PURE__*/React.createElement("input", {
     value: text,
     onChange: e => setText(e.target.value),
     onKeyDown: e => {
@@ -5227,6 +6952,7 @@ function MessageThread({
       color: "var(--cream)",
       borderRadius: "var(--radius-sm)",
       padding: "0 16px",
+      height: 40,
       cursor: text.trim() ? "pointer" : "default",
       display: "inline-flex",
       alignItems: "center",
@@ -5492,6 +7218,13 @@ async function downloadDoc(doc) {
 function canDownload(doc) {
   return !!(doc.dataUrl || doc.url || doc.storage_key);
 }
+
+/* look up an attorney headshot by account email (from attorneys.js) */
+function attorneyPhoto(email) {
+  if (!email) return undefined;
+  const a = (window.BERG_ATTORNEYS || []).find(x => x.email && x.email.toLowerCase() === String(email).toLowerCase());
+  return a ? a.photo : undefined;
+}
 window.BergUI = {
   Ico,
   refreshIcons,
@@ -5510,6 +7243,7 @@ window.BergUI = {
   downloadDoc,
   canDownload,
   fmtSize,
+  attorneyPhoto,
   extType,
   MARK_REV,
   LOGO_REV
@@ -5930,6 +7664,9 @@ function AdminApp({
     onBack: () => setOpenId(null)
   });
   if (view === "users") return /*#__PURE__*/React.createElement(Users, null);
+  if (view === "analytics") return /*#__PURE__*/React.createElement(window.BergAnalytics, {
+    user: user
+  });
   if (view === "assign") return /*#__PURE__*/React.createElement(Assignments, {
     onOpen: setOpenId
   });
@@ -7304,7 +9041,28 @@ function CaseDetail({
       n: "folder-lock",
       s: 15
     })
+  }, ...(editable ? [{
+    id: "drafts",
+    label: "Drafts",
+    icon: /*#__PURE__*/React.createElement(CIco, {
+      n: "file-pen",
+      s: 15
+    })
   }, {
+    id: "explorer",
+    label: "Explorer",
+    icon: /*#__PURE__*/React.createElement(CIco, {
+      n: "radar",
+      s: 15
+    })
+  }, {
+    id: "tasks",
+    label: "Tasks",
+    icon: /*#__PURE__*/React.createElement(CIco, {
+      n: "list-checks",
+      s: 15
+    })
+  }] : []), {
     id: "messages",
     label: "Messages",
     icon: /*#__PURE__*/React.createElement(CIco, {
@@ -7642,6 +9400,14 @@ function CaseDetail({
     client: client,
     user: user
   }), tab === "notes" && /*#__PURE__*/React.createElement(CNotes, {
+    client: client,
+    user: user
+  }), tab === "drafts" && /*#__PURE__*/React.createElement(window.BergDocGen, {
+    client: client,
+    user: user
+  }), tab === "explorer" && /*#__PURE__*/React.createElement(window.BergExplorer, {
+    client: client
+  }), tab === "tasks" && /*#__PURE__*/React.createElement(window.BergTasks, {
     client: client,
     user: user
   }), tab === "timeline" && /*#__PURE__*/React.createElement(TimelineTab, {
@@ -8495,6 +10261,7 @@ function ClientApp({
     client: client,
     user: user
   });
+  if (view === "help") return /*#__PURE__*/React.createElement(window.BergEducation, null);
   if (view === "profile") return /*#__PURE__*/React.createElement(ClientProfile, {
     client: client,
     user: user
@@ -8776,6 +10543,17 @@ function ClientHome({
   const STEPS_MAP = window.DB.STAGES;
   const idx = STEPS_MAP.indexOf(client.status);
   const traced = client.wallets.length ? Math.min(99, 40 + client.wallets.length * 12) : 0;
+  const EST = {
+    "Intake": "~1 week",
+    "Investigating": "~2–4 weeks",
+    "Filed": "~4–8 weeks",
+    "Frozen": "~1–3 months",
+    "Recovered": "",
+    "Closed": ""
+  };
+  const tracedAmt = Math.round((+client.amountLost || 0) * traced / 100);
+  const frozenAmt = idx >= 3 ? Math.round((+client.amountLost || 0) * 0.7) : 0;
+  const recoveredAmt = idx >= 4 ? +client.amountLost || 0 : 0;
   const lawyer = window.DB.users().find(u => u.id === client.lawyerId);
   const [grown, setGrown] = React.useState(false);
   const [tv, setTv] = React.useState(0);
@@ -8917,7 +10695,14 @@ function ClientHome({
         fontWeight: st === "todo" ? 500 : 600,
         color: st === "todo" ? "var(--ink-400)" : "var(--ink-900)"
       }
-    }, t)));
+    }, t, st === "active" && EST[t] ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontWeight: 500,
+        fontSize: 12.5,
+        color: "var(--stone-600)",
+        marginLeft: 8
+      }
+    }, "\xB7 typically ", EST[t]) : null)));
   }))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
@@ -8945,6 +10730,61 @@ function ClientHome({
     value: tv + "%",
     caption: "of fund flow"
   })), /*#__PURE__*/React.createElement(ClCard, {
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(ClCH, {
+    title: "Recovery progress"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 13
+    }
+  }, [["Traced", tracedAmt, "var(--info-500)", "search"], ["Frozen", frozenAmt, "var(--warning-500)", "snowflake"], ["Recovered", recoveredAmt, "var(--success-500)", "badge-check"]].map(([lbl, amt, col, ic]) => {
+    const pct = client.amountLost ? Math.round(amt / client.amountLost * 100) : 0;
+    return /*#__PURE__*/React.createElement("div", {
+      key: lbl
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        fontFamily: "var(--font-ui)",
+        fontSize: 13,
+        marginBottom: 5
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 7,
+        color: "var(--ink-700)",
+        fontWeight: 500
+      }
+    }, /*#__PURE__*/React.createElement(ClIco, {
+      n: ic,
+      s: 14,
+      c: col
+    }), " ", lbl), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "var(--ink-500)"
+      }
+    }, window.DB.fmtMoney(amt))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 7,
+        borderRadius: 4,
+        background: "var(--ink-100)",
+        overflow: "hidden"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: "100%",
+        borderRadius: 4,
+        background: col,
+        width: (grown ? pct : 0) + "%",
+        transition: "width 1s cubic-bezier(.16,1,.3,1)"
+      }
+    })));
+  }))), /*#__PURE__*/React.createElement(ClCard, {
     padding: "lg"
   }, /*#__PURE__*/React.createElement(ClCH, {
     title: "Your team"
@@ -9830,21 +11670,38 @@ try { (() => {
       log(d, actor, action, target);
       save();
     },
-    sendMessage(clientId, fromUser, text) {
+    sendMessage(clientId, fromUser, text, attachment) {
       const d = load();
       const c = d.clients.find(x => x.id === clientId);
-      if (!c || !text.trim()) return;
+      if (!c) return;
+      const body = (text || "").trim();
+      if (!body && !attachment) return;
       c.messages = c.messages || [];
       c.messages.push({
         id: uid("m"),
         fromId: fromUser.id,
         fromName: fromUser.name,
         fromRole: fromUser.role,
-        text: text.trim(),
+        text: body,
+        attachment: attachment || null,
+        recalled: false,
         ts: now(),
         read: false
       });
-      log(d, fromUser.name, "sent a secure message", c.name);
+      log(d, fromUser.name, attachment ? "shared a file in secure chat" : "sent a secure message", c.name);
+      save();
+    },
+    recallMessage(clientId, msgId, user) {
+      const d = load();
+      const c = d.clients.find(x => x.id === clientId);
+      if (!c || !c.messages) return;
+      const m = c.messages.find(x => x.id === msgId);
+      if (!m) return;
+      if (user && m.fromId !== user.id) return; // only the sender can recall
+      m.recalled = true;
+      m.text = "";
+      m.attachment = null;
+      log(d, user ? user.name : "", "recalled a message", c.name);
       save();
     },
     markMessagesRead(clientId, userId) {
@@ -9883,6 +11740,40 @@ try { (() => {
       const c = d.clients.find(x => x.id === clientId);
       if (!c || !c.notes) return;
       c.notes = c.notes.filter(n => n.id !== noteId);
+      save();
+    },
+    tasksFor(clientId) {
+      const c = load().clients.find(x => x.id === clientId);
+      return c && c.tasks || [];
+    },
+    addTask(clientId, task, actorName) {
+      const d = load();
+      const c = d.clients.find(x => x.id === clientId);
+      if (!c || !task.title || !task.title.trim()) return;
+      c.tasks = c.tasks || [];
+      c.tasks.push({
+        id: uid("tk"),
+        title: task.title.trim(),
+        due: task.due || "",
+        done: false,
+        createdBy: actorName || ""
+      });
+      log(d, actorName, "added task: " + task.title.trim(), c.name);
+      save();
+    },
+    toggleTask(clientId, taskId) {
+      const d = load();
+      const c = d.clients.find(x => x.id === clientId);
+      if (!c || !c.tasks) return;
+      const t = c.tasks.find(x => x.id === taskId);
+      if (t) t.done = !t.done;
+      save();
+    },
+    removeTask(clientId, taskId) {
+      const d = load();
+      const c = d.clients.find(x => x.id === clientId);
+      if (!c || !c.tasks) return;
+      c.tasks = c.tasks.filter(x => x.id !== taskId);
       save();
     }
   };
@@ -9936,6 +11827,1075 @@ try { (() => {
   window.DB = DB;
 })();
 })(); } catch (e) { __ds_ns.__errors.push({ path: "app/db.js", error: String((e && e.message) || e) }); }
+
+// app/extras.jsx
+try { (() => {
+/* Berg PC Platform — extra features: Analytics (admin) + Education (client).
+   Exposes window.BergAnalytics and window.BergEducation. */
+const DSX = window.BergPCDesignSystem_eb13e3;
+const {
+  Card: XCard,
+  CardHeader: XCH,
+  Stat: XStat,
+  Badge: XBadge
+} = DSX;
+const {
+  Ico: XIco,
+  refreshIcons: xRefresh,
+  PageWrap: XWrap,
+  SectionTitle: XSec
+} = window.BergUI;
+
+/* ---------------- Admin Analytics dashboard ---------------- */
+function Analytics({
+  user
+}) {
+  xRefresh();
+  const clients = window.DB.clientsFor({
+    role: "admin"
+  });
+  const lawyers = window.DB.lawyers();
+  const n = clients.length || 1;
+  const recovered = clients.filter(c => c.status === "Recovered");
+  const closed = clients.filter(c => c.status === "Closed");
+  const recoveryRate = Math.round(recovered.length / n * 100);
+  const atIssue = clients.reduce((s, c) => s + (+c.amountLost || 0), 0);
+  const recoveredAmt = recovered.reduce((s, c) => s + (+c.amountLost || 0), 0);
+  const pipeline = clients.filter(c => !["Recovered", "Closed", "Intake"].includes(c.status)).reduce((s, c) => s + (+c.amountLost || 0), 0);
+  const CONTINGENCY = 0.30;
+  const projected = Math.round((recoveredAmt + pipeline * 0.5) * CONTINGENCY);
+  const avgDays = Math.round(clients.reduce((s, c) => s + Math.max(1, (Date.now() - new Date(c.createdAt)) / 86400000), 0) / n);
+  const overseas = clients.filter(c => c.overseas).length;
+
+  // case-type mix
+  const typeMap = {};
+  clients.forEach(c => {
+    typeMap[c.matterType] = (typeMap[c.matterType] || 0) + 1;
+  });
+  const types = Object.entries(typeMap).sort((a, b) => b[1] - a[1]);
+  // stage funnel
+  const stageMap = window.DB.STAGES.map(s => ({
+    s,
+    n: clients.filter(c => c.status === s).length
+  }));
+  const stageTone = {
+    "Intake": "var(--ink-300)",
+    "Investigating": "var(--info-500)",
+    "Filed": "var(--stone-500)",
+    "Frozen": "var(--warning-500)",
+    "Recovered": "var(--success-500)",
+    "Closed": "var(--ink-500)"
+  };
+  const typeColors = ["var(--navy-700)", "var(--stone-500)", "var(--info-500)", "var(--warning-500)", "var(--success-500)", "var(--ink-400)"];
+  const [grown, setGrown] = React.useState(false);
+  React.useEffect(() => {
+    const t = setTimeout(() => setGrown(true), 70);
+    return () => clearTimeout(t);
+  }, []);
+  const kpis = [["Recovery rate", recoveryRate + "%", "trending-up", recovered.length + " of " + clients.length + " recovered"], ["Recovered to date", window.DB.fmtMoney(recoveredAmt), "badge-check", "across " + recovered.length + " cases"], ["Projected fees", window.DB.fmtMoney(projected), "scale", "~30% contingency"], ["Avg. case age", avgDays + " days", "clock", "open cases"]];
+  return /*#__PURE__*/React.createElement(XWrap, null, /*#__PURE__*/React.createElement(XSec, {
+    eyebrow: "Console",
+    title: "Analytics"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      gap: 14
+    }
+  }, kpis.map(([l, v, ic, cap]) => /*#__PURE__*/React.createElement(XCard, {
+    key: l,
+    padding: "md"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement(XStat, {
+    label: l,
+    value: v,
+    caption: cap
+  })), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: 38,
+      height: 38,
+      borderRadius: "var(--radius-md)",
+      background: "var(--stone-100)",
+      color: "var(--stone-700)",
+      flex: "none"
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: ic,
+    s: 19
+  })))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: 18,
+      alignItems: "start"
+    }
+  }, /*#__PURE__*/React.createElement(XCard, {
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(XCH, {
+    eyebrow: "Portfolio",
+    title: "Case-type mix"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 13
+    }
+  }, types.map(([t, c], i) => /*#__PURE__*/React.createElement("div", {
+    key: t
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      fontFamily: "var(--font-ui)",
+      fontSize: 13.5,
+      marginBottom: 5
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-800)",
+      fontWeight: 500
+    }
+  }, t), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-500)"
+    }
+  }, c)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 8,
+      borderRadius: 4,
+      background: "var(--ink-100)",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: "100%",
+      borderRadius: 4,
+      background: typeColors[i % typeColors.length],
+      width: (grown ? c / n * 100 : 0) + "%",
+      transition: "width .9s cubic-bezier(.16,1,.3,1) " + i * 0.08 + "s"
+    }
+  })))))), /*#__PURE__*/React.createElement(XCard, {
+    padding: "lg"
+  }, /*#__PURE__*/React.createElement(XCH, {
+    eyebrow: "Pipeline",
+    title: "Cases by stage"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 11
+    }
+  }, stageMap.map(({
+    s,
+    n: cnt
+  }, i) => {
+    const max = Math.max(1, ...stageMap.map(x => x.n));
+    return /*#__PURE__*/React.createElement("div", {
+      key: s,
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 92,
+        fontFamily: "var(--font-ui)",
+        fontSize: 12.5,
+        color: "var(--ink-600)",
+        textAlign: "right",
+        flex: "none"
+      }
+    }, s), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1,
+        height: 22,
+        borderRadius: 4,
+        background: "var(--ink-50)",
+        overflow: "hidden"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: "100%",
+        borderRadius: 4,
+        background: stageTone[s],
+        width: (grown ? cnt / max * 100 : 0) + "%",
+        transition: "width .9s cubic-bezier(.16,1,.3,1) " + i * 0.07 + "s"
+      }
+    })), /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 22,
+        fontFamily: "var(--font-mono)",
+        fontSize: 13,
+        color: "var(--ink-800)",
+        flex: "none"
+      }
+    }, cnt));
+  })))), /*#__PURE__*/React.createElement(XCard, {
+    padding: "none"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "15px 20px",
+      borderBottom: "1px solid var(--border-subtle)"
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 17,
+      margin: 0,
+      color: "var(--ink-900)"
+    }
+  }, "Attorney performance")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflowX: "auto"
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: "100%",
+      borderCollapse: "collapse",
+      fontFamily: "var(--font-ui)"
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, ["Attorney", "Cases", "At issue", "Recovered", "Rate"].map((h, i) => /*#__PURE__*/React.createElement("th", {
+    key: h,
+    style: {
+      textAlign: i === 0 ? "left" : "right",
+      padding: "11px 18px",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      color: "var(--ink-500)",
+      borderBottom: "1px solid var(--border-default)",
+      background: "var(--ink-50)"
+    }
+  }, h)))), /*#__PURE__*/React.createElement("tbody", null, lawyers.map((l, i) => {
+    const cs = window.DB.clientsFor(l);
+    const rec = cs.filter(c => c.status === "Recovered");
+    const ai = cs.reduce((s, c) => s + (+c.amountLost || 0), 0);
+    const rc = rec.reduce((s, c) => s + (+c.amountLost || 0), 0);
+    const rate = cs.length ? Math.round(rec.length / cs.length * 100) : 0;
+    return /*#__PURE__*/React.createElement("tr", {
+      key: l.id,
+      style: {
+        borderBottom: i < lawyers.length - 1 ? "1px solid var(--border-subtle)" : "none"
+      }
+    }, /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--ink-900)",
+        fontWeight: 500
+      }
+    }, l.name), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--ink-700)",
+        textAlign: "right"
+      }
+    }, cs.length), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--ink-700)",
+        textAlign: "right"
+      }
+    }, window.DB.fmtMoney(ai)), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        fontSize: 13.5,
+        color: "var(--success-700)",
+        textAlign: "right",
+        fontWeight: 600
+      }
+    }, window.DB.fmtMoney(rc)), /*#__PURE__*/React.createElement("td", {
+      style: {
+        padding: "12px 18px",
+        textAlign: "right"
+      }
+    }, /*#__PURE__*/React.createElement(XBadge, {
+      tone: rate >= 50 ? "success" : rate > 0 ? "warning" : "neutral"
+    }, rate, "%")));
+  }))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 12,
+      color: "var(--ink-400)",
+      textAlign: "center"
+    }
+  }, "Projected fees assume a 30% contingency on recovered funds plus 50%-weighted active pipeline. Indicative only."));
+}
+
+/* ---------------- Client Education / FAQ ---------------- */
+function Education() {
+  xRefresh();
+  const [open, setOpen] = React.useState(0);
+  const faqs = [["Can my stolen crypto really be recovered?", "Sometimes — it depends on where the funds went and how quickly we act. We trace the assets, and if they reach a regulated exchange or identifiable wallet, we can pursue freezing and recovery through the courts. We'll give you an honest assessment after reviewing your case."], ["How long does recovery take?", "It varies. Tracing and identifying funds takes days to weeks; freezing and litigation can take months. Cross-border cases take longer. Your case page shows the current stage and what's next."], ["What does it cost?", "We work on a contingency basis for recovery matters — no recovery, no fee. We never ask for upfront payment to 'release' your funds. Anyone who does is running a scam."], ["Why can't you guarantee recovery?", "No honest firm can. Criminals move fast and some funds are unrecoverable. We can guarantee a rigorous, evidence-led effort — not an outcome."], ["What should I send you?", "Anything documenting the loss: transaction IDs, wallet addresses, bank/wire records, screenshots of chats, and the platform or app involved. Upload them under 'My Documents'."]];
+  const warnings = [["shield-alert", "Never pay an upfront 'recovery fee'", "Berg PC is paid only from recovered funds. A demand for money to unlock or recover your assets is always a scam."], ["user-x", "Beware of 'recovery agents' who contact you", "Scammers target victims a second time, posing as recovery experts or even government agencies. Verify independently before trusting anyone."], ["lock", "We will never ask for your seed phrase", "Your recovery phrase or private keys are never needed for our work. Anyone asking for them is trying to steal what's left."]];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 760,
+      margin: "0 auto",
+      padding: "30px 26px 60px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      fontWeight: 600,
+      letterSpacing: ".16em",
+      textTransform: "uppercase",
+      color: "var(--stone-600)"
+    }
+  }, "Help & Safety"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 28,
+      margin: "8px 0 18px",
+      color: "var(--ink-900)"
+    }
+  }, "Understanding your case"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 11,
+      marginBottom: 30
+    }
+  }, warnings.map(([ic, t, d]) => /*#__PURE__*/React.createElement("div", {
+    key: t,
+    style: {
+      display: "flex",
+      gap: 13,
+      background: "var(--warning-100)",
+      borderLeft: "3px solid var(--warning-500)",
+      borderRadius: "var(--radius-md)",
+      padding: "15px 16px"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--warning-700)",
+      flex: "none",
+      marginTop: 1
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: ic,
+    s: 19
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 14.5,
+      fontWeight: 600,
+      color: "var(--ink-900)",
+      marginBottom: 3
+    }
+  }, t), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 13.5,
+      color: "var(--ink-700)",
+      lineHeight: 1.55
+    }
+  }, d))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 12,
+      fontWeight: 600,
+      letterSpacing: ".14em",
+      textTransform: "uppercase",
+      color: "var(--stone-600)",
+      marginBottom: 12
+    }
+  }, "Frequently asked"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 9
+    }
+  }, faqs.map(([q, a], i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      border: "1px solid var(--ink-100)",
+      borderRadius: "var(--radius-md)",
+      background: "var(--white)",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setOpen(open === i ? -1 : i),
+    style: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      gap: 12,
+      border: "none",
+      background: "none",
+      padding: "15px 16px",
+      cursor: "pointer",
+      textAlign: "left",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14.5,
+      fontWeight: 600,
+      color: "var(--ink-900)"
+    }
+  }, q, /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: "none",
+      transform: open === i ? "rotate(180deg)" : "none",
+      transition: "transform .2s",
+      color: "var(--ink-400)"
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: "chevron-down",
+    s: 18
+  }))), open === i && /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "0 16px 16px",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      color: "var(--ink-600)",
+      lineHeight: 1.6
+    }
+  }, a)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 26,
+      background: "var(--navy-900)",
+      borderRadius: "var(--radius-lg)",
+      padding: "22px 24px",
+      color: "var(--cream)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 19,
+      marginBottom: 6
+    }
+  }, "Still have a question?"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      color: "var(--navy-100)",
+      lineHeight: 1.55
+    }
+  }, "Use ", /*#__PURE__*/React.createElement("b", {
+    style: {
+      color: "var(--cream)"
+    }
+  }, "Secure messages"), " to ask your handling attorney directly \u2014 it's confidential and goes straight to your team.")));
+}
+
+/* ---------------- Lawyer: document generator ---------------- */
+function DocGen({
+  client,
+  user
+}) {
+  xRefresh();
+  const toast = window.BergUI.useToast();
+  const today = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  const wallets = client.wallets || [];
+  const walletRows = wallets.map(w => `<tr><td style="font-family:monospace;font-size:12px">${w.addr}</td><td>${w.role}</td><td>${w.usd || w.balance || "—"}</td></tr>`).join("");
+  const templates = [{
+    id: "demand",
+    icon: "mail",
+    title: "Demand letter",
+    desc: "Formal demand to an identified party to return misappropriated assets.",
+    body: () => `
+        <p>${today}</p>
+        <p><b>RE: Demand for Return of Misappropriated Digital Assets — Matter ${client.id.toUpperCase()}</b></p>
+        <p>To Whom It May Concern:</p>
+        <p>This firm represents ${client.name} in connection with the theft of cryptocurrency assets valued at approximately ${window.DB.fmtMoney(client.amountLost)}, occurring on or about ${client.dateOfLoss || "[date]"} via ${client.platform || "[platform]"}.</p>
+        <p>Our forensic investigation has traced the movement of these assets across the blockchain. Demand is hereby made for the immediate return of all misappropriated funds. Should you fail to respond within ten (10) business days, we are prepared to pursue all available legal and equitable remedies, including injunctive relief.</p>
+        <p>Sincerely,<br/>${user.name}<br/>Berg PC · 24 Greenway Plaza, Suite 1800, Houston, Texas 77046</p>`
+  }, {
+    id: "freeze",
+    icon: "snowflake",
+    title: "Application to freeze wallets",
+    desc: "Petition supporting an injunction freezing the identified wallets.",
+    body: () => `
+        <p>${today}</p>
+        <p><b>APPLICATION FOR TEMPORARY RESTRAINING ORDER — Matter ${client.id.toUpperCase()}</b></p>
+        <p>Applicant ${client.name} respectfully moves this Court for an order freezing the digital asset wallets identified below, which our forensic tracing has linked to the misappropriation of Applicant's funds (${window.DB.fmtMoney(client.amountLost)}).</p>
+        <table style="width:100%;border-collapse:collapse;margin:10px 0"><tr><th align="left">Wallet address</th><th align="left">Role</th><th align="left">Value</th></tr>${walletRows || '<tr><td colspan=3>[wallets pending]</td></tr>'}</table>
+        <p>Absent immediate relief, these assets are likely to be dissipated beyond recovery. Applicant therefore requests that the Court enjoin any transfer from the above addresses pending further proceedings.</p>
+        <p>Respectfully submitted,<br/>${user.name}, Counsel for Applicant</p>`
+  }, {
+    id: "forensic",
+    icon: "file-search",
+    title: "Forensic tracing summary",
+    desc: "Chain-of-funds summary suitable for enforcement referral.",
+    body: () => `
+        <p>${today}</p>
+        <p><b>BLOCKCHAIN FORENSIC SUMMARY — Matter ${client.id.toUpperCase()}</b></p>
+        <p><b>Subject:</b> ${client.name} &nbsp; <b>Loss:</b> ${window.DB.fmtMoney(client.amountLost)} &nbsp; <b>Date:</b> ${client.dateOfLoss || "—"}</p>
+        <p>The following wallets were identified in the flow of funds originating from the victim's account. Tracing was performed across ${wallets.length} hop(s), including pass-through, mixing, and off-ramp addresses.</p>
+        <table style="width:100%;border-collapse:collapse;margin:10px 0"><tr><th align="left">Wallet address</th><th align="left">Role</th><th align="left">Value</th></tr>${walletRows || '<tr><td colspan=3>[wallets pending]</td></tr>'}</table>
+        <p>Recovery strategies under consideration: ${(client.strategies || []).map(s => {
+      const st = window.DB.strategyById(s);
+      return st ? st.label : s;
+    }).join("; ") || "—"}.</p>
+        <p>Prepared by ${user.name}, Berg PC. For authorized use only.</p>`
+  }];
+  function open(tpl) {
+    const w = window.open("", "_blank");
+    if (!w) {
+      toast({
+        tone: "warning",
+        icon: "alert-triangle",
+        title: "Please allow pop-ups"
+      });
+      return;
+    }
+    w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${tpl.title} — ${client.name}</title>
+      <style>body{font-family:Georgia,serif;color:#1A1714;max-width:720px;margin:48px auto;padding:0 28px;line-height:1.7;font-size:15px}
+      .ey{font-family:Arial;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A7B66}
+      hr{border:0;border-top:3px solid #8A7B66;width:54px;margin:14px 0 22px}
+      table td,table th{border-bottom:1px solid #ddd;padding:6px 8px;font-family:Arial;font-size:12.5px}
+      b{color:#16202E}</style></head><body>
+      <div class="ey">Berg PC · Confidential Draft</div><hr>${tpl.body()}
+      <p style="font-family:Arial;font-size:11px;color:#8C867D;margin-top:34px">Auto-generated draft — review and adapt before filing or sending. Not legal advice until reviewed by counsel.</p>
+      <script>setTimeout(()=>window.print(),350)<\/script></body></html>`);
+    w.document.close();
+    window.DB.addTimeline(client.id, {
+      icon: tpl.icon,
+      text: "Generated draft: " + tpl.title
+    }, user.name);
+    toast({
+      tone: "success",
+      icon: "file-down",
+      title: "Draft generated",
+      msg: "Print or save as PDF in the new tab."
+    });
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      color: "var(--ink-500)",
+      fontFamily: "var(--font-ui)",
+      marginBottom: 14
+    }
+  }, "Auto-fill legal drafts from this case's data, then print or save as PDF."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 11
+    }
+  }, templates.map(t => /*#__PURE__*/React.createElement("div", {
+    key: t.id,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 14,
+      border: "1px solid var(--ink-100)",
+      borderRadius: "var(--radius-md)",
+      background: "var(--white)",
+      padding: "15px 16px"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 42,
+      height: 42,
+      borderRadius: "var(--radius-md)",
+      background: "var(--stone-100)",
+      color: "var(--stone-700)",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none"
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: t.icon,
+    s: 20
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 15,
+      fontWeight: 600,
+      color: "var(--ink-900)"
+    }
+  }, t.title), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 13,
+      color: "var(--ink-500)",
+      lineHeight: 1.45
+    }
+  }, t.desc)), /*#__PURE__*/React.createElement("button", {
+    onClick: () => open(t),
+    style: {
+      border: "1px solid var(--border-strong)",
+      background: "var(--white)",
+      color: "var(--ink-900)",
+      borderRadius: "var(--radius-sm)",
+      padding: "9px 15px",
+      fontFamily: "var(--font-ui)",
+      fontSize: 13.5,
+      fontWeight: 600,
+      cursor: "pointer",
+      flex: "none",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: "printer",
+    s: 15
+  }), " Generate")))));
+}
+
+/* ---------------- Lawyer: blockchain explorer (API-ready + mock) ---------------- */
+function Explorer({
+  client
+}) {
+  xRefresh();
+  const [addr, setAddr] = React.useState(client.wallets && client.wallets[0] && client.wallets[0].addr || "");
+  const [data, setData] = React.useState(null);
+  const [busy, setBusy] = React.useState(false);
+  const [live, setLive] = React.useState(false);
+  function mock(a) {
+    let h = 0;
+    for (let i = 0; i < a.length; i++) h = h * 31 + a.charCodeAt(i) >>> 0;
+    const isBtc = /^(bc1|[13])/.test(a);
+    const bal = (h % 90000 / 1000 + 0.3).toFixed(4);
+    const txc = h % 480 + 3;
+    const usd = Math.round(bal * (isBtc ? 64000 : 3400));
+    const txs = Array.from({
+      length: 5
+    }, (_, i) => {
+      const hh = h + i * 2654435761 >>> 0;
+      return {
+        hash: (isBtc ? "" : "0x") + hh.toString(16).padStart(8, "0") + "…" + (hh * 7 >>> 0).toString(16).slice(0, 6),
+        val: (hh % 40000 / 1000).toFixed(4),
+        dir: hh % 2 ? "in" : "out",
+        age: hh % 60 + "d ago"
+      };
+    });
+    return {
+      isBtc,
+      bal,
+      txc,
+      usd,
+      txs
+    };
+  }
+  async function lookup() {
+    if (!addr.trim()) return;
+    setBusy(true);
+    setData(null);
+    setLive(false);
+    const a = addr.trim();
+    try {
+      const isBtc = /^(bc1|[13])/.test(a);
+      const url = isBtc ? "https://api.blockchair.com/bitcoin/dashboards/address/" + a : "https://api.blockchair.com/ethereum/dashboards/address/" + a;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("api");
+      const j = await res.json();
+      const d = j.data && j.data[a];
+      if (!d) throw new Error("nodata");
+      const addrInfo = d.address || {};
+      setData({
+        isBtc,
+        bal: isBtc ? (addrInfo.balance / 1e8).toFixed(4) : (addrInfo.balance / 1e18).toFixed(4),
+        txc: addrInfo.transaction_count || (d.transactions ? d.transactions.length : 0),
+        usd: Math.round(addrInfo.balance_usd || 0),
+        txs: (d.transactions || []).slice(0, 5).map(t => ({
+          hash: (typeof t === "string" ? t : t.hash || "").slice(0, 12) + "…",
+          val: "—",
+          dir: "—",
+          age: ""
+        }))
+      });
+      setLive(true);
+    } catch (e) {
+      setData(mock(a));
+      setLive(false);
+    } finally {
+      setBusy(false);
+    }
+  }
+  const roleColor = {
+    tainted: "var(--trace-tainted)",
+    hop: "var(--trace-hop)",
+    exchange: "var(--trace-exchange)",
+    mixer: "var(--trace-mixer)",
+    frozen: "var(--trace-frozen)"
+  };
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      color: "var(--ink-500)",
+      fontFamily: "var(--font-ui)",
+      marginBottom: 12
+    }
+  }, "Paste any wallet address to look up its balance and recent activity."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 8,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    value: addr,
+    onChange: e => setAddr(e.target.value),
+    onKeyDown: e => {
+      if (e.key === "Enter") lookup();
+    },
+    placeholder: "bc1q\u2026 or 0x\u2026",
+    style: {
+      flex: 1,
+      fontFamily: "var(--font-mono)",
+      fontSize: 13.5,
+      border: "1px solid var(--border-default)",
+      borderRadius: "var(--radius-sm)",
+      padding: "11px 13px",
+      outline: "none",
+      color: "var(--ink-900)"
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: lookup,
+    disabled: busy,
+    style: {
+      border: "none",
+      background: "var(--ink-900)",
+      color: "var(--cream)",
+      borderRadius: "var(--radius-sm)",
+      padding: "0 18px",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      fontWeight: 600,
+      cursor: "pointer",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: busy ? "loader" : "search",
+    s: 16
+  }), " ", busy ? "…" : "Look up")), client.wallets && client.wallets.length > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 7,
+      marginBottom: 16
+    }
+  }, client.wallets.map((w, i) => /*#__PURE__*/React.createElement("button", {
+    key: i,
+    onClick: () => {
+      setAddr(w.addr);
+    },
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 7,
+      border: "1px solid var(--border-default)",
+      background: "var(--white)",
+      borderRadius: "var(--radius-pill)",
+      padding: "5px 11px",
+      fontFamily: "var(--font-mono)",
+      fontSize: 12,
+      color: "var(--ink-700)",
+      cursor: "pointer"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: "50%",
+      background: roleColor[w.role] || "var(--ink-400)"
+    }
+  }), w.addr.slice(0, 8), "\u2026", w.addr.slice(-4)))), data && /*#__PURE__*/React.createElement("div", {
+    style: {
+      border: "1px solid var(--ink-100)",
+      borderRadius: "var(--radius-lg)",
+      background: "var(--white)",
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 0,
+      borderBottom: "1px solid var(--ink-100)"
+    }
+  }, [["Balance", data.bal + " " + (data.isBtc ? "BTC" : "ETH")], ["Approx. USD", "$" + Number(data.usd).toLocaleString("en-US")], ["Transactions", data.txc]].map(([l, v], i) => /*#__PURE__*/React.createElement("div", {
+    key: l,
+    style: {
+      flex: 1,
+      padding: "16px 18px",
+      borderLeft: i ? "1px solid var(--ink-100)" : "none"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      color: "var(--ink-500)"
+    }
+  }, l), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 22,
+      color: "var(--ink-900)",
+      marginTop: 4
+    }
+  }, v)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "12px 18px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: ".1em",
+      textTransform: "uppercase",
+      color: "var(--ink-500)",
+      marginBottom: 8
+    }
+  }, "Recent transactions"), data.txs.map((t, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      padding: "8px 0",
+      borderTop: i ? "1px solid var(--ink-50)" : "none",
+      fontFamily: "var(--font-mono)",
+      fontSize: 12.5
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: t.dir === "in" ? "var(--success-600)" : t.dir === "out" ? "var(--danger-500)" : "var(--ink-400)",
+      flex: "none"
+    }
+  }, t.dir === "in" ? "↓" : t.dir === "out" ? "↑" : "·"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      color: "var(--ink-700)",
+      overflow: "hidden",
+      textOverflow: "ellipsis"
+    }
+  }, t.hash), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-600)"
+    }
+  }, t.val !== "—" ? t.val : ""), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "var(--ink-400)",
+      width: 56,
+      textAlign: "right"
+    }
+  }, t.age)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "10px 18px",
+      background: live ? "var(--success-100)" : "var(--ink-50)",
+      fontFamily: "var(--font-ui)",
+      fontSize: 12,
+      color: live ? "var(--success-700)" : "var(--ink-500)",
+      display: "flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement(XIco, {
+    n: live ? "wifi" : "info",
+    s: 14
+  }), " ", live ? "Live data from Blockchair." : "Demo figures (live blockchain API blocked offline — works once deployed).")));
+}
+Object.assign(window, {
+  BergAnalytics: Analytics,
+  BergEducation: Education,
+  BergDocGen: DocGen,
+  BergExplorer: Explorer,
+  BergTasks: Tasks
+});
+
+/* ---------------- Lawyer: tasks & deadlines ---------------- */
+function Tasks({
+  client,
+  user
+}) {
+  xRefresh();
+  const [, force] = React.useReducer(x => x + 1, 0);
+  const [title, setTitle] = React.useState("");
+  const [due, setDue] = React.useState("");
+  const tasks = window.DB.tasksFor(client.id).slice().sort((a, b) => (a.due || "9999") < (b.due || "9999") ? -1 : 1);
+  const today = new Date().toISOString().slice(0, 10);
+  function add() {
+    if (!title.trim()) return;
+    window.DB.addTask(client.id, {
+      title,
+      due
+    }, user.name);
+    setTitle("");
+    setDue("");
+    force();
+  }
+  const fld = {
+    fontFamily: "var(--font-ui)",
+    fontSize: 14,
+    border: "1px solid var(--border-default)",
+    borderRadius: "var(--radius-sm)",
+    padding: "10px 12px",
+    outline: "none",
+    color: "var(--ink-900)"
+  };
+  function meta(t) {
+    if (t.done) return ["Done", "var(--success-700)", "var(--success-100)"];
+    if (!t.due) return ["No date", "var(--ink-500)", "var(--ink-50)"];
+    if (t.due < today) return ["Overdue", "var(--danger-700)", "var(--danger-100)"];
+    if (t.due === today) return ["Due today", "var(--warning-700)", "var(--warning-100)"];
+    const days = Math.round((new Date(t.due) - new Date(today)) / 86400000);
+    return ["In " + days + "d", "var(--ink-600)", "var(--ink-50)"];
+  }
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13.5,
+      color: "var(--ink-500)",
+      fontFamily: "var(--font-ui)",
+      marginBottom: 14
+    }
+  }, "Track deadlines and follow-ups for this case \u2014 statute dates, court filings, client check-ins."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 8,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    value: title,
+    onChange: e => setTitle(e.target.value),
+    onKeyDown: e => {
+      if (e.key === "Enter") add();
+    },
+    placeholder: "New task \u2014 e.g. File TRO application",
+    style: {
+      ...fld,
+      flex: 1
+    }
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "date",
+    value: due,
+    onChange: e => setDue(e.target.value),
+    style: {
+      ...fld,
+      width: 150
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: add,
+    style: {
+      border: "none",
+      background: "var(--ink-900)",
+      color: "var(--cream)",
+      borderRadius: "var(--radius-sm)",
+      padding: "0 16px",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      fontWeight: 600,
+      cursor: "pointer"
+    }
+  }, "Add")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 8
+    }
+  }, tasks.map(t => {
+    const [lbl, fg, bg] = meta(t);
+    return /*#__PURE__*/React.createElement("div", {
+      key: t.id,
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        border: "1px solid var(--ink-100)",
+        borderRadius: "var(--radius-md)",
+        background: "var(--white)",
+        padding: "12px 14px"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => {
+        window.DB.toggleTask(client.id, t.id);
+        force();
+      },
+      style: {
+        width: 22,
+        height: 22,
+        borderRadius: "var(--radius-xs)",
+        border: "1.5px solid " + (t.done ? "var(--success-500)" : "var(--border-strong)"),
+        background: t.done ? "var(--success-500)" : "var(--white)",
+        cursor: "pointer",
+        flex: "none",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 0
+      }
+    }, t.done && /*#__PURE__*/React.createElement(XIco, {
+      n: "check",
+      s: 13,
+      c: "#fff"
+    })), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontFamily: "var(--font-ui)",
+        fontSize: 14.5,
+        color: t.done ? "var(--ink-400)" : "var(--ink-900)",
+        textDecoration: t.done ? "line-through" : "none"
+      }
+    }, t.title), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "var(--font-ui)",
+        fontSize: 11.5,
+        fontWeight: 600,
+        padding: "3px 9px",
+        borderRadius: 999,
+        background: bg,
+        color: fg
+      }
+    }, lbl, t.due && !t.done ? " · " + t.due : ""), /*#__PURE__*/React.createElement("button", {
+      onClick: () => {
+        window.DB.removeTask(client.id, t.id);
+        force();
+      },
+      style: {
+        border: "none",
+        background: "transparent",
+        cursor: "pointer",
+        color: "var(--ink-300)"
+      }
+    }, /*#__PURE__*/React.createElement(XIco, {
+      n: "x",
+      s: 16
+    })));
+  }), !tasks.length && /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: "center",
+      color: "var(--ink-400)",
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      padding: "30px 0"
+    }
+  }, "No tasks yet.")));
+}
+})(); } catch (e) { __ds_ns.__errors.push({ path: "app/extras.jsx", error: String((e && e.message) || e) }); }
 
 // app/lawyer.jsx
 try { (() => {
@@ -11259,7 +14219,11 @@ function MessageThread({
   height = 360
 }) {
   const [text, setText] = React.useState("");
+  const [hover, setHover] = React.useState(null);
+  const [busy, setBusy] = React.useState(false);
+  const fileRef = React.useRef(null);
   const endRef = React.useRef(null);
+  const toast = useToast();
   const msgs = client.messages || [];
   React.useEffect(() => {
     window.DB.markMessagesRead(client.id, user.id);
@@ -11272,6 +14236,48 @@ function MessageThread({
     if (!text.trim()) return;
     window.DB.sendMessage(client.id, user, text);
     setText("");
+  }
+  function recall(m) {
+    if (window.confirm("Recall this message? It will be removed for everyone on this case.")) window.DB.recallMessage(client.id, m.id, user);
+  }
+  async function pickFile(e) {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    const MAX = 3 * 1024 * 1024;
+    if (file.size > MAX) {
+      toast({
+        tone: "danger",
+        icon: "alert-circle",
+        title: "File too large",
+        msg: "Max 3 MB in chat — use Documents for larger files."
+      });
+      return;
+    }
+    setBusy(true);
+    try {
+      const dataUrl = await new Promise((res, rej) => {
+        const r = new FileReader();
+        r.onload = () => res(r.result);
+        r.onerror = rej;
+        r.readAsDataURL(file);
+      });
+      await window.DB.sendMessage(client.id, user, "", {
+        name: file.name,
+        type: extType(file.name),
+        size: fmtSize(file.size),
+        dataUrl
+      });
+    } catch (err) {
+      toast({
+        tone: "danger",
+        icon: "alert-circle",
+        title: "Couldn't attach",
+        msg: String(err && err.message || err)
+      });
+    } finally {
+      setBusy(false);
+    }
   }
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -11295,8 +14301,12 @@ function MessageThread({
     }
   }, msgs.length ? msgs.map(m => {
     const mine = m.fromId === user.id;
+    const att = m.attachment;
+    const imgOnly = att && att.type === "img" && att.dataUrl && !m.text;
     return /*#__PURE__*/React.createElement("div", {
       key: m.id,
+      onMouseEnter: () => setHover(m.id),
+      onMouseLeave: () => setHover(h => h === m.id ? null : h),
       style: {
         display: "flex",
         flexDirection: "column",
@@ -11304,17 +14314,121 @@ function MessageThread({
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
-        maxWidth: "78%",
-        background: mine ? "var(--navy-800)" : "var(--white)",
+        display: "flex",
+        alignItems: "center",
+        gap: 6,
+        flexDirection: mine ? "row" : "row-reverse",
+        maxWidth: "82%"
+      }
+    }, mine && !m.recalled && /*#__PURE__*/React.createElement("button", {
+      onClick: () => recall(m),
+      title: "Recall message",
+      "aria-label": "Recall message",
+      style: {
+        border: "none",
+        background: "transparent",
+        cursor: "pointer",
+        color: "var(--ink-400)",
+        padding: 4,
+        lineHeight: 0,
+        opacity: hover === m.id ? 1 : 0,
+        transition: "opacity var(--duration-fast) var(--ease-standard)",
+        flex: "none"
+      }
+    }, /*#__PURE__*/React.createElement(Ico, {
+      n: "undo-2",
+      s: 14
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: m.recalled ? "transparent" : mine ? "var(--navy-800)" : "var(--white)",
         color: mine ? "var(--cream)" : "var(--ink-800)",
-        border: mine ? "none" : "1px solid var(--border-subtle)",
+        border: m.recalled ? "1px dashed var(--border-default)" : mine ? "none" : "1px solid var(--border-subtle)",
         borderRadius: "var(--radius-md)",
-        padding: "9px 13px",
+        padding: imgOnly ? 4 : "9px 13px",
         fontFamily: "var(--font-ui)",
         fontSize: 14,
-        lineHeight: 1.5
+        lineHeight: 1.5,
+        minWidth: 0
       }
-    }, m.text), /*#__PURE__*/React.createElement("div", {
+    }, m.recalled ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontStyle: "italic",
+        color: "var(--ink-400)",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+        fontSize: 13
+      }
+    }, /*#__PURE__*/React.createElement(Ico, {
+      n: "ban",
+      s: 14
+    }), " ", mine ? "You recalled a message" : m.fromName + " recalled a message") : /*#__PURE__*/React.createElement(React.Fragment, null, att && att.type === "img" && att.dataUrl ? /*#__PURE__*/React.createElement("a", {
+      href: att.dataUrl,
+      target: "_blank",
+      rel: "noreferrer",
+      style: {
+        display: "block"
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: att.dataUrl,
+      alt: att.name,
+      style: {
+        maxWidth: 230,
+        maxHeight: 220,
+        borderRadius: 7,
+        display: "block"
+      }
+    })) : att ? /*#__PURE__*/React.createElement("a", {
+      href: att.dataUrl || undefined,
+      download: att.name,
+      target: "_blank",
+      rel: "noreferrer",
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 9,
+        textDecoration: "none",
+        color: mine ? "var(--cream)" : "var(--ink-800)",
+        background: mine ? "rgba(255,255,255,0.10)" : "var(--ink-50)",
+        border: mine ? "none" : "1px solid var(--border-subtle)",
+        borderRadius: "var(--radius-sm)",
+        padding: "8px 10px",
+        minWidth: 180
+      }
+    }, /*#__PURE__*/React.createElement(Ico, {
+      n: "file-text",
+      s: 18
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        minWidth: 0
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "block",
+        fontSize: 13,
+        fontWeight: 600,
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        textOverflow: "ellipsis"
+      }
+    }, att.name), /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: "block",
+        fontFamily: "var(--font-mono)",
+        fontSize: 10.5,
+        opacity: 0.7
+      }
+    }, att.size)), /*#__PURE__*/React.createElement(Ico, {
+      n: "download",
+      s: 15
+    })) : null, m.text ? /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: att ? 6 : 0,
+        whiteSpace: "pre-wrap",
+        wordBreak: "break-word"
+      }
+    }, m.text) : null))), /*#__PURE__*/React.createElement("div", {
       style: {
         fontFamily: "var(--font-mono)",
         fontSize: 10.5,
@@ -11326,7 +14440,7 @@ function MessageThread({
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit"
-    })));
+    }), m.recalled ? " · recalled" : ""));
   }) : /*#__PURE__*/React.createElement("div", {
     style: {
       margin: "auto",
@@ -11348,9 +14462,39 @@ function MessageThread({
       gap: 8,
       padding: 12,
       borderTop: "1px solid var(--border-subtle)",
-      background: "var(--white)"
+      background: "var(--white)",
+      alignItems: "center"
     }
   }, /*#__PURE__*/React.createElement("input", {
+    ref: fileRef,
+    type: "file",
+    accept: "image/*,.pdf,.csv,.xls,.xlsx,.zip,.doc,.docx,.txt",
+    onChange: pickFile,
+    style: {
+      display: "none"
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: () => fileRef.current && fileRef.current.click(),
+    disabled: busy,
+    title: "Attach file or image",
+    "aria-label": "Attach file or image",
+    style: {
+      border: "1px solid var(--border-default)",
+      background: "var(--white)",
+      color: busy ? "var(--ink-300)" : "var(--ink-600)",
+      borderRadius: "var(--radius-sm)",
+      width: 40,
+      height: 40,
+      cursor: busy ? "default" : "pointer",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none"
+    }
+  }, /*#__PURE__*/React.createElement(Ico, {
+    n: busy ? "loader" : "paperclip",
+    s: 18
+  })), /*#__PURE__*/React.createElement("input", {
     value: text,
     onChange: e => setText(e.target.value),
     onKeyDown: e => {
@@ -11375,6 +14519,7 @@ function MessageThread({
       color: "var(--cream)",
       borderRadius: "var(--radius-sm)",
       padding: "0 16px",
+      height: 40,
       cursor: text.trim() ? "pointer" : "default",
       display: "inline-flex",
       alignItems: "center",
@@ -12034,6 +15179,63 @@ window.BergTraceI = {
 };
 })(); } catch (e) { __ds_ns.__errors.push({ path: "app/trace.jsx", error: String((e && e.message) || e) }); }
 
+// assets/team/roster.js
+try { (() => {
+// Berg PC — real team roster (source: www.bergppc.com/lawyers, 2025-07 listing).
+// Headshots are referenced from the live site; cards fall back to branded
+// serif initials when offline. Bios are original short summaries.
+window.BergPCTeam = [{
+  name: "Geoffrey Berg",
+  role: "Trial Lawyer, Managing Partner",
+  photo: "https://www.bergppc.com/wp-content/uploads/2025/04/DSC02815-scaled-e1744302932965-1024x684.jpg",
+  href: "https://www.bergppc.com/lawyers/geoffrey-berg/",
+  bio: "Founder and managing partner. Decades of trial experience leading the firm's business and cryptocurrency litigation, with a focus on crypto fraud tracing and recovery. Featured in NPR, CBS, WIRED, CNN, and Fox.",
+  credentials: ["Crypto Recovery", "Business Litigation", "Trials"]
+}, {
+  name: "Kathryn E. Nelson",
+  role: "Trial Lawyer, Partner",
+  photo: "https://www.bergppc.com/wp-content/uploads/2025/04/Kathryn-Nelson094-Edit-2-scaled-e1744216498364.jpg",
+  href: "https://www.bergppc.com/lawyers/kathryn-e-nelson/",
+  bio: "Partner driving case strategy and courtroom advocacy across business and partnership disputes — from breach of contract to fiduciary-duty claims.",
+  credentials: ["Business Disputes", "Partnership Disputes", "Litigation"]
+}, {
+  name: "Tomas Tijerina",
+  role: "Business & Transactional Lawyer, Of Counsel",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/tomas-f-tijerina.png",
+  href: "https://www.bergppc.com/lawyers/tomas-f-tijerina/",
+  bio: "Provides legal insight and strategic support on financial transactions, cryptocurrency matters, corporate compliance, and regulatory oversight — with substantial experience in complex financial and digital-asset cases.",
+  credentials: ["Crypto Transactions", "Corporate Compliance", "Regulatory"]
+}, {
+  name: "Lisa Clark",
+  role: "Cryptocurrency & Cybersecurity Legal Counsel",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/lisa-clark.png",
+  href: "https://www.bergppc.com/lawyers/lisa-clark/",
+  bio: "Advises on the legal dimensions of cryptocurrency and cybersecurity matters — digital-asset compliance, data protection, and incident response that supports the firm's recovery work.",
+  credentials: ["Crypto Counsel", "Cybersecurity", "Compliance"]
+}, {
+  name: "Denise Pack",
+  role: "Cybersecurity Legal Consultant",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/denise-pack.jpg",
+  href: "https://www.bergppc.com/lawyers/profile.php?slug=denise-pack",
+  bio: "Brings cybersecurity legal expertise to fraud investigations — helping align technical findings with the legal standards needed to pursue and recover stolen assets.",
+  credentials: ["Cybersecurity", "Investigations"]
+}, {
+  name: "Frank Feltes",
+  role: "Cybersecurity Legal Consultant",
+  photo: "https://www.bergppc.com/wp-content/uploads/lawyers/frank-feltes.jpg",
+  href: "https://www.bergppc.com/lawyers/profile.php?slug=frank-feltes",
+  bio: "Supports the firm's investigative team on cybersecurity matters — evidence integrity, fund-flow analysis, and the technical groundwork behind asset-recovery cases.",
+  credentials: ["Cybersecurity", "Forensics"]
+}, {
+  name: "Tracy Moberg",
+  role: "Business Manager",
+  photo: "https://www.bergppc.com/wp-content/uploads/2025/04/tracy-moberg.jpg",
+  href: "https://www.bergppc.com/lawyers/tracy-moberg/",
+  bio: "Runs firm operations and client coordination — keeping intake, matters, and recovery workflows moving from first contact through resolution.",
+  credentials: ["Operations", "Client Coordination"]
+}];
+})(); } catch (e) { __ds_ns.__errors.push({ path: "assets/team/roster.js", error: String((e && e.message) || e) }); }
+
 // components/data/AddressChip.jsx
 try { (() => {
 const {
@@ -12147,6 +15349,145 @@ function AddressChip({
 Object.assign(__ds_scope, { AddressChip });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/AddressChip.jsx", error: String((e && e.message) || e) }); }
 
+// components/data/AttorneyCard.jsx
+try { (() => {
+/**
+ * Berg PC — AttorneyCard.
+ * Attorney / team-member profile card: headshot (with branded initials fallback),
+ * name, role, short bio, and optional credential tags. Used on the Team page,
+ * in case-team rosters, and inside the portal/dashboard.
+ */
+function AttorneyCard({
+  name = "",
+  role = "",
+  bio = "",
+  photo,
+  credentials = [],
+  href,
+  orientation = "portrait",
+  // "portrait" | "row"
+  style
+}) {
+  const [imgOk, setImgOk] = React.useState(Boolean(photo));
+  const initials = name.split(" ").filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+  const row = orientation === "row";
+  const photoBlock = /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flex: "none",
+      width: row ? 96 : "100%",
+      height: row ? 96 : 248,
+      borderRadius: row ? "var(--radius-pill)" : "var(--radius-lg)",
+      overflow: "hidden",
+      background: "linear-gradient(160deg, var(--navy-800), var(--navy-950))",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: row ? 30 : 52,
+      fontWeight: "var(--weight-semibold)",
+      color: "var(--stone-400)",
+      opacity: 0.65
+    }
+  }, initials), photo && imgOk ? /*#__PURE__*/React.createElement("img", {
+    src: photo,
+    alt: name,
+    onError: () => setImgOk(false),
+    style: {
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "center 22%"
+    }
+  }) : null);
+  const body = /*#__PURE__*/React.createElement("div", {
+    style: {
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: row ? 19 : 22,
+      fontWeight: "var(--weight-semibold)",
+      color: "var(--ink-900)",
+      margin: "0 0 3px",
+      letterSpacing: "-0.01em"
+    }
+  }, name), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 12,
+      fontWeight: "var(--weight-semibold)",
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      color: "var(--stone-700)"
+    }
+  }, role), !row ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 54,
+      height: 3,
+      background: "var(--stone-400)",
+      margin: "12px 0 12px"
+    }
+  }) : null, bio ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 14,
+      lineHeight: 1.6,
+      color: "var(--ink-600)",
+      margin: row ? "8px 0 0" : "0 0 12px"
+    }
+  }, bio) : null, credentials && credentials.length ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 6,
+      marginTop: bio ? 4 : 12
+    }
+  }, credentials.map(c => /*#__PURE__*/React.createElement("span", {
+    key: c,
+    style: {
+      fontFamily: "var(--font-ui)",
+      fontSize: 11,
+      fontWeight: "var(--weight-medium)",
+      letterSpacing: "0.02em",
+      color: "var(--stone-700)",
+      background: "var(--stone-100)",
+      border: "1px solid var(--border-subtle)",
+      borderRadius: "var(--radius-sm)",
+      padding: "3px 8px"
+    }
+  }, c))) : null);
+  const Tag = href ? "a" : "div";
+  return /*#__PURE__*/React.createElement(Tag, {
+    href: href,
+    style: {
+      display: row ? "flex" : "block",
+      gap: row ? 16 : 0,
+      alignItems: row ? "center" : undefined,
+      textAlign: "left",
+      textDecoration: "none",
+      background: "#fff",
+      border: "1px solid var(--border-subtle)",
+      borderRadius: "var(--radius-lg)",
+      padding: row ? 16 : 16,
+      boxShadow: "var(--shadow-sm)",
+      ...style
+    }
+  }, photoBlock, row ? body : /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16
+    }
+  }, body));
+}
+Object.assign(__ds_scope, { AttorneyCard });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/AttorneyCard.jsx", error: String((e && e.message) || e) }); }
+
 // components/data/Avatar.jsx
 try { (() => {
 /** Berg PC — Avatar. Initials or photo; circle with subtle ring. */
@@ -12161,7 +15502,7 @@ function Avatar({
   const tones = {
     navy: ["var(--navy-800)", "var(--cream)"],
     stone: ["var(--stone-500)", "var(--cream)"],
-    ink: ["var(--ink-800)", "var(--cream)"]
+    ink: ["var(--fill-ink-strong)", "var(--cream)"]
   };
   const [bg, fg] = tones[tone] || tones.navy;
   return /*#__PURE__*/React.createElement("span", {
@@ -12266,6 +15607,672 @@ function Table({
 }
 Object.assign(__ds_scope, { Table });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Table.jsx", error: String((e && e.message) || e) }); }
+
+// components/data/tweaks-panel.jsx
+try { (() => {
+// @ds-adherence-ignore -- omelette starter scaffold (raw elements/hex/px by design)
+
+/* BEGIN USAGE */
+// tweaks-panel.jsx
+// Reusable Tweaks shell + form-control helpers.
+// Exports (to window): useTweaks, TweaksPanel, TweakSection, TweakRow, TweakSlider,
+//   TweakToggle, TweakRadio, TweakSelect, TweakText, TweakNumber, TweakColor, TweakButton.
+//
+// Owns the host protocol (listens for __activate_edit_mode / __deactivate_edit_mode,
+// posts __edit_mode_available / __edit_mode_set_keys / __edit_mode_dismissed) so
+// individual prototypes don't re-roll it. Ships a consistent set of controls so you
+// don't hand-draw <input type="range">, segmented radios, steppers, etc.
+//
+// Usage (in an HTML file that loads React + Babel):
+//
+//   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+//     "primaryColor": "#D97757",
+//     "palette": ["#D97757", "#29261b", "#f6f4ef"],
+//     "fontSize": 16,
+//     "density": "regular",
+//     "dark": false
+//   }/*EDITMODE-END*/;
+//
+//   function App() {
+//     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+//     return (
+//       <div style={{ fontSize: t.fontSize, color: t.primaryColor }}>
+//         Hello
+//         <TweaksPanel>
+//           <TweakSection label="Typography" />
+//           <TweakSlider label="Font size" value={t.fontSize} min={10} max={32} unit="px"
+//                        onChange={(v) => setTweak('fontSize', v)} />
+//           <TweakRadio  label="Density" value={t.density}
+//                        options={['compact', 'regular', 'comfy']}
+//                        onChange={(v) => setTweak('density', v)} />
+//           <TweakSection label="Theme" />
+//           <TweakColor  label="Primary" value={t.primaryColor}
+//                        options={['#D97757', '#2A6FDB', '#1F8A5B', '#7A5AE0']}
+//                        onChange={(v) => setTweak('primaryColor', v)} />
+//           <TweakColor  label="Palette" value={t.palette}
+//                        options={[['#D97757', '#29261b', '#f6f4ef'],
+//                                  ['#475569', '#0f172a', '#f1f5f9']]}
+//                        onChange={(v) => setTweak('palette', v)} />
+//           <TweakToggle label="Dark mode" value={t.dark}
+//                        onChange={(v) => setTweak('dark', v)} />
+//         </TweaksPanel>
+//       </div>
+//     );
+//   }
+//
+// TweakRadio is the segmented control for 2–3 short options (auto-falls-back to
+// TweakSelect past ~16/~10 chars per label); reach for TweakSelect directly when
+// options are many or long. For color tweaks always curate 3-4 options rather than
+// a free picker; an option can also be a whole 2–5 color palette (the stored value
+// is the array). The Tweak* controls are a floor, not a ceiling — build custom
+// controls inside the panel if a tweak calls for UI they don't cover.
+/* END USAGE */
+// ─────────────────────────────────────────────────────────────────────────────
+
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-body::-webkit-scrollbar{width:8px}
+  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
+  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
+    border:2px solid transparent;background-clip:content-box}
+  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
+    border:2px solid transparent;background-clip:content-box}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
+    color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+
+  .twk-field{appearance:none;box-sizing:border-box;width:100%;min-width:0;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+
+  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
+    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
+  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+    width:14px;height:14px;border-radius:50%;background:#fff;
+    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+  .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
+    background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
+    background:rgba(0,0,0,.06);user-select:none}
+  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
+    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
+    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+  .twk-seg.dragging .twk-seg-thumb{transition:none}
+  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
+    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
+    overflow-wrap:anywhere}
+
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+
+  .twk-num{display:flex;align-items:center;box-sizing:border-box;min-width:0;height:26px;padding:0 0 0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
+  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;
+    user-select:none;padding-right:8px}
+  .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
+    font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
+    outline:none;color:inherit;-moz-appearance:textfield}
+  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{
+    -webkit-appearance:none;margin:0}
+  .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
+
+  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
+    background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
+  .twk-btn:hover{background:rgba(0,0,0,.88)}
+  .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
+  .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
+
+  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
+    background:transparent;flex-shrink:0}
+  .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
+  .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
+  .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
+
+  .twk-chips{display:flex;gap:6px}
+  .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
+    padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
+    box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
+    transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
+  .twk-chip:hover{transform:translateY(-1px);
+    box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
+  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),
+    0 2px 6px rgba(0,0,0,.15)}
+  .twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;
+    display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i:first-child{box-shadow:none}
+  .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+`;
+
+// ── useTweaks ───────────────────────────────────────────────────────────────
+// Single source of truth for tweak values. setTweak persists via the host
+// (__edit_mode_set_keys → host rewrites the EDITMODE block on disk).
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  // Accepts either setTweak('key', value) or setTweak({ key: value, ... }) so a
+  // useState-style call doesn't write a "[object Object]" key into the persisted
+  // JSON block.
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null ? keyOrEdits : {
+      [keyOrEdits]: val
+    };
+    setValues(prev => ({
+      ...prev,
+      ...edits
+    }));
+    window.parent.postMessage({
+      type: '__edit_mode_set_keys',
+      edits
+    }, '*');
+    // Same-window signal so in-page listeners (deck-stage rail thumbnails)
+    // can react — the parent message only reaches the host, not peers.
+    window.dispatchEvent(new CustomEvent('tweakchange', {
+      detail: edits
+    }));
+  }, []);
+  return [values, setTweak];
+}
+
+// ── TweaksPanel ─────────────────────────────────────────────────────────────
+// Floating shell. Registers the protocol listener BEFORE announcing
+// availability — if the announce ran first, the host's activate could land
+// before our handler exists and the toolbar toggle would silently no-op.
+// The close button posts __edit_mode_dismissed so the host's toolbar toggle
+// flips off in lockstep; the host echoes __deactivate_edit_mode back which
+// is what actually hides the panel.
+function TweaksPanel({
+  title = 'Tweaks',
+  children
+}) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  const offsetRef = React.useRef({
+    x: 16,
+    y: 16
+  });
+  const PAD = 16;
+  const clampToViewport = React.useCallback(() => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const w = panel.offsetWidth,
+      h = panel.offsetHeight;
+    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
+    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
+    offsetRef.current = {
+      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
+      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y))
+    };
+    panel.style.right = offsetRef.current.x + 'px';
+    panel.style.bottom = offsetRef.current.y + 'px';
+  }, []);
+  React.useEffect(() => {
+    if (!open) return;
+    clampToViewport();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', clampToViewport);
+      return () => window.removeEventListener('resize', clampToViewport);
+    }
+    const ro = new ResizeObserver(clampToViewport);
+    ro.observe(document.documentElement);
+    return () => ro.disconnect();
+  }, [open, clampToViewport]);
+  React.useEffect(() => {
+    const onMsg = e => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({
+      type: '__edit_mode_available'
+    }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+  const dismiss = () => {
+    setOpen(false);
+    window.parent.postMessage({
+      type: '__edit_mode_dismissed'
+    }, '*');
+  };
+  const onDragStart = e => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const sx = e.clientX,
+      sy = e.clientY;
+    const startRight = window.innerWidth - r.right;
+    const startBottom = window.innerHeight - r.bottom;
+    const move = ev => {
+      offsetRef.current = {
+        x: startRight - (ev.clientX - sx),
+        y: startBottom - (ev.clientY - sy)
+      };
+      clampToViewport();
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+  if (!open) return null;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, __TWEAKS_STYLE), /*#__PURE__*/React.createElement("div", {
+    ref: dragRef,
+    className: "twk-panel",
+    "data-omelette-chrome": "",
+    style: {
+      right: offsetRef.current.x,
+      bottom: offsetRef.current.y
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "twk-hd",
+    onMouseDown: onDragStart
+  }, /*#__PURE__*/React.createElement("b", null, title), /*#__PURE__*/React.createElement("button", {
+    className: "twk-x",
+    "aria-label": "Close tweaks",
+    onMouseDown: e => e.stopPropagation(),
+    onClick: dismiss
+  }, "\u2715")), /*#__PURE__*/React.createElement("div", {
+    className: "twk-body"
+  }, children)));
+}
+
+// ── Layout helpers ──────────────────────────────────────────────────────────
+
+function TweakSection({
+  label,
+  children
+}) {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "twk-sect"
+  }, label), children);
+}
+function TweakRow({
+  label,
+  value,
+  children,
+  inline = false
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: inline ? 'twk-row twk-row-h' : 'twk-row'
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "twk-lbl"
+  }, /*#__PURE__*/React.createElement("span", null, label), value != null && /*#__PURE__*/React.createElement("span", {
+    className: "twk-val"
+  }, value)), children);
+}
+
+// ── Controls ────────────────────────────────────────────────────────────────
+
+function TweakSlider({
+  label,
+  value,
+  min = 0,
+  max = 100,
+  step = 1,
+  unit = '',
+  onChange
+}) {
+  return /*#__PURE__*/React.createElement(TweakRow, {
+    label: label,
+    value: `${value}${unit}`
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "range",
+    className: "twk-slider",
+    min: min,
+    max: max,
+    step: step,
+    value: value,
+    onChange: e => onChange(Number(e.target.value))
+  }));
+}
+function TweakToggle({
+  label,
+  value,
+  onChange
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "twk-row twk-row-h"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "twk-lbl"
+  }, /*#__PURE__*/React.createElement("span", null, label)), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "twk-toggle",
+    "data-on": value ? '1' : '0',
+    role: "switch",
+    "aria-checked": !!value,
+    onClick: () => onChange(!value)
+  }, /*#__PURE__*/React.createElement("i", null)));
+}
+function TweakRadio({
+  label,
+  value,
+  options,
+  onChange
+}) {
+  const trackRef = React.useRef(null);
+  const [dragging, setDragging] = React.useState(false);
+  // The active value is read by pointer-move handlers attached for the lifetime
+  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
+  const valueRef = React.useRef(value);
+  valueRef.current = value;
+
+  // Segments wrap mid-word once per-segment width runs out. The track is
+  // ~248px (280 panel − 28 body pad − 4 seg pad), each button loses 12px
+  // to its own padding, and 11.5px system-ui averages ~6.3px/char — so 2
+  // options fit ~16 chars each, 3 fit ~10. Past that (or >3 options), fall
+  // back to a dropdown rather than wrap.
+  const labelLen = o => String(typeof o === 'object' ? o.label : o).length;
+  const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
+  const fitsAsSegments = maxLen <= ({
+    2: 16,
+    3: 10
+  }[options.length] ?? 0);
+  if (!fitsAsSegments) {
+    // <select> emits strings — map back to the original option value so the
+    // fallback stays type-preserving (numbers, booleans) like the segment path.
+    const resolve = s => {
+      const m = options.find(o => String(typeof o === 'object' ? o.value : o) === s);
+      return m === undefined ? s : typeof m === 'object' ? m.value : m;
+    };
+    return /*#__PURE__*/React.createElement(TweakSelect, {
+      label: label,
+      value: value,
+      options: options,
+      onChange: s => onChange(resolve(s))
+    });
+  }
+  const opts = options.map(o => typeof o === 'object' ? o : {
+    value: o,
+    label: o
+  });
+  const idx = Math.max(0, opts.findIndex(o => o.value === value));
+  const n = opts.length;
+  const segAt = clientX => {
+    const r = trackRef.current.getBoundingClientRect();
+    const inner = r.width - 4;
+    const i = Math.floor((clientX - r.left - 2) / inner * n);
+    return opts[Math.max(0, Math.min(n - 1, i))].value;
+  };
+  const onPointerDown = e => {
+    setDragging(true);
+    const v0 = segAt(e.clientX);
+    if (v0 !== valueRef.current) onChange(v0);
+    const move = ev => {
+      if (!trackRef.current) return;
+      const v = segAt(ev.clientX);
+      if (v !== valueRef.current) onChange(v);
+    };
+    const up = () => {
+      setDragging(false);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+  return /*#__PURE__*/React.createElement(TweakRow, {
+    label: label
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: trackRef,
+    role: "radiogroup",
+    onPointerDown: onPointerDown,
+    className: dragging ? 'twk-seg dragging' : 'twk-seg'
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "twk-seg-thumb",
+    style: {
+      left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
+      width: `calc((100% - 4px) / ${n})`
+    }
+  }), opts.map(o => /*#__PURE__*/React.createElement("button", {
+    key: o.value,
+    type: "button",
+    role: "radio",
+    "aria-checked": o.value === value
+  }, o.label))));
+}
+function TweakSelect({
+  label,
+  value,
+  options,
+  onChange
+}) {
+  return /*#__PURE__*/React.createElement(TweakRow, {
+    label: label
+  }, /*#__PURE__*/React.createElement("select", {
+    className: "twk-field",
+    value: value,
+    onChange: e => onChange(e.target.value)
+  }, options.map(o => {
+    const v = typeof o === 'object' ? o.value : o;
+    const l = typeof o === 'object' ? o.label : o;
+    return /*#__PURE__*/React.createElement("option", {
+      key: v,
+      value: v
+    }, l);
+  })));
+}
+function TweakText({
+  label,
+  value,
+  placeholder,
+  onChange
+}) {
+  return /*#__PURE__*/React.createElement(TweakRow, {
+    label: label
+  }, /*#__PURE__*/React.createElement("input", {
+    className: "twk-field",
+    type: "text",
+    value: value,
+    placeholder: placeholder,
+    onChange: e => onChange(e.target.value)
+  }));
+}
+function TweakNumber({
+  label,
+  value,
+  min,
+  max,
+  step = 1,
+  unit = '',
+  onChange
+}) {
+  const clamp = n => {
+    if (min != null && n < min) return min;
+    if (max != null && n > max) return max;
+    return n;
+  };
+  const startRef = React.useRef({
+    x: 0,
+    val: 0
+  });
+  const onScrubStart = e => {
+    e.preventDefault();
+    startRef.current = {
+      x: e.clientX,
+      val: value
+    };
+    const decimals = (String(step).split('.')[1] || '').length;
+    const move = ev => {
+      const dx = ev.clientX - startRef.current.x;
+      const raw = startRef.current.val + dx * step;
+      const snapped = Math.round(raw / step) * step;
+      onChange(clamp(Number(snapped.toFixed(decimals))));
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "twk-num"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "twk-num-lbl",
+    onPointerDown: onScrubStart
+  }, label), /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    value: value,
+    min: min,
+    max: max,
+    step: step,
+    onChange: e => onChange(clamp(Number(e.target.value)))
+  }), unit && /*#__PURE__*/React.createElement("span", {
+    className: "twk-num-unit"
+  }, unit));
+}
+
+// Relative-luminance contrast pick — checkmarks drawn over a swatch need to
+// read on both #111 and #fafafa without per-option configuration. Hex input
+// only (#rgb / #rrggbb); named or rgb()/hsl() colors fall through to "light".
+function __twkIsLight(hex) {
+  const h = String(hex).replace('#', '');
+  const x = h.length === 3 ? h.replace(/./g, c => c + c) : h.padEnd(6, '0');
+  const n = parseInt(x.slice(0, 6), 16);
+  if (Number.isNaN(n)) return true;
+  const r = n >> 16 & 255,
+    g = n >> 8 & 255,
+    b = n & 255;
+  return r * 299 + g * 587 + b * 114 > 148000;
+}
+const __TwkCheck = ({
+  light
+}) => /*#__PURE__*/React.createElement("svg", {
+  viewBox: "0 0 14 14",
+  "aria-hidden": "true"
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M3 7.2 5.8 10 11 4.2",
+  fill: "none",
+  strokeWidth: "2.2",
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  stroke: light ? 'rgba(0,0,0,.78)' : '#fff'
+}));
+
+// TweakColor — curated color/palette picker. Each option is either a single
+// hex string or an array of 1-5 hex strings; the card adapts — a lone color
+// renders solid, a palette renders colors[0] as the hero (left ~2/3) with the
+// rest stacked in a sharp column on the right. onChange emits the
+// option in the shape it was passed (string stays string, array stays array).
+// Without options it falls back to the native color input for back-compat.
+function TweakColor({
+  label,
+  value,
+  options,
+  onChange
+}) {
+  if (!options || !options.length) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "twk-row twk-row-h"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "twk-lbl"
+    }, /*#__PURE__*/React.createElement("span", null, label)), /*#__PURE__*/React.createElement("input", {
+      type: "color",
+      className: "twk-swatch",
+      value: value,
+      onChange: e => onChange(e.target.value)
+    }));
+  }
+  // Native <input type=color> emits lowercase hex per the HTML spec, so
+  // compare case-insensitively. String() guards JSON.stringify(undefined),
+  // which returns the primitive undefined (no .toLowerCase).
+  const key = o => String(JSON.stringify(o)).toLowerCase();
+  const cur = key(value);
+  return /*#__PURE__*/React.createElement(TweakRow, {
+    label: label
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "twk-chips",
+    role: "radiogroup"
+  }, options.map((o, i) => {
+    const colors = Array.isArray(o) ? o : [o];
+    const [hero, ...rest] = colors;
+    const sup = rest.slice(0, 4);
+    const on = key(o) === cur;
+    return /*#__PURE__*/React.createElement("button", {
+      key: i,
+      type: "button",
+      className: "twk-chip",
+      role: "radio",
+      "aria-checked": on,
+      "data-on": on ? '1' : '0',
+      "aria-label": colors.join(', '),
+      title: colors.join(' · '),
+      style: {
+        background: hero
+      },
+      onClick: () => onChange(o)
+    }, sup.length > 0 && /*#__PURE__*/React.createElement("span", null, sup.map((c, j) => /*#__PURE__*/React.createElement("i", {
+      key: j,
+      style: {
+        background: c
+      }
+    }))), on && /*#__PURE__*/React.createElement(__TwkCheck, {
+      light: __twkIsLight(hero)
+    }));
+  })));
+}
+function TweakButton({
+  label,
+  onClick,
+  secondary = false
+}) {
+  return /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: secondary ? 'twk-btn secondary' : 'twk-btn',
+    onClick: onClick
+  }, label);
+}
+Object.assign(window, {
+  useTweaks,
+  TweaksPanel,
+  TweakSection,
+  TweakRow,
+  TweakSlider,
+  TweakToggle,
+  TweakRadio,
+  TweakSelect,
+  TweakText,
+  TweakNumber,
+  TweakColor,
+  TweakButton
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/tweaks-panel.jsx", error: String((e && e.message) || e) }); }
 
 // components/feedback/Alert.jsx
 try { (() => {
@@ -12401,7 +16408,7 @@ function Badge({
   const tones = {
     neutral: {
       soft: ["var(--ink-100)", "var(--ink-700)"],
-      solid: ["var(--ink-900)", "var(--cream)"]
+      solid: ["var(--fill-ink)", "var(--cream)"]
     },
     accent: {
       soft: ["var(--stone-100)", "var(--stone-700)"],
@@ -12671,7 +16678,7 @@ function Tooltip({
     style: {
       position: "absolute",
       ...pos[side],
-      background: "var(--ink-900)",
+      background: "var(--fill-ink)",
       color: "var(--cream)",
       fontFamily: "var(--font-ui)",
       fontSize: "var(--text-xs)",
@@ -12865,8 +16872,8 @@ function Checkbox({
       width: 18,
       height: 18,
       borderRadius: "var(--radius-xs)",
-      border: `1.5px solid ${checked ? "var(--ink-900)" : "var(--border-strong)"}`,
-      background: checked ? "var(--ink-900)" : "var(--white)",
+      border: `1.5px solid ${checked ? "var(--fill-ink)" : "var(--border-strong)"}`,
+      background: checked ? "var(--fill-ink)" : "var(--white)",
       transition: "all var(--duration-fast) var(--ease-standard)"
     }
   }, checked && /*#__PURE__*/React.createElement("svg", {
@@ -12973,9 +16980,9 @@ function IconButton({
       border: "1px solid var(--border-default)"
     },
     solid: {
-      background: "var(--ink-900)",
+      background: "var(--fill-ink)",
       color: "var(--cream)",
-      border: "1px solid var(--ink-900)"
+      border: "1px solid var(--fill-ink)"
     }
   };
   const d = dims[size];
@@ -13000,8 +17007,8 @@ function IconButton({
     onMouseEnter: e => {
       if (disabled) return;
       if (variant === "ghost") e.currentTarget.style.background = "var(--ink-100)";
-      if (variant === "outline") e.currentTarget.style.borderColor = "var(--ink-900)";
-      if (variant === "solid") e.currentTarget.style.background = "var(--ink-800)";
+      if (variant === "outline") e.currentTarget.style.borderColor = "var(--fill-ink)";
+      if (variant === "solid") e.currentTarget.style.background = "var(--fill-ink-strong)";
     },
     onMouseLeave: e => {
       e.currentTarget.style.background = variants[variant].background;
@@ -13154,7 +17161,7 @@ function Radio({
       width: 18,
       height: 18,
       borderRadius: "var(--radius-pill)",
-      border: `1.5px solid ${checked ? "var(--ink-900)" : "var(--border-strong)"}`,
+      border: `1.5px solid ${checked ? "var(--fill-ink)" : "var(--border-strong)"}`,
       background: "var(--white)",
       transition: "all var(--duration-fast) var(--ease-standard)"
     }
@@ -13163,7 +17170,7 @@ function Radio({
       width: 9,
       height: 9,
       borderRadius: "var(--radius-pill)",
-      background: "var(--ink-900)"
+      background: "var(--fill-ink)"
     }
   }))), label && /*#__PURE__*/React.createElement("span", null, label));
 }
@@ -13301,7 +17308,7 @@ function Switch({
       width: 40,
       height: 22,
       borderRadius: "var(--radius-pill)",
-      background: checked ? "var(--ink-900)" : "var(--ink-300)",
+      background: checked ? "var(--fill-ink)" : "var(--ink-300)",
       transition: "background var(--duration-base) var(--ease-standard)"
     }
   }), /*#__PURE__*/React.createElement("span", {
@@ -13444,6 +17451,69 @@ function CardHeader({
 Object.assign(__ds_scope, { Card, CardHeader });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Card.jsx", error: String((e && e.message) || e) }); }
 
+// components/layout/EmptyState.jsx
+try { (() => {
+/**
+ * Berg PC — EmptyState
+ * Centered placeholder for empty tables, searches, inboxes, and dashboards.
+ * icon = ReactNode (e.g. a Lucide <i>), title, description, action = ReactNode.
+ */
+function EmptyState({
+  icon,
+  title = "Nothing here yet",
+  description,
+  action,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      padding: "48px 28px",
+      fontFamily: "var(--font-ui)",
+      ...style
+    }
+  }, icon ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 52,
+      height: 52,
+      borderRadius: "var(--radius-lg)",
+      background: "var(--stone-100)",
+      border: "1px solid var(--border-subtle)",
+      color: "var(--stone-600)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: 16
+    }
+  }, icon) : null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-serif)",
+      fontSize: 19,
+      fontWeight: "var(--weight-semibold)",
+      color: "var(--ink-900)",
+      letterSpacing: "-0.01em"
+    }
+  }, title), description ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 14,
+      lineHeight: 1.6,
+      color: "var(--ink-500)",
+      margin: "8px 0 0",
+      maxWidth: 360
+    }
+  }, description) : null, action ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 20
+    }
+  }, action) : null);
+}
+Object.assign(__ds_scope, { EmptyState });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/EmptyState.jsx", error: String((e && e.message) || e) }); }
+
 // components/layout/Stat.jsx
 try { (() => {
 /**
@@ -13516,6 +17586,294 @@ function Stat({
 }
 Object.assign(__ds_scope, { Stat });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Stat.jsx", error: String((e && e.message) || e) }); }
+
+// components/navigation/Breadcrumb.jsx
+try { (() => {
+/**
+ * Berg PC — Breadcrumb
+ * Hierarchy trail. items: [{ label, href? }]. The last item is the current
+ * page (ink, non-link). Separator is a thin stone chevron.
+ */
+function Breadcrumb({
+  items = [],
+  style
+}) {
+  return /*#__PURE__*/React.createElement("nav", {
+    "aria-label": "Breadcrumb",
+    style: {
+      display: "flex",
+      alignItems: "center",
+      flexWrap: "wrap",
+      gap: 7,
+      fontFamily: "var(--font-ui)",
+      fontSize: "var(--text-sm)",
+      ...style
+    }
+  }, items.map((it, i) => {
+    const last = i === items.length - 1;
+    return /*#__PURE__*/React.createElement(React.Fragment, {
+      key: i
+    }, last || !it.href ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: last ? "var(--ink-900)" : "var(--ink-500)",
+        fontWeight: last ? "var(--weight-semibold)" : "var(--weight-medium)"
+      },
+      "aria-current": last ? "page" : undefined
+    }, it.label) : /*#__PURE__*/React.createElement("a", {
+      href: it.href,
+      style: {
+        color: "var(--ink-500)",
+        textDecoration: "none",
+        fontWeight: "var(--weight-medium)",
+        transition: "color var(--duration-fast) var(--ease-standard)"
+      },
+      onMouseEnter: e => e.currentTarget.style.color = "var(--navy-700)",
+      onMouseLeave: e => e.currentTarget.style.color = "var(--ink-500)"
+    }, it.label), !last && /*#__PURE__*/React.createElement("svg", {
+      width: "13",
+      height: "13",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "var(--stone-400)",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      style: {
+        flex: "none"
+      }
+    }, /*#__PURE__*/React.createElement("polyline", {
+      points: "9 18 15 12 9 6"
+    })));
+  }));
+}
+Object.assign(__ds_scope, { Breadcrumb });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Breadcrumb.jsx", error: String((e && e.message) || e) }); }
+
+// components/navigation/Pagination.jsx
+try { (() => {
+/**
+ * Berg PC — Pagination
+ * Prev / numbered pages with ellipsis / Next. Controlled.
+ * page = 1-based current; pageCount = total pages; onChange(nextPage).
+ */
+function Pagination({
+  page = 1,
+  pageCount = 1,
+  onChange,
+  siblingCount = 1,
+  style
+}) {
+  const go = p => {
+    if (p >= 1 && p <= pageCount && p !== page && onChange) onChange(p);
+  };
+
+  // build the page list with ellipses
+  const pages = [];
+  const range = (a, b) => {
+    for (let i = a; i <= b; i++) pages.push(i);
+  };
+  const left = Math.max(2, page - siblingCount);
+  const right = Math.min(pageCount - 1, page + siblingCount);
+  pages.push(1);
+  if (left > 2) pages.push("…l");
+  range(left, right);
+  if (right < pageCount - 1) pages.push("…r");
+  if (pageCount > 1) pages.push(pageCount);
+  const base = {
+    minWidth: 34,
+    height: 34,
+    padding: "0 8px",
+    borderRadius: "var(--radius-sm)",
+    border: "1px solid var(--border-default)",
+    background: "var(--white)",
+    fontFamily: "var(--font-ui)",
+    fontSize: 13.5,
+    fontWeight: "var(--weight-medium)",
+    color: "var(--ink-700)",
+    cursor: "pointer",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "all var(--duration-fast) var(--ease-standard)"
+  };
+  const Arrow = ({
+    dir,
+    disabled
+  }) => /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: () => go(page + (dir === "next" ? 1 : -1)),
+    disabled: disabled,
+    "aria-label": dir === "next" ? "Next page" : "Previous page",
+    style: {
+      ...base,
+      color: disabled ? "var(--ink-300)" : "var(--ink-700)",
+      cursor: disabled ? "default" : "pointer",
+      opacity: disabled ? 0.6 : 1
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "15",
+    height: "15",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, dir === "next" ? /*#__PURE__*/React.createElement("polyline", {
+    points: "9 18 15 12 9 6"
+  }) : /*#__PURE__*/React.createElement("polyline", {
+    points: "15 18 9 12 15 6"
+  })));
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 6,
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement(Arrow, {
+    dir: "prev",
+    disabled: page <= 1
+  }), pages.map((p, i) => typeof p === "string" ? /*#__PURE__*/React.createElement("span", {
+    key: p + i,
+    style: {
+      minWidth: 22,
+      textAlign: "center",
+      color: "var(--ink-400)",
+      fontFamily: "var(--font-ui)",
+      fontSize: 13.5
+    }
+  }, "\u2026") : /*#__PURE__*/React.createElement("button", {
+    key: p,
+    type: "button",
+    onClick: () => go(p),
+    "aria-current": p === page ? "page" : undefined,
+    style: {
+      ...base,
+      background: p === page ? "var(--fill-ink)" : "var(--white)",
+      borderColor: p === page ? "var(--fill-ink)" : "var(--border-default)",
+      color: p === page ? "var(--cream)" : "var(--ink-700)",
+      fontWeight: p === page ? "var(--weight-semibold)" : "var(--weight-medium)"
+    }
+  }, p)), /*#__PURE__*/React.createElement(Arrow, {
+    dir: "next",
+    disabled: page >= pageCount
+  }));
+}
+Object.assign(__ds_scope, { Pagination });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Pagination.jsx", error: String((e && e.message) || e) }); }
+
+// components/navigation/Stepper.jsx
+try { (() => {
+/**
+ * Berg PC — Stepper
+ * Horizontal progress through case stages (e.g. Intake → Investigating →
+ * Filed → Frozen → Recovered, or the trace → identify → freeze → recover flow).
+ * steps: array of strings OR { label, sub? } objects. current = 0-based index.
+ */
+function Stepper({
+  steps = [],
+  current = 0,
+  style
+}) {
+  const items = steps.map(s => typeof s === "string" ? {
+    label: s
+  } : s);
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "flex-start",
+      width: "100%",
+      fontFamily: "var(--font-ui)",
+      ...style
+    }
+  }, items.map((s, i) => {
+    const done = i < current;
+    const active = i === current;
+    const last = i === items.length - 1;
+    const dotBg = done ? "var(--fill-ink)" : active ? "var(--surface-card)" : "var(--surface-card)";
+    const dotBorder = done ? "var(--fill-ink)" : active ? "var(--stone-500)" : "var(--border-default)";
+    const dotFg = done ? "var(--cream)" : active ? "var(--text-strong)" : "var(--text-subtle)";
+    return /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        flex: last ? "0 0 auto" : "1 1 0",
+        minWidth: 0,
+        position: "relative"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        width: "100%"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1,
+        height: 2,
+        background: i === 0 ? "transparent" : done || active ? "var(--text-strong)" : "var(--border-default)"
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: "none",
+        width: 28,
+        height: 28,
+        borderRadius: "var(--radius-pill)",
+        background: dotBg,
+        border: `2px solid ${dotBorder}`,
+        color: dotFg,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: 12.5,
+        fontWeight: "var(--weight-semibold)",
+        boxShadow: active ? "0 0 0 4px color-mix(in oklch, var(--stone-500) 16%, transparent)" : "none",
+        transition: "all var(--duration-fast) var(--ease-standard)"
+      }
+    }, done ? /*#__PURE__*/React.createElement("svg", {
+      width: "13",
+      height: "13",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "3",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/React.createElement("polyline", {
+      points: "20 6 9 17 4 12"
+    })) : i + 1), /*#__PURE__*/React.createElement("div", {
+      style: {
+        flex: 1,
+        height: 2,
+        background: last ? "transparent" : done ? "var(--ink-900)" : "var(--border-default)"
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 8,
+        textAlign: "center",
+        padding: "0 6px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 12.5,
+        fontWeight: active || done ? "var(--weight-semibold)" : "var(--weight-medium)",
+        color: active ? "var(--ink-900)" : done ? "var(--ink-700)" : "var(--ink-400)",
+        letterSpacing: "0.01em"
+      }
+    }, s.label), s.sub ? /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 11,
+        color: "var(--ink-400)",
+        marginTop: 2
+      }
+    }, s.sub) : null));
+  }));
+}
+Object.assign(__ds_scope, { Stepper });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Stepper.jsx", error: String((e && e.message) || e) }); }
 
 // components/navigation/Tabs.jsx
 try { (() => {
@@ -13832,6 +18190,61 @@ try { (() => {
 })();
 })(); } catch (e) { __ds_ns.__errors.push({ path: "marketing.js", error: String((e && e.message) || e) }); }
 
+// pwa/push.js
+try { (() => {
+/* Berg PC — Web Push subscribe helper (shared by client & lawyer PWAs).
+   Background push (notify a CLOSED app) needs a VAPID key pair + a server to send.
+   Paste your VAPID PUBLIC key below; until then this no-ops safely. See PUSH-AND-DEPLOY.md. */
+window.BERG_VAPID_PUBLIC_KEY = ""; // e.g. "BPxX...long-url-base64..."
+
+window.bergEnablePush = async function (user) {
+  try {
+    if (!("serviceWorker" in navigator) || !("PushManager" in window)) return {
+      ok: false,
+      reason: "unsupported"
+    };
+    if (!window.BERG_VAPID_PUBLIC_KEY) return {
+      ok: false,
+      reason: "no-vapid-key"
+    };
+    const perm = await Notification.requestPermission();
+    if (perm !== "granted") return {
+      ok: false,
+      reason: "denied"
+    };
+    const reg = await navigator.serviceWorker.ready;
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) {
+      sub = await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(window.BERG_VAPID_PUBLIC_KEY)
+      });
+    }
+    // Persist the subscription so your server (Supabase Edge Function) can push to it.
+    try {
+      if (window.DB && window.DB.savePushSubscription) await window.DB.savePushSubscription(user, sub.toJSON());
+    } catch (_) {}
+    return {
+      ok: true,
+      subscription: sub.toJSON()
+    };
+  } catch (e) {
+    return {
+      ok: false,
+      reason: String(e && e.message || e)
+    };
+  }
+};
+function urlBase64ToUint8Array(base64String) {
+  const padding = "=".repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const raw = atob(base64);
+  const out = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+  return out;
+}
+})(); } catch (e) { __ds_ns.__errors.push({ path: "pwa/push.js", error: String((e && e.message) || e) }); }
+
 // pwa/sw.js
 try { (() => {
 /* Berg PC Client — minimal offline app-shell cache */
@@ -13850,6 +18263,41 @@ self.addEventListener("fetch", e => {
     caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
     return res;
   }).catch(() => hit)));
+});
+
+/* ---- Web Push: show a notification when the server pushes one ---- */
+self.addEventListener("push", e => {
+  let d = {};
+  try {
+    d = e.data ? e.data.json() : {};
+  } catch (_) {
+    d = {
+      body: e.data && e.data.text()
+    };
+  }
+  e.waitUntil(self.registration.showNotification(d.title || "Berg PC", {
+    body: d.body || "You have a new update on your case.",
+    icon: "icon-192.png",
+    badge: "icon-192.png",
+    data: {
+      url: d.url || "./index.html"
+    },
+    tag: d.tag || "berg-update",
+    renotify: true
+  }));
+});
+self.addEventListener("notificationclick", e => {
+  e.notification.close();
+  const url = e.notification.data && e.notification.data.url || "./index.html";
+  e.waitUntil(self.clients.matchAll({
+    type: "window",
+    includeUncontrolled: true
+  }).then(wins => {
+    for (const w of wins) {
+      if ("focus" in w) return w.focus();
+    }
+    if (self.clients.openWindow) return self.clients.openWindow(url);
+  }));
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "pwa/sw.js", error: String((e && e.message) || e) }); }
 
@@ -14536,8 +18984,10 @@ try { (() => {
 
 // ui_kits/dashboard/TraceGraph.jsx
 try { (() => {
-/* Berg PC — Blockchain asset-trace flow graph (SVG). Exports window.BergTrace.TraceGraph.
-   Nodes positioned on a left→right flow; colored by trace role. */
+/* Berg PC — Blockchain asset-trace flow graph (SVG). Exports window.BergTrace.
+   Nodes positioned on a left→right flow; colored by trace role.
+   NODES/TXNS are exported so the Inspector and the transaction ledger render
+   from the same source of truth as the graph. */
 const {
   AddressChip,
   Badge
@@ -14556,68 +19006,162 @@ const ROLE_FILL = {
   mixer: "#E6DEF0",
   frozen: "#DCEEE4"
 };
+const ROLE_BADGE = {
+  tainted: ["danger", "Tainted origin"],
+  hop: ["neutral", "Pass-through"],
+  mixer: ["accent", "Mixer"],
+  exchange: ["info", "Exchange / VASP"],
+  frozen: ["success", "Frozen"]
+};
+const NODES = [{
+  id: "victim",
+  x: 70,
+  y: 180,
+  role: "tainted",
+  label: "Victim wallet",
+  short: "bc1qvict…9j6l3",
+  addr: "bc1q9zk2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9j6l3",
+  amt: "8.42 BTC",
+  balance: "0.00 BTC",
+  usd: "$0",
+  txs: 6,
+  first: "2025-01-30",
+  last: "2025-02-05",
+  cluster: "Self-custody (Ledger)",
+  note: "Origin of the stolen funds — confirmed by the client."
+}, {
+  id: "h1",
+  x: 250,
+  y: 100,
+  role: "hop",
+  label: "Hop 1",
+  short: "bc1qhop1…a7c2",
+  addr: "bc1qhop1a7c2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9",
+  amt: "5.10 BTC",
+  balance: "0.00 BTC",
+  usd: "$0",
+  txs: 3,
+  first: "2025-02-04",
+  last: "2025-02-08",
+  cluster: "Unclustered",
+  note: "Short-lived pass-through wallet; emptied within 4 days."
+}, {
+  id: "h2",
+  x: 250,
+  y: 260,
+  role: "hop",
+  label: "Hop 2",
+  short: "bc1qhop2…b3f8",
+  addr: "bc1qhop2b3f84f8x3v0rd7t6yqe2h5n8s4p1w0c9",
+  amt: "3.32 BTC",
+  balance: "0.00 BTC",
+  usd: "$0",
+  txs: 2,
+  first: "2025-02-05",
+  last: "2025-02-09",
+  cluster: "Unclustered",
+  note: "Routed funds directly to an off-ramp exchange."
+}, {
+  id: "mix",
+  x: 440,
+  y: 100,
+  role: "mixer",
+  label: "Mixer",
+  short: "bc1qmix…44ad",
+  addr: "bc1qmixer44adm4f8x3v0rd7t6yqe2h5n8s4p1w0c9",
+  amt: "5.10 BTC",
+  balance: "—",
+  usd: "—",
+  txs: 128,
+  first: "2025-02-08",
+  last: "ongoing",
+  cluster: "Coin-mixer (high-risk)",
+  note: "Funds entered a mixing service. Tracing continues on best-effort clustering; recovery of this branch is unlikely."
+}, {
+  id: "ex1",
+  x: 440,
+  y: 260,
+  role: "exchange",
+  label: "Exchange A — off-ramp",
+  short: "0xa3f1…b204",
+  addr: "0xa3f19c4e7b2049d5f1c8a6037be29d4471e7b204",
+  amt: "3.32 BTC",
+  balance: "3.32 BTC",
+  usd: "$214,800",
+  txs: 41,
+  first: "2025-02-14",
+  last: "2025-04-02",
+  cluster: "Binance hot wallet (likely)",
+  note: "KYC subpoena prepared; awaiting court signature for account-holder records."
+}, {
+  id: "frozen",
+  x: 630,
+  y: 180,
+  role: "frozen",
+  label: "Frozen — court order",
+  short: "0x7be2…c603",
+  addr: "0x7be29d4471e7b204a3f19c4e7b2049d5f1c8a603",
+  amt: "3.32 BTC",
+  balance: "3.32 BTC",
+  usd: "$214,800",
+  txs: 2,
+  first: "2025-03-12",
+  last: "2025-03-12",
+  cluster: "Held by Exchange A",
+  note: "Injunction served; funds frozen and held pending judgment."
+}];
+const TXNS = [{
+  hash: "0x9f3c…1a47",
+  from: "victim",
+  to: "h1",
+  amount: "5.10 BTC",
+  dest: "hop",
+  date: "2025-02-04",
+  status: "Confirmed"
+}, {
+  hash: "0x3a8e…77b1",
+  from: "victim",
+  to: "h2",
+  amount: "3.32 BTC",
+  dest: "hop",
+  date: "2025-02-05",
+  status: "Confirmed"
+}, {
+  hash: "0x77d2…c0e9",
+  from: "h1",
+  to: "mix",
+  amount: "5.10 BTC",
+  dest: "mixer",
+  date: "2025-02-08",
+  status: "Mixed"
+}, {
+  hash: "0xb204…f19c",
+  from: "h2",
+  to: "ex1",
+  amount: "3.32 BTC",
+  dest: "exchange",
+  date: "2025-02-09",
+  status: "Off-ramp"
+}, {
+  hash: "0xe4a1…be29",
+  from: "ex1",
+  to: "frozen",
+  amount: "3.32 BTC",
+  dest: "frozen",
+  date: "2025-03-12",
+  status: "Frozen"
+}];
 function TraceGraph({
   height = 360,
   onSelect,
   selectedId
 }) {
-  // x in columns, y in px
-  const nodes = [{
-    id: "victim",
-    x: 70,
-    y: 180,
-    role: "tainted",
-    label: "Victim wallet",
-    addr: "bc1qvict…9j6l3",
-    amt: "8.42 BTC"
-  }, {
-    id: "h1",
-    x: 250,
-    y: 100,
-    role: "hop",
-    label: "Hop 1",
-    addr: "bc1qhop1…a7c2",
-    amt: "5.10 BTC"
-  }, {
-    id: "h2",
-    x: 250,
-    y: 260,
-    role: "hop",
-    label: "Hop 2",
-    addr: "bc1qhop2…b3f8",
-    amt: "3.32 BTC"
-  }, {
-    id: "mix",
-    x: 440,
-    y: 100,
-    role: "mixer",
-    label: "Mixer",
-    addr: "bc1qmix…44ad",
-    amt: "5.10 BTC"
-  }, {
-    id: "ex1",
-    x: 440,
-    y: 260,
-    role: "exchange",
-    label: "Exchange A",
-    addr: "0xa3f1…b204",
-    amt: "3.32 BTC"
-  }, {
-    id: "frozen",
-    x: 630,
-    y: 180,
-    role: "frozen",
-    label: "Frozen — court order",
-    addr: "0x7be2…c603",
-    amt: "3.32 BTC"
-  }];
-  const N = Object.fromEntries(nodes.map(n => [n.id, n]));
+  const N = Object.fromEntries(NODES.map(n => [n.id, n]));
   const edges = [["victim", "h1"], ["victim", "h2"], ["h1", "mix"], ["h2", "ex1"], ["ex1", "frozen"]];
-  const W = 720,
+  const W = 760,
     NW = 128,
     NH = 56;
-  const cx = n => n.x + NW / 2,
-    cy = n => n.y + NH / 2;
+  const cy = n => n.y + NH / 2;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       width: "100%",
@@ -14631,7 +19175,7 @@ function TraceGraph({
     width: "100%",
     style: {
       display: "block",
-      minWidth: 720
+      minWidth: 760
     }
   }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("marker", {
     id: "bg-arrow",
@@ -14668,15 +19212,16 @@ function TraceGraph({
       x2 = B.x,
       y2 = cy(B);
     const mx = (x1 + x2) / 2;
+    const active = selectedId && (a === selectedId || b === selectedId);
     return /*#__PURE__*/React.createElement("path", {
       key: i,
       d: `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`,
       fill: "none",
-      stroke: "var(--ink-300)",
-      strokeWidth: "1.8",
+      stroke: active ? "var(--stone-500)" : "var(--ink-300)",
+      strokeWidth: active ? "2.4" : "1.8",
       markerEnd: "url(#bg-arrow)"
     });
-  }), nodes.map(n => {
+  }), NODES.map(n => {
     const sel = n.id === selectedId;
     return /*#__PURE__*/React.createElement("g", {
       key: n.id,
@@ -14694,7 +19239,7 @@ function TraceGraph({
       stroke: ROLE_COLOR[n.role],
       strokeWidth: "2",
       strokeDasharray: "4 3",
-      opacity: "0.8"
+      opacity: "0.85"
     }), /*#__PURE__*/React.createElement("rect", {
       x: n.x,
       y: n.y,
@@ -14728,7 +19273,7 @@ function TraceGraph({
       style: {
         pointerEvents: "none"
       }
-    }, n.addr), /*#__PURE__*/React.createElement("text", {
+    }, n.short), /*#__PURE__*/React.createElement("text", {
       x: n.x + 12,
       y: n.y + 49,
       fontFamily: "var(--font-mono)",
@@ -14772,7 +19317,11 @@ function TraceLegend() {
 window.BergTrace = {
   TraceGraph,
   TraceLegend,
-  ROLE_COLOR
+  ROLE_COLOR,
+  ROLE_FILL,
+  ROLE_BADGE,
+  NODES,
+  TXNS
 };
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/dashboard/TraceGraph.jsx", error: String((e && e.message) || e) }); }
 
@@ -14792,7 +19341,9 @@ const {
   Tag,
   Alert,
   Input,
-  IconButton
+  IconButton,
+  Pagination,
+  EmptyState
 } = _D;
 const {
   AIco
@@ -15331,10 +19882,560 @@ function CaseDetail({
     }
   }, d))))))));
 }
+const WATCH = [{
+  id: "w1",
+  wallet: "bc1q9zk2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9j6l3",
+  case: "BPC-2025-0417",
+  role: "tainted",
+  risk: "Critical",
+  balance: "8.42 BTC",
+  last: "12m ago",
+  status: "Watching"
+}, {
+  id: "w2",
+  wallet: "0xa3f19c4e7b2049d5f1c8a6037be29d4471e7b204",
+  case: "BPC-2025-0388",
+  role: "exchange",
+  risk: "High",
+  balance: "3.32 BTC",
+  last: "1h ago",
+  status: "Frozen"
+}, {
+  id: "w3",
+  wallet: "bc1qhop1a7c2m4f8x3v0rd7t6yqe2h5n8s4p1w0c9",
+  case: "BPC-2025-0417",
+  role: "hop",
+  risk: "Medium",
+  balance: "0.00 BTC",
+  last: "4h ago",
+  status: "Watching"
+}, {
+  id: "w4",
+  wallet: "bc1qmixer44adm4f8x3v0rd7t6yqe2h5n8s4p1w0c9",
+  case: "BPC-2025-0417",
+  role: "mixer",
+  risk: "Critical",
+  balance: "—",
+  last: "ongoing",
+  status: "Watching"
+}, {
+  id: "w5",
+  wallet: "0x7be29d4471e7b204a3f19c4e7b2049d5f1c8a603",
+  case: "BPC-2025-0341",
+  role: "frozen",
+  risk: "Low",
+  balance: "3.32 BTC",
+  last: "1d ago",
+  status: "Frozen"
+}, {
+  id: "w6",
+  wallet: "bc1qxy2kgd9q8r3v7m0w5t4f6h8s2p1c0j9l3k7n5",
+  case: "BPC-2025-0356",
+  role: "hop",
+  risk: "Medium",
+  balance: "1.04 BTC",
+  last: "2d ago",
+  status: "Cleared"
+}];
+const RISK_TONE = {
+  Critical: "danger",
+  High: "warning",
+  Medium: "accent",
+  Low: "neutral"
+};
+const WSTATUS_TONE = {
+  Watching: "info",
+  Frozen: "success",
+  Cleared: "neutral"
+};
+const ROLE_LABEL = {
+  tainted: "Tainted",
+  hop: "Pass-through",
+  mixer: "Mixer",
+  exchange: "Exchange",
+  frozen: "Frozen"
+};
+function WalletWatchlist() {
+  const [page, setPage] = React.useState(1);
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 26,
+      display: "flex",
+      flexDirection: "column",
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: "repeat(4,1fr)",
+      gap: 16
+    }
+  }, [["Watched", "146", "wallet"], ["Flagged", "12", "flag"], ["Frozen", "8", "snowflake"], ["Cleared", "31", "check-circle"]].map(([l, v, ic]) => /*#__PURE__*/React.createElement(Card, {
+    key: l,
+    padding: "md"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement(Stat, {
+    label: l,
+    value: v
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: 38,
+      height: 38,
+      borderRadius: "var(--radius-md)",
+      background: "var(--stone-100)",
+      color: "var(--stone-700)"
+    }
+  }, /*#__PURE__*/React.createElement(AIco, {
+    n: ic,
+    s: 19
+  })))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 12,
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 320
+    }
+  }, /*#__PURE__*/React.createElement(Input, {
+    placeholder: "Search wallets\u2026",
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "search",
+      s: 16
+    })
+  })), /*#__PURE__*/React.createElement(Tag, {
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "filter",
+      s: 14
+    })
+  }, "Risk: All"), /*#__PURE__*/React.createElement(Tag, {
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "filter",
+      s: 14
+    })
+  }, "Status: All"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "plus",
+      s: 16
+    })
+  }, "Watch address")), /*#__PURE__*/React.createElement(Card, {
+    padding: "none"
+  }, /*#__PURE__*/React.createElement(Table, {
+    rowKey: "id",
+    columns: [{
+      key: "wallet",
+      label: "Address",
+      render: (v, r) => /*#__PURE__*/React.createElement(AddressChip, {
+        address: v,
+        role: r.role
+      })
+    }, {
+      key: "role",
+      label: "Role",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 13,
+          color: "var(--ink-600)"
+        }
+      }, ROLE_LABEL[v])
+    }, {
+      key: "case",
+      label: "Case",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "var(--font-mono)",
+          fontSize: 12.5,
+          color: "var(--ink-700)"
+        }
+      }, v)
+    }, {
+      key: "risk",
+      label: "Risk",
+      render: v => /*#__PURE__*/React.createElement(Badge, {
+        tone: RISK_TONE[v]
+      }, v)
+    }, {
+      key: "balance",
+      label: "Balance",
+      align: "right",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "var(--font-mono)",
+          fontWeight: 600
+        }
+      }, v)
+    }, {
+      key: "last",
+      label: "Last seen",
+      align: "right",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          color: "var(--ink-400)",
+          fontSize: 13
+        }
+      }, v)
+    }, {
+      key: "status",
+      label: "Status",
+      render: v => /*#__PURE__*/React.createElement(Badge, {
+        tone: WSTATUS_TONE[v]
+      }, v)
+    }],
+    rows: WATCH
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "14px 18px",
+      borderTop: "1px solid var(--border-subtle)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      color: "var(--ink-500)"
+    }
+  }, "Showing 1\u20136 of 146 watched wallets"), /*#__PURE__*/React.createElement(Pagination, {
+    page: page,
+    pageCount: 24,
+    onChange: setPage
+  }))));
+}
+const VASPS = [{
+  id: "e1",
+  name: "Binance",
+  jur: "Global / Malta",
+  cases: 9,
+  reqs: 6,
+  status: "Cooperating",
+  resp: "~2 days"
+}, {
+  id: "e2",
+  name: "Coinbase",
+  jur: "United States",
+  cases: 7,
+  reqs: 5,
+  status: "Cooperating",
+  resp: "~1 day"
+}, {
+  id: "e3",
+  name: "Kraken",
+  jur: "United States",
+  cases: 3,
+  reqs: 2,
+  status: "Cooperating",
+  resp: "~3 days"
+}, {
+  id: "e4",
+  name: "Tether (USDT)",
+  jur: "Issuer freeze",
+  cases: 4,
+  reqs: 3,
+  status: "Pending",
+  resp: "—"
+}, {
+  id: "e5",
+  name: "Huobi / HTX",
+  jur: "Seychelles",
+  cases: 2,
+  reqs: 2,
+  status: "Slow",
+  resp: "~10 days"
+}, {
+  id: "e6",
+  name: "Unknown VASP",
+  jur: "Unattributed",
+  cases: 1,
+  reqs: 0,
+  status: "Declined",
+  resp: "—"
+}];
+const VASP_TONE = {
+  Cooperating: "success",
+  Pending: "warning",
+  Slow: "accent",
+  Declined: "danger"
+};
+function Exchanges() {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 26,
+      display: "flex",
+      flexDirection: "column",
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement(Alert, {
+    tone: "info",
+    icon: /*#__PURE__*/React.createElement(AIco, {
+      n: "building-2",
+      s: 17
+    })
+  }, "Track freeze requests and KYC cooperation across exchanges and VASPs. Response times feed the recovery timeline for each case."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 12,
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 320
+    }
+  }, /*#__PURE__*/React.createElement(Input, {
+    placeholder: "Search exchanges / VASPs\u2026",
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "search",
+      s: 16
+    })
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "send",
+      s: 16
+    })
+  }, "New freeze request")), /*#__PURE__*/React.createElement(Card, {
+    padding: "none"
+  }, /*#__PURE__*/React.createElement(Table, {
+    rowKey: "id",
+    columns: [{
+      key: "name",
+      label: "Exchange / VASP",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 9,
+          fontWeight: 600,
+          color: "var(--ink-900)"
+        }
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          width: 26,
+          height: 26,
+          borderRadius: "var(--radius-sm)",
+          background: "var(--navy-900)",
+          color: "var(--stone-300)",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 12,
+          fontFamily: "var(--font-serif)",
+          fontWeight: 700
+        }
+      }, v[0]), v)
+    }, {
+      key: "jur",
+      label: "Jurisdiction",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 13,
+          color: "var(--ink-600)"
+        }
+      }, v)
+    }, {
+      key: "cases",
+      label: "Cases",
+      align: "right"
+    }, {
+      key: "reqs",
+      label: "Freeze requests",
+      align: "right"
+    }, {
+      key: "resp",
+      label: "Avg. response",
+      align: "right",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "var(--font-mono)",
+          fontSize: 12.5,
+          color: "var(--ink-600)"
+        }
+      }, v)
+    }, {
+      key: "status",
+      label: "Status",
+      render: v => /*#__PURE__*/React.createElement(Badge, {
+        tone: VASP_TONE[v]
+      }, v)
+    }],
+    rows: VASPS
+  })));
+}
+const FILES = [{
+  id: "d1",
+  name: "Chain-of-funds report.pdf",
+  case: "BPC-2025-0417",
+  type: "Forensic report",
+  by: "Investigations",
+  date: "May 02",
+  status: "verified"
+}, {
+  id: "d2",
+  name: "Bank statement — Feb 2025.pdf",
+  case: "BPC-2025-0417",
+  type: "Evidence",
+  by: "Jane Doe",
+  date: "Apr 17",
+  status: "verified"
+}, {
+  id: "d3",
+  name: "Exchange A — KYC subpoena.docx",
+  case: "BPC-2025-0388",
+  type: "Filing",
+  by: "Geoffrey Berg",
+  date: "Apr 24",
+  status: "verified"
+}, {
+  id: "d4",
+  name: "Screenshots — platform chat.zip",
+  case: "BPC-2025-0417",
+  type: "Evidence",
+  by: "Jane Doe",
+  date: "Apr 18",
+  status: "review"
+}, {
+  id: "d5",
+  name: "Injunction order — draft.pdf",
+  case: "BPC-2025-0356",
+  type: "Filing",
+  by: "Kathryn E. Nelson",
+  date: "May 06",
+  status: "review"
+}];
+function Documents() {
+  const [q, setQ] = React.useState("");
+  const rows = FILES.filter(f => (f.name + f.case + f.type).toLowerCase().includes(q.toLowerCase()));
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 26,
+      display: "flex",
+      flexDirection: "column",
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 12,
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 320
+    }
+  }, /*#__PURE__*/React.createElement(Input, {
+    placeholder: "Search documents\u2026",
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "search",
+      s: 16
+    }),
+    value: q,
+    onChange: e => setQ(e.target.value)
+  })), /*#__PURE__*/React.createElement(Tag, {
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "filter",
+      s: 14
+    })
+  }, "Type: All"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    iconLeft: /*#__PURE__*/React.createElement(AIco, {
+      n: "upload",
+      s: 16
+    })
+  }, "Upload")), /*#__PURE__*/React.createElement(Card, {
+    padding: "none"
+  }, rows.length === 0 ? /*#__PURE__*/React.createElement(EmptyState, {
+    icon: /*#__PURE__*/React.createElement(AIco, {
+      n: "file-search",
+      s: 22
+    }),
+    title: "No documents match",
+    description: "Try a different search term, or upload a new file to a case."
+  }) : /*#__PURE__*/React.createElement(Table, {
+    rowKey: "id",
+    columns: [{
+      key: "name",
+      label: "Document",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 9,
+          color: "var(--ink-800)",
+          fontWeight: 500
+        }
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          color: "var(--stone-600)"
+        }
+      }, /*#__PURE__*/React.createElement(AIco, {
+        n: "file-text",
+        s: 17
+      })), v)
+    }, {
+      key: "case",
+      label: "Case",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "var(--font-mono)",
+          fontSize: 12.5,
+          color: "var(--ink-700)"
+        }
+      }, v)
+    }, {
+      key: "type",
+      label: "Type",
+      render: v => /*#__PURE__*/React.createElement(Tag, null, v)
+    }, {
+      key: "by",
+      label: "Added by"
+    }, {
+      key: "date",
+      label: "Date",
+      align: "right",
+      render: v => /*#__PURE__*/React.createElement("span", {
+        style: {
+          color: "var(--ink-400)",
+          fontSize: 13
+        }
+      }, v)
+    }, {
+      key: "status",
+      label: "Status",
+      render: v => /*#__PURE__*/React.createElement(Badge, {
+        tone: v === "verified" ? "success" : "warning"
+      }, v === "verified" ? "Verified" : "In review")
+    }],
+    rows: rows
+  })));
+}
 window.BergDash = {
   Overview,
   CaseList,
   CaseDetail,
+  WalletWatchlist,
+  Exchanges,
+  Documents,
   CASES
 };
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/dashboard/screens.jsx", error: String((e && e.message) || e) }); }
@@ -15463,7 +20564,7 @@ function Sidebar({
       gap: 10
     }
   }, /*#__PURE__*/React.createElement(Avatar, {
-    name: "Geoff Berg",
+    name: "Geoffrey Berg",
     size: 34,
     tone: "stone"
   }), /*#__PURE__*/React.createElement("div", {
@@ -15478,7 +20579,7 @@ function Sidebar({
       color: "var(--cream)",
       whiteSpace: "nowrap"
     }
-  }, "Geoff Berg"), /*#__PURE__*/React.createElement("div", {
+  }, "Geoffrey Berg"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: "var(--font-ui)",
       fontSize: 11.5,
@@ -16651,6 +21752,8 @@ window.BergWebScreens = {
 
 __ds_ns.AddressChip = __ds_scope.AddressChip;
 
+__ds_ns.AttorneyCard = __ds_scope.AttorneyCard;
+
 __ds_ns.Avatar = __ds_scope.Avatar;
 
 __ds_ns.Table = __ds_scope.Table;
@@ -16687,7 +21790,15 @@ __ds_ns.Card = __ds_scope.Card;
 
 __ds_ns.CardHeader = __ds_scope.CardHeader;
 
+__ds_ns.EmptyState = __ds_scope.EmptyState;
+
 __ds_ns.Stat = __ds_scope.Stat;
+
+__ds_ns.Breadcrumb = __ds_scope.Breadcrumb;
+
+__ds_ns.Pagination = __ds_scope.Pagination;
+
+__ds_ns.Stepper = __ds_scope.Stepper;
 
 __ds_ns.Tabs = __ds_scope.Tabs;
 

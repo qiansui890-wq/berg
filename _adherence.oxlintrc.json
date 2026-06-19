@@ -18,6 +18,7 @@
             "group": [
               "app-supabase/**",
               "app/**",
+              "assets/team/**",
               "components/data/**",
               "components/feedback/**",
               "components/forms/**",
@@ -67,6 +68,14 @@
         "message": "<Alert> tone must be one of 'info' | 'success' | 'warning' | 'danger' | 'neutral'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='AttorneyCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|role|bio|photo|credentials|href|orientation|key|ref|className|style|children)$/]",
+        "message": "<AttorneyCard> doesn't accept that prop. Declared props: name, role, bio, photo, credentials, href, orientation."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AttorneyCard'] > JSXAttribute[name.name='orientation'] > Literal[value!=/^(?:portrait|row)$/]",
+        "message": "<AttorneyCard> orientation must be one of 'portrait' | 'row'."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='Avatar'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|src|size|tone|key|ref|className|style|children)$/]",
         "message": "<Avatar> doesn't accept that prop. Declared props: name, src, size, tone."
       },
@@ -89,6 +98,10 @@
       {
         "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md)$/]",
         "message": "<Badge> size must be one of 'sm' | 'md'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BreadcrumbItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|href|key|ref|className|style|children)$/]",
+        "message": "<BreadcrumbItem> doesn't accept that prop. Declared props: label, href."
       },
       {
         "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|disabled|fullWidth|iconLeft|iconRight|children|key|ref|className|style|children)$/]",
@@ -119,6 +132,10 @@
         "message": "<Dialog> doesn't accept that prop. Declared props: open, onClose, title, description, footer, width, children."
       },
       {
+        "selector": "JSXOpeningElement[name.name='EmptyState'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|title|description|action|key|ref|className|style|children)$/]",
+        "message": "<EmptyState> doesn't accept that prop. Declared props: icon, title, description, action."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='Field'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|htmlFor|required|hint|error|children|key|ref|className|style|children)$/]",
         "message": "<Field> doesn't accept that prop. Declared props: label, htmlFor, required, hint, error, children."
       },
@@ -147,6 +164,10 @@
         "message": "<Input> size must be one of 'sm' | 'md' | 'lg'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='Pagination'] > JSXAttribute > JSXIdentifier[name!=/^(?:page|pageCount|onChange|siblingCount|key|ref|className|style|children)$/]",
+        "message": "<Pagination> doesn't accept that prop. Declared props: page, pageCount, onChange, siblingCount."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='Radio'] > JSXAttribute > JSXIdentifier[name!=/^(?:checked|name|value|onChange|disabled|label|id|key|ref|className|style|children)$/]",
         "message": "<Radio> doesn't accept that prop. Declared props: checked, name, value, onChange, disabled, label, id."
       },
@@ -169,6 +190,10 @@
       {
         "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center)$/]",
         "message": "<Stat> align must be one of 'left' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StepperStep'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|sub|key|ref|className|style|children)$/]",
+        "message": "<StepperStep> doesn't accept that prop. Declared props: label, sub."
       },
       {
         "selector": "JSXOpeningElement[name.name='Switch'] > JSXAttribute > JSXIdentifier[name!=/^(?:checked|onChange|disabled|label|id|key|ref|className|style|children)$/]",
@@ -230,10 +255,16 @@
       "Alert": {
         "replaces": []
       },
+      "AttorneyCard": {
+        "replaces": []
+      },
       "Avatar": {
         "replaces": []
       },
       "Badge": {
+        "replaces": []
+      },
+      "BreadcrumbItem": {
         "replaces": []
       },
       "Button": {
@@ -248,6 +279,9 @@
       "Dialog": {
         "replaces": []
       },
+      "EmptyState": {
+        "replaces": []
+      },
       "Field": {
         "replaces": []
       },
@@ -257,6 +291,9 @@
       "Input": {
         "replaces": []
       },
+      "Pagination": {
+        "replaces": []
+      },
       "Radio": {
         "replaces": []
       },
@@ -264,6 +301,9 @@
         "replaces": []
       },
       "Stat": {
+        "replaces": []
+      },
+      "StepperStep": {
         "replaces": []
       },
       "Switch": {
@@ -319,6 +359,8 @@
       "--ease-in-out",
       "--ease-out",
       "--ease-standard",
+      "--fill-ink",
+      "--fill-ink-strong",
       "--focus-ring",
       "--font-body",
       "--font-data",
@@ -516,6 +558,8 @@
       "--accent-strong": "color",
       "--accent-deep": "color",
       "--accent-soft": "color",
+      "--fill-ink": "color",
+      "--fill-ink-strong": "color",
       "--primary": "color",
       "--primary-hover": "color",
       "--primary-active": "color",
